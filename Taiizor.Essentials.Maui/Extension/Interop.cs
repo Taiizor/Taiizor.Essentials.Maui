@@ -1,6 +1,6 @@
 ﻿using Microsoft.JSInterop;
 
-namespace Taiizor.Essentials.Maui.Helper
+namespace Taiizor.Essentials.Maui.Extension
 {
     public class Interop
     {
