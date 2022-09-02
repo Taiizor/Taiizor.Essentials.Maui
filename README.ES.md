@@ -9,12 +9,12 @@
 
 [![Discord-Server](https://img.shields.io/discord/932386235538878534?label=Discord)](https://discord.gg/nxG977byXb)
 
-# Welcome to Taiizor.Essentials.Maui
-Taiizor.Essentials.Maui is a essentials library for projects using .NET MAUI Blazor. It provides convenience with various functions it offers.
+# Bienvenido a Taiizor.Essentials.Maui
+Taiizor.Essentials.Maui es una biblioteca esencial para proyectos que utilizan .NET MAUI Blazor. Proporciona comodidad con varias funciones que ofrece.
 
-## Contributors
+## Colaboradores
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Gracias a estas personas maravillosas ([emoji clave](https://allcontributors.org/docs/es-es/emoji-key)):
 
 <table>
   <tr>
@@ -27,15 +27,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 			</sub>
 		</a>
 		<br/>
-		<a href="https://github.com/Taiizor/Taiizor.Essentials.Maui/commits?author=Taiizor" title="Code">💻</a>
-		<a href="https://www.taiizor.com" title="Ideas & Planning, Feedback">🤔</a>
+		<a href="https://github.com/Taiizor/Taiizor.Essentials.Maui/commits?author=Taiizor" title="Código">💻</a>
+		<a href="https://www.taiizor.com" title="Ideas & Planificación, Comentarios">🤔</a>
 	</td>
   </tr>
 </table>
 
-This project follows the [all contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+Este proyecto sigue la especificación de [todos los contribuyentes](https://github.com/all-contributors/all-contributors). ¡Contribuciones de cualquier tipo de bienvenida!
 
-## Backers
+## Partidarios
 
 <table>
   <tr>
@@ -48,15 +48,15 @@ This project follows the [all contributors](https://github.com/all-contributors/
 			</sub>
 		</a>
 		<br/>
-		<a href="https://github.com/Soferity" target="_blank" title="Content">🖋</a>
+		<a href="https://github.com/Soferity" target="_blank" title="Contenido">🖋</a>
 	</td>
   </tr>
 </table>
 
-## Usage
+## Utilizar
 
-Step 1：Add a reference to Taiizor.Essentials.Maui or search for Taiizor.Essentials.Maui on the NuGet;
+Paso 1：Agregue una referencia a Taiizor.Essentials.Maui o busque Taiizor.Essentials.Maui en el NuGet;
 
 ```Install-Package Taiizor.Essentials.Maui```
 
-Step 2：Enjoy encoding
+Paso 2：Disfruta de las codificación
