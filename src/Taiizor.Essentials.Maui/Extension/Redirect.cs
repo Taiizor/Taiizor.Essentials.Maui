@@ -11,7 +11,7 @@ namespace Taiizor.Essentials.Maui.Extension
         }
 
         [JSInvokable]
-        public static async ValueTask GoLocation(string Uri)
+        public static async Task GoLocation(string Uri)
         {
             await Interop.JS.InvokeVoidAsync("GoLocation", Uri);
         }

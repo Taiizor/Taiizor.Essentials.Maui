@@ -1,0 +1,30 @@
+﻿@page "/function"
+@inject IJSRuntime JS
+
+<a href="">Return Home</a>
+
+<h3>Function</h3>
+
+<button class="btn btn-success" @onclick="Call">Click Me</button>
+
+<h5>@Text</h5>
+
+@code {
+    private string Text { get; set; } = "Empty";
+
+    [JSInvokable("SetText")]
+    //[JSInvokableAttribute("SetText")]
+    public void SetText(string text)
+    {
+        Text = text;
+
+        StateHasChanged();
+    }
+
+    private async void Call()
+    {
+        await Invoke.Method(DotNetObjectReference.Create(this), "SetText", "Whooaa!");
+
+        //await Invoke.Method("BasicExample", "SetText", "Whooaa!");
+    }
+}

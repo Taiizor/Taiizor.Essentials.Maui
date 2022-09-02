@@ -1,0 +1,39 @@
+﻿@page "/"
+
+<a href="function">Function Example</a>
+
+<h1>Hello, Universe!</h1>
+
+<h6 id="Example1">Welcome to your new app.</h6>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click Me</button>
+
+<h6 id="Example2">Result: @currentString</h6>
+
+@code {
+    protected override void OnInitialized()
+    {
+        Include.Script("js/custom.js");
+
+        base.OnInitialized();
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            Class.Add("Example1", "alert-danger");
+            Class.Add("Example2", "alert-success");
+        }
+
+        base.OnAfterRender(firstRender);
+    }
+
+    private int currentCount = 0;
+    private string currentString { get; set; } = "0";
+
+    private async Task IncrementCount()
+    {
+        currentString = await Interop.CallString("Return", ++currentCount);
+    }
+}

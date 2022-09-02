@@ -4,12 +4,12 @@ namespace Taiizor.Essentials.Maui.Extension
 {
     public class Reload
     {
-        public static async ValueTask Page()
+        public static async Task Page()
         {
             await Page(true);
         }
 
-        public static async ValueTask Page(bool Redirect)
+        public static async Task Page(bool Redirect)
         {
             if (Redirect)
             {
@@ -17,12 +17,12 @@ namespace Taiizor.Essentials.Maui.Extension
             }
         }
 
-        public static async ValueTask Element(string Identify)
+        public static async Task Element(string Identify)
         {
             await Element(Identify, true);
         }
 
-        public static async ValueTask Element(string Identify, bool Method)
+        public static async Task Element(string Identify, bool Method)
         {
             await Interop.JS.InvokeVoidAsync("ReloadElement", Identify, Method);
         }
