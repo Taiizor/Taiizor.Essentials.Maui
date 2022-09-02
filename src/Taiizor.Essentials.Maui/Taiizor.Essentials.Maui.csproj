@@ -21,7 +21,7 @@
 
   <PropertyGroup>
     <PackageId>Taiizor.Essentials.Maui</PackageId>
-    <Summary>Essentials library for projects using .NET MAUI</Summary>
+    <Summary>Essentials library for projects using .NET MAUI Blazor</Summary>
     <Authors>Taiizor</Authors>
     <Owners>$(Authors)</Owners>
     <Company>$(Authors)</Company>
@@ -41,14 +41,14 @@
     <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
     <Title>Taiizor.Essentials.Maui</Title>
     <Description>$(Summary)
-.NET Essentials Maui Library - $(PackageId)</Description>
-    <PackageReleaseNotes>Major changes have been made.
+.NET MAUI Blazor Essentials Library - $(PackageId)</Description>
+    <PackageReleaseNotes>Minor changes have been made.
 Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/releases</PackageReleaseNotes>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-    <PackageIcon>Taiizor.png</PackageIcon>
-    <ApplicationIcon>Resources\Taiizor.ico</ApplicationIcon>
+    <PackageIcon>Taiizor.Essentials.Maui.png</PackageIcon>
+    <ApplicationIcon>Resources\Taiizor.Essentials.Maui.ico</ApplicationIcon>
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
     <FileVersion>$(Version)</FileVersion>
     <AssemblyVersion>$(Version)</AssemblyVersion>
@@ -66,7 +66,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
   </PropertyGroup>
   
   <ItemGroup>
-    <None Include="Resources\Taiizor.png">
+    <None Include="Resources\Taiizor.Essentials.Maui.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
