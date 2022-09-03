@@ -31,7 +31,7 @@ namespace Taiizor.Essentials.Maui.Extension
             AppInfo.Current.ShowSettingsUI();
         }
 
-        public static string ReadProjectInfo()
+        public static string Info()
         {
             StringBuilder stringBuilder = new();
 

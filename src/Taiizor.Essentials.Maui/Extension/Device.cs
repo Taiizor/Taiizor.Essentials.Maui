@@ -26,7 +26,7 @@ namespace Taiizor.Essentials.Maui.Extension
 
         public static string DeviceTypeString => DeviceType.ToString();
 
-        public static string ReadDeviceInfo()
+        public static string Info()
         {
             StringBuilder stringBuilder = new();
 

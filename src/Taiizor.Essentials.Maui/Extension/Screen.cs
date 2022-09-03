@@ -20,7 +20,7 @@ namespace Taiizor.Essentials.Maui.Extension
 
         public static float RefreshRate = DeviceDisplay.Current.MainDisplayInfo.RefreshRate;
 
-        public static string ReadScreenInfo()
+        public static string Info()
         {
             StringBuilder stringBuilder = new();
 
