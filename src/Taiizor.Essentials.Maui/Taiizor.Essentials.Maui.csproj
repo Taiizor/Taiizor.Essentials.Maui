@@ -42,7 +42,7 @@
     <Title>Taiizor.Essentials.Maui</Title>
     <Description>$(Summary)
 .NET MAUI Blazor Essentials Library - $(PackageId)</Description>
-    <PackageReleaseNotes>Major changes have been made.
+    <PackageReleaseNotes>Minor changes have been made.
 Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/releases</PackageReleaseNotes>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -53,7 +53,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
     <FileVersion>$(Version)</FileVersion>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <AssemblyFileVersion>$(Version)</AssemblyFileVersion>
-    <Version>1.0.0.5</Version>
+    <Version>1.0.0.6</Version>
     <VersionPrefix></VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
