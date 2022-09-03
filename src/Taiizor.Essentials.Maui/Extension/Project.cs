@@ -26,7 +26,10 @@ namespace Taiizor.Essentials.Maui.Extension
 
         public static string RequestedLayoutDirectionString => RequestedLayoutDirection.ToString();
 
-        public static void ShowSettings() => AppInfo.Current.ShowSettingsUI();
+        public static void ShowSettings()
+        {
+            AppInfo.Current.ShowSettingsUI();
+        }
 
         public static string ReadProjectInfo()
         {

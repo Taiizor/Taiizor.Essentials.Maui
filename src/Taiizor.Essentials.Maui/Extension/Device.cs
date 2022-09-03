@@ -34,9 +34,9 @@ namespace Taiizor.Essentials.Maui.Extension
             stringBuilder.AppendLine($"Model: {Model}");
             stringBuilder.AppendLine($"Idiom: {IdiomString}");
             stringBuilder.AppendLine($"Version: {VersionString}");
+            stringBuilder.AppendLine($"Type: {DeviceTypeString}");
             stringBuilder.AppendLine($"Platform: {PlatformString}");
             stringBuilder.AppendLine($"Manufacturer: {Manufacturer}");
-            stringBuilder.AppendLine($"DeviceType: {DeviceTypeString}");
 
             return stringBuilder.ToString();
         }

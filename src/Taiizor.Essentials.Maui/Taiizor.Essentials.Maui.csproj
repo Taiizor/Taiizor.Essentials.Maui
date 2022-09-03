@@ -92,6 +92,9 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
 
   <ItemGroup>
     <PackageReference Include="Microsoft.JSInterop" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AppCenter" Version="4.5.3" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.5.3" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.5.3" />
   </ItemGroup>
 
 </Project>
