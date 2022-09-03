@@ -2,6 +2,7 @@
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using System.Globalization;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using Taiizor.Essentials.Maui.Enum;
 using Taiizor.Essentials.Maui.Value;
@@ -10,6 +11,12 @@ using Device = Taiizor.Essentials.Maui.Extension.Device;
 #if ANDROID || IOS || MACCATALYST || WINDOWS
 
 using Service = Taiizor.Essentials.Maui.Platforms.Services.AppCenterService;
+
+#endif
+
+#if WINDOWS
+
+using Unhandled = Microsoft.UI.Xaml.UnhandledExceptionEventArgs;
 
 #endif
 
@@ -40,11 +47,39 @@ namespace Taiizor.Essentials.Maui.Services
             }
         }
 
+        public static void Exception(FirstChanceExceptionEventArgs e)
+        {
+            if (Internal.AppCenterState)
+            {
+                TrackError(e.Exception, "FirstChanceMessage", e.Exception.Message);
+            }
+        }
+
         public static void Exception(UnhandledExceptionEventArgs e)
         {
             if (Internal.AppCenterState)
             {
-                TrackError((Exception)e.ExceptionObject, "Message", ((Exception)e.ExceptionObject).Message);
+                TrackError((Exception)e.ExceptionObject, "UnhandledMessage", ((Exception)e.ExceptionObject).Message);
+            }
+        }
+
+#if WINDOWS
+
+        public static void Exception(Unhandled e)
+        {
+            if (Internal.AppCenterState)
+            {
+                TrackError(e.Exception, "UnhandledMessage", e.Exception.Message);
+            }
+        }
+
+#endif
+
+        public static void Exception(UnobservedTaskExceptionEventArgs e)
+        {
+            if (Internal.AppCenterState)
+            {
+                TrackError(e.Exception, "UnobservedMessage", e.Exception.Message);
             }
         }
 
