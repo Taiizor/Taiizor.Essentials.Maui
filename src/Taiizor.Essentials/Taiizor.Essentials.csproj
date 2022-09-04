@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AnalysisLevel>preview</AnalysisLevel>
@@ -9,13 +9,13 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>Taiizor.Essentials.AppCenter</PackageId>
-    <Summary>Essentials library for projects using .NET AppCenter</Summary>
+    <PackageId>Taiizor.Essentials</PackageId>
+    <Summary>Essentials library for projects using .NET</Summary>
     <Authors>Taiizor</Authors>
     <Owners>$(Authors)</Owners>
     <Company>$(Authors)</Company>
     <NeutralLanguage>en-GB</NeutralLanguage>
-    <Product>Taiizor.Essentials.AppCenter (net6.0)</Product>
+    <Product>Taiizor.Essentials (net6.0)</Product>
     <Copyright>Copyright © $([System.DateTime]::Today.ToString(yyyy)) $(Authors)</Copyright>
     <PackageDescription>$(Description)</PackageDescription>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -28,10 +28,10 @@
     <!--<DocumentationFile>..\$(PackageId)\bin$(OutputPath)\$(Configuration)\$(TargetFramework)\$(PackageId).xml</DocumentationFile>-->
     <DefineConstants>$(DefineConstants);</DefineConstants>
     <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
-    <Title>Taiizor.Essentials.AppCenter</Title>
+    <Title>Taiizor.Essentials</Title>
     <Description>
       $(Summary)
-      .NET AppCenter Essentials Library - $(PackageId)
+      .NET Essentials Library - $(PackageId)
     </Description>
     <PackageReleaseNotes>
       Minor changes have been made.
@@ -40,8 +40,8 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-    <PackageIcon>Taiizor.Essentials.AppCenter.png</PackageIcon>
-    <ApplicationIcon>Resources\Taiizor.Essentials.AppCenter.ico</ApplicationIcon>
+    <PackageIcon>Taiizor.Essentials.png</PackageIcon>
+    <ApplicationIcon>Resources\Taiizor.Essentials.ico</ApplicationIcon>
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
     <FileVersion>$(Version)</FileVersion>
     <AssemblyVersion>$(Version)</AssemblyVersion>
@@ -50,7 +50,7 @@
     <VersionPrefix></VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
-    <PackageTags>Taiizor Soferity Vegalya Essentials AppCenter Class Library C# CSharp VBC VB VisualBasic DotNET .NET NET</PackageTags>
+    <PackageTags>Taiizor Soferity Vegalya Essentials Class Library C# CSharp VBC VB VisualBasic DotNET .NET NET</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -59,7 +59,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Resources\Taiizor.Essentials.AppCenter.png">
+    <None Include="Resources\Taiizor.Essentials.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
@@ -84,9 +84,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AppCenter" Version="4.5.3" />
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.5.3" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.5.3" />
+    <PackageReference Include="Microsoft.JSInterop" Version="6.0.8" />
   </ItemGroup>
 
 </Project>
