@@ -53,11 +53,11 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials/releases</
     <FileVersion>$(Version)</FileVersion>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <AssemblyFileVersion>$(Version)</AssemblyFileVersion>
-    <Version>1.0.0.9</Version>
+    <Version>1.0.1.0</Version>
     <VersionPrefix></VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
-    <PackageTags>Taiizor Soferity Vegalya Essentials Maui AppCenter Class Library C# CSharp VBC VB VisualBasic DotNET .NET NET</PackageTags>
+    <PackageTags>Taiizor Soferity Vegalya Essentials Maui Blazor AppCenter Class Library C# CSharp VBC VB VisualBasic DotNET .NET NET</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>

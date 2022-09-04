@@ -1,4 +1,4 @@
-﻿namespace Taiizor.Essentials.Maui.Enum
+﻿namespace Taiizor.Essentials.Enum
 {
     public enum LifecycleEnum
     {

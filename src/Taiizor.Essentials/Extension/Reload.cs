@@ -1,6 +1,6 @@
 ﻿using Microsoft.JSInterop;
 
-namespace Taiizor.Essentials.Maui.Extension
+namespace Taiizor.Essentials.Extension
 {
     public class Reload
     {
