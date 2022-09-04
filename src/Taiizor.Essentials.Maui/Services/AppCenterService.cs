@@ -8,11 +8,7 @@ using Taiizor.Essentials.Maui.Enum;
 using Taiizor.Essentials.Maui.Value;
 using Device = Taiizor.Essentials.Maui.Extension.Device;
 
-#if ANDROID || IOS || MACCATALYST || WINDOWS
-
 using Service = Taiizor.Essentials.Maui.Platforms.Services.AppCenterService;
-
-#endif
 
 #if WINDOWS
 
@@ -31,12 +27,7 @@ namespace Taiizor.Essentials.Maui.Services
             Level(); //
             User();
             Country();
-
-#if ANDROID || IOS || MACCATALYST || WINDOWS
-
             Service.Start();
-
-#endif
         }
 
         public static void TestCrash()
