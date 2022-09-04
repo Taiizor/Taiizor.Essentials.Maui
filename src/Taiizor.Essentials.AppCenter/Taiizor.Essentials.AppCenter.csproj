@@ -1,32 +1,21 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
-    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.22621.0</TargetFrameworks>
-    <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
-    <!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
-    <UseMaui>true</UseMaui>
-    <SingleProject>true</SingleProject>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AnalysisLevel>preview</AnalysisLevel>
     <LangVersion>preview</LangVersion>
-
-    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
-    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
-    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
-    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.22621.0</SupportedOSPlatformVersion>
-    <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
-    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>Taiizor.Essentials.Maui.AppCenter</PackageId>
-    <Summary>Essentials library for projects using .NET MAUI AppCenter</Summary>
+    <PackageId>Taiizor.Essentials.AppCenter</PackageId>
+    <Summary>Essentials library for projects using .NET AppCenter</Summary>
     <Authors>Taiizor</Authors>
     <Owners>$(Authors)</Owners>
     <Company>$(Authors)</Company>
     <NeutralLanguage>en-GB</NeutralLanguage>
-    <Product>Taiizor.Essentials.Maui.AppCenter (net6.0)</Product>
+    <Product>Taiizor.Essentials.AppCenter (net6.0)</Product>
     <Copyright>Copyright © $([System.DateTime]::Today.ToString(yyyy)) $(Authors)</Copyright>
     <PackageDescription>$(Description)</PackageDescription>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -39,16 +28,20 @@
     <!--<DocumentationFile>..\$(PackageId)\bin$(OutputPath)\$(Configuration)\$(TargetFramework)\$(PackageId).xml</DocumentationFile>-->
     <DefineConstants>$(DefineConstants);</DefineConstants>
     <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
-    <Title>Taiizor.Essentials.Maui.AppCenter</Title>
-    <Description>$(Summary)
-.NET MAUI AppCenter Essentials Library - $(PackageId)</Description>
-    <PackageReleaseNotes>Minor changes have been made.
-Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/releases</PackageReleaseNotes>
+    <Title>Taiizor.Essentials.AppCenter</Title>
+    <Description>
+      $(Summary)
+      .NET AppCenter Essentials Library - $(PackageId)
+    </Description>
+    <PackageReleaseNotes>
+      Minor changes have been made.
+      Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/releases
+    </PackageReleaseNotes>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-    <PackageIcon>Taiizor.Essentials.Maui.AppCenter.png</PackageIcon>
-    <ApplicationIcon>Resources\Taiizor.Essentials.Maui.AppCenter.ico</ApplicationIcon>
+    <PackageIcon>Taiizor.Essentials.AppCenter.png</PackageIcon>
+    <ApplicationIcon>Resources\Taiizor.Essentials.AppCenter.ico</ApplicationIcon>
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
     <FileVersion>$(Version)</FileVersion>
     <AssemblyVersion>$(Version)</AssemblyVersion>
@@ -57,16 +50,16 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
     <VersionPrefix></VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
-    <PackageTags>Taiizor Soferity Vegalya Essentials Maui AppCenter Class Library C# CSharp VBC VB VisualBasic DotNET .NET NET</PackageTags>
+    <PackageTags>Taiizor Soferity Vegalya Essentials AppCenter Class Library C# CSharp VBC VB VisualBasic DotNET .NET NET</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Configurations>Debug;Release</Configurations>
     <NoWarn>1587,1591</NoWarn>
   </PropertyGroup>
-  
+
   <ItemGroup>
-    <None Include="Resources\Taiizor.Essentials.Maui.AppCenter.png">
+    <None Include="Resources\Taiizor.Essentials.AppCenter.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
