@@ -4,11 +4,10 @@ using Microsoft.AppCenter.Crashes;
 using System.Globalization;
 using System.Runtime.ExceptionServices;
 using System.Text;
-using Taiizor.Essentials.Maui.Enum;
-using Taiizor.Essentials.Maui.Value;
-using Device = Taiizor.Essentials.Maui.Extension.Device;
-
-using Service = Taiizor.Essentials.Maui.Platforms.Services.AppCenterService;
+using Taiizor.Essentials.Maui.AppCenter.Enum;
+using Taiizor.Essentials.Maui.AppCenter.Value;
+using AC = Microsoft.AppCenter.AppCenter;
+using Service = Taiizor.Essentials.Maui.AppCenter.Platforms.Services.AppCenterService;
 
 #if WINDOWS
 
@@ -178,19 +177,19 @@ namespace Taiizor.Essentials.Maui.Services
 
         private static void Country()
         {
-            AppCenter.SetCountryCode(CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
-            //AppCenter.SetCountryCode(RegionInfo.CurrentRegion.TwoLetterISORegionName);
-            //AppCenter.SetCountryCode(CultureInfo.InstalledUICulture.TwoLetterISOLanguageName);
+            AC.SetCountryCode(CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
+            //AC.SetCountryCode(RegionInfo.CurrentRegion.TwoLetterISORegionName);
+            //AC.SetCountryCode(CultureInfo.InstalledUICulture.TwoLetterISOLanguageName);
         }
 
         private static void User()
         {
-            AppCenter.SetUserId($"{Device.Name}-{Device.Model}");
+            AC.SetUserId($"{DeviceInfo.Current.Name}-{DeviceInfo.Current.Model}");
         }
 
         private static void Level()
         {
-            AppCenter.LogLevel = LogLevel.Verbose;
+            AC.LogLevel = LogLevel.Verbose;
         }
 
         private static void Enabled()

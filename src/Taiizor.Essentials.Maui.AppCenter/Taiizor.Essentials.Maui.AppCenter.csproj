@@ -20,13 +20,13 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>Taiizor.Essentials.Maui</PackageId>
-    <Summary>Essentials library for projects using .NET MAUI Blazor</Summary>
+    <PackageId>Taiizor.Essentials.Maui.AppCenter</PackageId>
+    <Summary>Essentials library for projects using .NET MAUI AppCenter</Summary>
     <Authors>Taiizor</Authors>
     <Owners>$(Authors)</Owners>
     <Company>$(Authors)</Company>
     <NeutralLanguage>en-GB</NeutralLanguage>
-    <Product>Taiizor.Essentials.Maui (net6.0)</Product>
+    <Product>Taiizor.Essentials.Maui.AppCenter (net6.0)</Product>
     <Copyright>Copyright © $([System.DateTime]::Today.ToString(yyyy)) $(Authors)</Copyright>
     <PackageDescription>$(Description)</PackageDescription>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -39,16 +39,16 @@
     <!--<DocumentationFile>..\$(PackageId)\bin$(OutputPath)\$(Configuration)\$(TargetFramework)\$(PackageId).xml</DocumentationFile>-->
     <DefineConstants>$(DefineConstants);</DefineConstants>
     <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
-    <Title>Taiizor.Essentials.Maui</Title>
+    <Title>Taiizor.Essentials.Maui.AppCenter</Title>
     <Description>$(Summary)
-.NET MAUI Blazor Essentials Library - $(PackageId)</Description>
+.NET MAUI AppCenter Essentials Library - $(PackageId)</Description>
     <PackageReleaseNotes>Minor changes have been made.
 Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/releases</PackageReleaseNotes>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-    <PackageIcon>Taiizor.Essentials.Maui.png</PackageIcon>
-    <ApplicationIcon>Resources\Taiizor.Essentials.Maui.ico</ApplicationIcon>
+    <PackageIcon>Taiizor.Essentials.Maui.AppCenter.png</PackageIcon>
+    <ApplicationIcon>Resources\Taiizor.Essentials.Maui.AppCenter.ico</ApplicationIcon>
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
     <FileVersion>$(Version)</FileVersion>
     <AssemblyVersion>$(Version)</AssemblyVersion>
@@ -57,7 +57,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
     <VersionPrefix></VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
-    <PackageTags>Taiizor Soferity Vegalya Essentials Maui Blazor Class Library C# CSharp VBC VB VisualBasic DotNET .NET NET</PackageTags>
+    <PackageTags>Taiizor Soferity Vegalya Essentials Maui AppCenter Class Library C# CSharp VBC VB VisualBasic DotNET .NET NET</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -66,7 +66,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
   </PropertyGroup>
   
   <ItemGroup>
-    <None Include="Resources\Taiizor.Essentials.Maui.png">
+    <None Include="Resources\Taiizor.Essentials.Maui.AppCenter.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
@@ -91,16 +91,9 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.JSInterop" Version="6.0.8" />
     <PackageReference Include="Microsoft.AppCenter" Version="4.5.3" />
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.5.3" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.5.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Platforms\Android\PlatformTest.cs">
-      <ExcludeFromCurrentConfiguration>true</ExcludeFromCurrentConfiguration>
-    </Compile>
   </ItemGroup>
 
 </Project>

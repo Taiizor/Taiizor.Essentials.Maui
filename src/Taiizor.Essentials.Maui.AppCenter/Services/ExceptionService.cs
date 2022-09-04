@@ -1,4 +1,5 @@
 ﻿using System.Runtime.ExceptionServices;
+using Taiizor.Essentials.Maui.Services;
 
 #if WINDOWS
 
@@ -7,7 +8,7 @@ using Unhandled = Microsoft.UI.Xaml.UnhandledExceptionEventArgs;
 
 #endif
 
-namespace Taiizor.Essentials.Maui.Services
+namespace Taiizor.Essentials.Maui.AppCenter.Services
 {
     public class ExceptionService
     {
