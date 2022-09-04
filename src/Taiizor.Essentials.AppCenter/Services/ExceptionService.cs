@@ -1,5 +1,4 @@
 ﻿using System.Runtime.ExceptionServices;
-using Taiizor.Essentials.Services;
 
 namespace Taiizor.Essentials.AppCenter.Services
 {

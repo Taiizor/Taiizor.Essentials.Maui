@@ -8,7 +8,7 @@ using System.Text;
 using Taiizor.Essentials.AppCenter.Value;
 using AC = Microsoft.AppCenter.AppCenter;
 
-namespace Taiizor.Essentials.Services
+namespace Taiizor.Essentials.AppCenter.Services
 {
     public class AppCenterService
     {

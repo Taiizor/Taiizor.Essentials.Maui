@@ -53,7 +53,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
     <FileVersion>$(Version)</FileVersion>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <AssemblyFileVersion>$(Version)</AssemblyFileVersion>
-    <Version>1.0.0.7</Version>
+    <Version>1.0.0.8</Version>
     <VersionPrefix></VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
@@ -92,15 +92,6 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
 
   <ItemGroup>
     <PackageReference Include="Microsoft.JSInterop" Version="6.0.8" />
-    <PackageReference Include="Microsoft.AppCenter" Version="4.5.3" />
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.5.3" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.5.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Platforms\Android\PlatformTest.cs">
-      <ExcludeFromCurrentConfiguration>true</ExcludeFromCurrentConfiguration>
-    </Compile>
   </ItemGroup>
 
 </Project>
