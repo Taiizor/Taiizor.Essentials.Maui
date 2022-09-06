@@ -9,11 +9,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taiizor.Essentials.Maui.App
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taiizor.Essentials.AppCenter", "Taiizor.Essentials.AppCenter\Taiizor.Essentials.AppCenter.csproj", "{043821E1-E16A-4355-804B-186EB48343F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taiizor.Essentials", "Taiizor.Essentials\Taiizor.Essentials.csproj", "{BA9C0E1F-F722-4B56-8533-14C096F5791F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taiizor.Essentials", "Taiizor.Essentials\Taiizor.Essentials.csproj", "{BA9C0E1F-F722-4B56-8533-14C096F5791F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Essentials", "Essentials", "{C245DA54-21EC-4408-9DF9-964C380D6837}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppCenter", "AppCenter", "{74FA136D-E0DA-40B6-A704-DF48A6DFD314}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{90F14CE2-8162-4E4F-B6F1-0EFB7D00B800}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		global.json = global.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

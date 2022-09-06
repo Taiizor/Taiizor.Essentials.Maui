@@ -50,10 +50,10 @@
     <FileVersion>$(Version)</FileVersion>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <AssemblyFileVersion>$(Version)</AssemblyFileVersion>
-    <Version>1.0.1.1</Version>
+    <Version>1.0.1.2</Version>
     <VersionPrefix></VersionPrefix>
     <VersionSuffix></VersionSuffix>
-    <PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
+    <PackageVersion>$(VersionPrefix)$(Version)$(VersionSuffix)</PackageVersion>
     <PackageTags>Taiizor Soferity Vegalya Essentials Class Library C# CSharp VBC VB VisualBasic DotNET .NET NET</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
