@@ -53,7 +53,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials/releases</
     <FileVersion>$(Version)</FileVersion>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <AssemblyFileVersion>$(Version)</AssemblyFileVersion>
-    <Version>1.0.1.1</Version>
+    <Version>1.0.1.2</Version>
     <VersionPrefix></VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <PackageVersion>$(VersionPrefix)$(Version)$(VersionSuffix)</PackageVersion>
