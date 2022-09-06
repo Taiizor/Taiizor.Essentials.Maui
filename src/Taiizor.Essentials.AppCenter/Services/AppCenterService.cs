@@ -166,6 +166,9 @@ namespace Taiizor.Essentials.AppCenter.Services
 
         private static void User()
         {
+
+#if WINDOWS
+
             try
             {
                 string Name = WindowsIdentity.GetCurrent().Name;
@@ -198,6 +201,13 @@ namespace Taiizor.Essentials.AppCenter.Services
             {
                 AC.SetUserId("Unknown");
             }
+
+#else
+
+            AC.SetUserId("Unknown");
+
+#endif
+
         }
 
         private static void Level()

@@ -7,7 +7,12 @@ using System.Text;
 using Taiizor.Essentials.Maui.AppCenter.Enum;
 using Taiizor.Essentials.Maui.AppCenter.Value;
 using AC = Microsoft.AppCenter.AppCenter;
+
+#if WINDOWS || ANDROID || MACCATALYST || IOS
+
 using Service = Taiizor.Essentials.Maui.AppCenter.Platforms.Services.AppCenterService;
+
+#endif
 
 #if WINDOWS
 
@@ -26,7 +31,12 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
             Level(); //
             User();
             Country();
+
+#if WINDOWS || ANDROID || MACCATALYST || IOS
+
             Service.Start();
+
+#endif
         }
 
         public static void TestCrash()
