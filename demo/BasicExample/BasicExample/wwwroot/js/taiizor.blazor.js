@@ -1,8 +1,8 @@
-﻿function Reload() {
+function Reload() {
 	window.location.reload();
 }
 
-function GoLocation(uriLocation = "/") {
+function GoLocation(uriLocation = '/') {
     location.href = uriLocation;
     //window.location.href = uriLocation;
 }
@@ -54,6 +54,35 @@ function ToggleClass(classId, className) {
 function RemoveClass(classId, className) {
 
 	document.getElementById(classId).classList.remove(className);
+}
+
+function SetStyle(styleId, stylePair) {
+    document.getElementById(styleId).style = stylePair;
+}
+
+function AddStyle(styleId, styleName, styleValue) {
+    document.getElementById(styleId).style.setProperty(styleName, styleValue);
+}
+
+var styles = [];
+
+function ToggleStyle(styleId) {
+    var style = document.getElementById(styleId).style.cssText;
+
+    if (style != '') {
+        styles[styleId] = document.getElementById(styleId).style.cssText;
+        document.getElementById(styleId).style.cssText = null;
+        console.log("1");
+    }
+    else if (styles[styleId] != null) {
+        document.getElementById(styleId).style.cssText = styles[styleId];
+        styles[styleId] = null;
+        console.log("1");
+    }
+}
+
+function RemoveStyle(styleId, styleName) {
+    document.getElementById(styleId).style.removeProperty(styleName);
 }
 
 function InvokeMethodAsync(assemblyName, methodName, arguments) {
