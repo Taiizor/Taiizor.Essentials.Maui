@@ -59,7 +59,7 @@
 
   <!--<ItemGroup>
     <Reference Include="Taiizor.Essentials">
-      <HintPath>..\..\..\src\Taiizor.Essentials\bin\Release\net6.0\Taiizor.Essentials.dll</HintPath>
+      <HintPath>..\..\..\src\Taiizor.Essentials\bin\Release\$(TargetFramework)\Taiizor.Essentials.dll</HintPath>
     </Reference>
     <Reference Include="Taiizor.Essentials.Maui">
       <HintPath>..\..\..\src\Taiizor.Essentials.Maui\bin\Release\$(TargetFramework)\Taiizor.Essentials.Maui.dll</HintPath>
