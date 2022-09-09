@@ -10,11 +10,9 @@
 </div>
 
 @code{
-	private Interop JSC;
-
 	protected override void OnInitialized()
 	{
-		JSC = new(JS);
+		_ = new Interop(JS, Javascript.File);
         
 		base.OnInitialized();
 	}

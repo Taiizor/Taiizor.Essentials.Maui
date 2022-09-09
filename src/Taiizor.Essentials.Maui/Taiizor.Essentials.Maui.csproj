@@ -64,6 +64,10 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials/releases</
     <Configurations>Debug;Release</Configurations>
     <NoWarn>1587,1591</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Raw\taiizor.blazor.js" />
+  </ItemGroup>
   
   <ItemGroup>
     <None Include="Resources\Taiizor.Essentials.Maui.png">

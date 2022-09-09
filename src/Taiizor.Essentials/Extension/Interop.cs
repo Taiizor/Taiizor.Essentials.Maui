@@ -1,4 +1,5 @@
 ﻿using Microsoft.JSInterop;
+using HI = Taiizor.Essentials.Helper.Interop;
 
 namespace Taiizor.Essentials.Extension
 {
@@ -6,9 +7,14 @@ namespace Taiizor.Essentials.Extension
     {
         public static IJSRuntime JS;
 
-        public Interop(IJSRuntime JSR)
+        public Interop(IJSRuntime JSR, string TaiizorBlazorScript)
         {
+            HI.CheckRuntime(JSR);
+            HI.CheckScript(TaiizorBlazorScript);
+
             JS = JSR;
+            
+            JS.InvokeVoidAsync("eval", TaiizorBlazorScript);
         }
 
         public static async Task Call(string Function)
