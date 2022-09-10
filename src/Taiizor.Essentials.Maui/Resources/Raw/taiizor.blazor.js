@@ -1,3 +1,5 @@
+console.log('%cTaiizor Blazor Javascript has started.', 'color: #DC143C');
+
 function Reload() {
 	window.location.reload();
 }
@@ -72,17 +74,39 @@ function ToggleStyle(styleId) {
     if (style != '') {
         styles[styleId] = document.getElementById(styleId).style.cssText;
         document.getElementById(styleId).style.cssText = null;
-        console.log("1");
     }
     else if (styles[styleId] != null) {
         document.getElementById(styleId).style.cssText = styles[styleId];
         styles[styleId] = null;
-        console.log("1");
     }
 }
 
 function RemoveStyle(styleId, styleName) {
     document.getElementById(styleId).style.removeProperty(styleName);
+}
+
+function HeadAdd(tagHtml) {
+    document.head.appendChild(document.createRange().createContextualFragment(tagHtml));
+}
+
+function BodyAdd(tagHtml) {
+    document.body.appendChild(document.createRange().createContextualFragment(tagHtml));
+}
+
+function HeadScriptAdd(textNode) {
+    var element = document.createElement("script");
+    element.setAttribute("type", "text/javascript");
+
+    element.appendChild(document.createTextNode(textNode));
+    document.head.appendChild(element);
+}
+
+function BodyScriptAdd(textNode) {
+    var element = document.createElement("script");
+    element.setAttribute("type", "text/javascript");
+
+    element.appendChild(document.createTextNode(textNode));
+    document.body.appendChild(element);
 }
 
 function InvokeMethodAsync(assemblyName, methodName, arguments) {
