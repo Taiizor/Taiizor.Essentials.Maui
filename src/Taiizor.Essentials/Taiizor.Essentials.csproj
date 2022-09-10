@@ -56,7 +56,7 @@
     <FileVersion>$(Version)</FileVersion>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <AssemblyFileVersion>$(Version)</AssemblyFileVersion>
-    <Version>1.0.1.4</Version>
+    <Version>1.0.1.5</Version>
     <VersionPrefix></VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <PackageVersion>$(VersionPrefix)$(Version)$(VersionSuffix)</PackageVersion>
