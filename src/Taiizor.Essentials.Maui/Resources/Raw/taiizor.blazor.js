@@ -1,7 +1,7 @@
 console.log('%cTaiizor Blazor Javascript has started.', 'color: #DC143C');
 
 function Reload() {
-	window.location.reload();
+    window.location.reload();
 }
 
 function GoLocation(uriLocation = '/') {
@@ -14,8 +14,7 @@ function ReloadElement(elementId, methodType) {
         var container = document.getElementById(elementId);
         var content = container.innerHTML;
         container.innerHTML = content;
-    }
-    else {
+    } else {
         document.getElementById(elementId).innerHTML = document.getElementById(elementId).innerHTML;
     }
 }
@@ -28,7 +27,7 @@ function IncludeFont(path, rel) {
 }
 
 function IncludeJs(path) {
-	var customScript = document.createElement('script');
+    var customScript = document.createElement('script');
     customScript.setAttribute('src', path);
     document.body.appendChild(customScript);
 }
@@ -42,20 +41,20 @@ function IncludeCss(path, rel, type) {
 }
 
 function SetClass(classId, className) {
-	document.getElementById(classId).className = className;
+    document.getElementById(classId).className = className;
 }
 
 function AddClass(classId, className) {
-	document.getElementById(classId).classList.add(className);
+    document.getElementById(classId).classList.add(className);
 }
 
 function ToggleClass(classId, className) {
-	document.getElementById(classId).classList.toggle(className);
+    document.getElementById(classId).classList.toggle(className);
 }
 
 function RemoveClass(classId, className) {
 
-	document.getElementById(classId).classList.remove(className);
+    document.getElementById(classId).classList.remove(className);
 }
 
 function SetStyle(styleId, stylePair) {
@@ -74,8 +73,7 @@ function ToggleStyle(styleId) {
     if (style != '') {
         styles[styleId] = document.getElementById(styleId).style.cssText;
         document.getElementById(styleId).style.cssText = null;
-    }
-    else if (styles[styleId] != null) {
+    } else if (styles[styleId] != null) {
         document.getElementById(styleId).style.cssText = styles[styleId];
         styles[styleId] = null;
     }
@@ -94,39 +92,74 @@ function BodyAdd(tagHtml) {
 }
 
 function HeadScriptAdd(textNode) {
-    var element = document.createElement("script");
-    element.setAttribute("type", "text/javascript");
+    var element = document.createElement('script');
+    element.setAttribute('type', 'text/javascript');
 
     element.appendChild(document.createTextNode(textNode));
     document.head.appendChild(element);
 }
 
 function BodyScriptAdd(textNode) {
-    var element = document.createElement("script");
-    element.setAttribute("type", "text/javascript");
+    var element = document.createElement('script');
+    element.setAttribute('type', 'text/javascript');
 
     element.appendChild(document.createTextNode(textNode));
     document.body.appendChild(element);
 }
 
+function SetCookie(cookieName, cookieValue, exDays, path) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exDays * 24 * 60 * 60 * 1000));
+    let expires = 'expires=' + d.toUTCString();
+    let paths = 'path=' + path;
+    document.cookie = cookieName + '=' + cookieValue + ';' + expires + ';' + paths;
+}
+
+function GetCookie(cookieName) {
+    let name = cookieName + '=';
+    let ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    
+    return '';
+}
+
+function CheckCookie(cookieName) {
+    let cookie = GetCookie(cookieName);
+    if (cookie == null || cookie == '') {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function DeleteCookie(cookieName, execute = false) {
+    if (CheckCookie(cookieName) || execute) {
+        document.cookie = cookieName + '=; Max-Age=-99999999;'; 
+    }
+}
+
 function InvokeMethodAsync(assemblyName, methodName, arguments) {
     if (arguments != null && arguments.length > 0) {
         return DotNet.invokeMethodAsync(assemblyName, methodName, arguments);
-    }
-    else {
-
+    } else {
         return DotNet.invokeMethodAsync(assemblyName, methodName);
     }
 }
 
-function InvokeReferenceMethodAsync(objectReference, assemblyName, methodName, arguments) {
+function InvokeReferenceMethodAsync(objectReference, methodName, arguments) {
     if (arguments != null && arguments.length > 0) {
-        objectReference.invokeMethodAsync(assemblyName, methodName, arguments);
+        return objectReference.invokeMethodAsync(methodName, arguments);
+    } else {
+        return objectReference.invokeMethodAsync(methodName);
     }
-    else {
 
-        objectReference.invokeMethodAsync(assemblyName, methodName);
-    }
-    
     //objectReference.dispose();
 }

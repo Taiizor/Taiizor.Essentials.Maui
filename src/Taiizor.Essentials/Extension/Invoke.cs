@@ -1,70 +1,87 @@
-﻿namespace Taiizor.Essentials.Extension
+﻿using Microsoft.JSInterop;
+
+namespace Taiizor.Essentials.Extension
 {
     public class Invoke
     {
-        public static async Task Method(string Assembly, string Method, params int[] Arguments)
-        {
-            await Interop.Call("InvokeMethodAsync", Assembly, Method, Arguments);
-        }
-
-        public static async Task Method(string Assembly, string Method, params bool[] Arguments)
-        {
-            await Interop.Call("InvokeMethodAsync", Assembly, Method, Arguments);
-        }
-
-        public static async Task Method(string Assembly, string Method, params string[] Arguments)
-        {
-            await Interop.Call("InvokeMethodAsync", Assembly, Method, Arguments);
-        }
-
-        public static async Task Method(string Assembly, string Method, params object[] Arguments)
-        {
-            await Interop.Call("InvokeMethodAsync", Assembly, Method, Arguments);
-        }
-
-        public static async Task Method(params object[] Arguments)
+        public static async ValueTask ReferenceMethod(params object?[]? Arguments)
         {
             await Interop.Call("InvokeReferenceMethodAsync", Arguments);
         }
 
-        public static async Task<string> MethodString(string Assembly, string Method, params int[] Arguments)
+        public static async ValueTask<bool> ReferenceMethodBool(params object?[]? Arguments)
         {
-            return await Task.FromResult(await Interop.CallString("InvokeMethodAsync", Assembly, Method, Arguments));
+            return await Task.FromResult(await Interop.CallBool("InvokeReferenceMethodAsync", Arguments));
         }
 
-        public static async Task<string> MethodString(string Assembly, string Method, params bool[] Arguments)
+        public static async ValueTask<byte> ReferenceMethodByte(params object?[]? Arguments)
         {
-            return await Task.FromResult(await Interop.CallString("InvokeMethodAsync", Assembly, Method, Arguments));
+            return await Task.FromResult(await Interop.CallByte("InvokeReferenceMethodAsync", Arguments));
         }
 
-        public static async Task<string> MethodString(string Assembly, string Method, params string[] Arguments)
+        public static async ValueTask<char> ReferenceMethodChar(params object?[]? Arguments)
         {
-            return await Task.FromResult(await Interop.CallString("InvokeMethodAsync", Assembly, Method, Arguments));
+            return await Task.FromResult(await Interop.CallChar("InvokeReferenceMethodAsync", Arguments));
         }
 
-        public static async Task<string> MethodString(string Assembly, string Method, params object[] Arguments)
+        public static async ValueTask<long> ReferenceMethodLong(params object?[]? Arguments)
         {
-            return await Task.FromResult(await Interop.CallString("InvokeMethodAsync", Assembly, Method, Arguments));
+            return await Task.FromResult(await Interop.CallLong("InvokeReferenceMethodAsync", Arguments));
         }
 
-        public static async Task<int> MethodInteger(string Assembly, string Method, params int[] Arguments)
+        public static async ValueTask<int> ReferenceMethodInteger(params object?[]? Arguments)
         {
-            return await Task.FromResult(await Interop.CallInteger("InvokeMethodAsync", Assembly, Method, Arguments));
+            return await Task.FromResult(await Interop.CallInteger("InvokeReferenceMethodAsync", Arguments));
         }
 
-        public static async Task<int> MethodInteger(string Assembly, string Method, params bool[] Arguments)
+        public static async ValueTask<string> ReferenceMethodString(params object?[]? Arguments)
         {
-            return await Task.FromResult(await Interop.CallInteger("InvokeMethodAsync", Assembly, Method, Arguments));
+            return await Task.FromResult(await Interop.CallString("InvokeReferenceMethodAsync", Arguments));
         }
 
-        public static async Task<int> MethodInteger(string Assembly, string Method, params string[] Arguments)
+        public static async ValueTask<object> ReferenceMethodObject(params object?[]? Arguments)
         {
-            return await Task.FromResult(await Interop.CallInteger("InvokeMethodAsync", Assembly, Method, Arguments));
+            return await Task.FromResult(await Interop.CallObject("InvokeReferenceMethodAsync", Arguments));
         }
 
-        public static async Task<int> MethodInteger(string Assembly, string Method, params object[] Arguments)
+        public static async ValueTask AssemblyMethod(params object?[]? Arguments)
         {
-            return await Task.FromResult(await Interop.CallInteger("InvokeMethodAsync", Assembly, Method, Arguments));
+            await Interop.Call("InvokeMethodAsync", Arguments);
+        }
+
+        public static async ValueTask<bool> AssemblyMethodBool(params object?[]? Arguments)
+        {
+            return await Task.FromResult(await Interop.CallBool("InvokeMethodAsync", Arguments));
+        }
+
+        public static async ValueTask<byte> AssemblyMethodByte(params object?[]? Arguments)
+        {
+            return await Task.FromResult(await Interop.CallByte("InvokeMethodAsync", Arguments));
+        }
+
+        public static async ValueTask<char> AssemblyMethodChar(params object?[]? Arguments)
+        {
+            return await Task.FromResult(await Interop.CallChar("InvokeMethodAsync", Arguments));
+        }
+
+        public static async ValueTask<long> AssemblyMethodLong(params object?[]? Arguments)
+        {
+            return await Task.FromResult(await Interop.CallLong("InvokeMethodAsync", Arguments));
+        }
+
+        public static async ValueTask<int> AssemblyMethodInteger(params object?[]? Arguments)
+        {
+            return await Task.FromResult(await Interop.CallInteger("InvokeMethodAsync", Arguments));
+        }
+        
+        public static async ValueTask<string> AssemblyMethodString(params object?[]? Arguments)
+        {
+            return await Task.FromResult(await Interop.JS.InvokeAsync<string>("InvokeMethodAsync", Arguments));
+        }
+
+        public static async ValueTask<object> AssemblyMethodObject(params object?[]? Arguments)
+        {
+            return await Task.FromResult(await Interop.CallObject("InvokeMethodAsync", Arguments));
         }
     }
 }

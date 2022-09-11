@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components.WebView.Maui;
+﻿using Taiizor.Essentials.Maui.Interfaces;
+using Taiizor.Essentials.Maui.Services;
 
 namespace BasicExample;
 
@@ -18,6 +19,8 @@ public static class MauiProgram
 #if DEBUG
         builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
+
+        builder.Services.AddSingleton<IDialogService, DialogService>();
 
         return builder.Build();
     }

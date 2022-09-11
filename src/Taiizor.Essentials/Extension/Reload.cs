@@ -1,6 +1,4 @@
-﻿using Microsoft.JSInterop;
-
-namespace Taiizor.Essentials.Extension
+﻿namespace Taiizor.Essentials.Extension
 {
     public class Reload
     {
@@ -13,7 +11,7 @@ namespace Taiizor.Essentials.Extension
         {
             if (Redirect)
             {
-                await Interop.JS.InvokeVoidAsync("Reload");
+                await Interop.Call("Reload");
             }
         }
 
@@ -24,7 +22,7 @@ namespace Taiizor.Essentials.Extension
 
         public static async Task Element(string Identify, bool Method)
         {
-            await Interop.JS.InvokeVoidAsync("ReloadElement", Identify, Method);
+            await Interop.Call("ReloadElement", Identify, Method);
         }
     }
 }

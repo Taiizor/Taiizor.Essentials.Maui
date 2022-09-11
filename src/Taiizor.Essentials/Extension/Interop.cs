@@ -5,7 +5,7 @@ namespace Taiizor.Essentials.Extension
 {
     public class Interop
     {
-        public static IJSRuntime JS;
+        public static IJSRuntime JS = null;
 
         public Interop(IJSRuntime JSR, string TaiizorBlazorScript)
         {
@@ -14,142 +14,47 @@ namespace Taiizor.Essentials.Extension
 
             JS = JSR;
             
-            JS.InvokeVoidAsync("eval", TaiizorBlazorScript);
+            _ = Call("eval", TaiizorBlazorScript);
         }
 
-        public static async Task Call(string Function)
-        {
-            await JS.InvokeVoidAsync(Function);
-        }
-
-        public static async Task Call(string Function, int Argument)
-        {
-            await JS.InvokeVoidAsync(Function, Argument);
-        }
-
-        public static async Task Call(string Function, bool Argument)
-        {
-            await JS.InvokeVoidAsync(Function, Argument);
-        }
-
-        public static async Task Call(string Function, string Argument)
-        {
-            await JS.InvokeVoidAsync(Function, Argument);
-        }
-
-        public static async Task Call(string Function, object Argument)
-        {
-            await JS.InvokeVoidAsync(Function, Argument);
-        }
-
-        public static async Task Call(string Function, params int[] Arguments)
+        public static async ValueTask Call(string Function, params object?[]? Arguments)
         {
             await JS.InvokeVoidAsync(Function, Arguments);
         }
 
-        public static async Task Call(string Function, params bool[] Arguments)
+        public static async ValueTask<bool> CallBool(string Function, params object?[]? Arguments)
         {
-            await JS.InvokeVoidAsync(Function, Arguments);
+            return await JS.InvokeAsync<bool>(Function, Arguments);
+        }
+        
+        public static async ValueTask<byte> CallByte(string Function, params object?[]? Arguments)
+        {
+            return await JS.InvokeAsync<byte>(Function, Arguments);
         }
 
-        public static async Task Call(string Function, params string[] Arguments)
+        public static async ValueTask<char> CallChar(string Function, params object?[]? Arguments)
         {
-            await JS.InvokeVoidAsync(Function, Arguments);
+            return await JS.InvokeAsync<char>(Function, Arguments);
+        }
+        
+        public static async ValueTask<long> CallLong(string Function, params object?[]? Arguments)
+        {
+            return await JS.InvokeAsync<long>(Function, Arguments);
         }
 
-        public static async Task Call(string Function, params object[] Arguments)
-        {
-            await JS.InvokeVoidAsync(Function, Arguments);
-        }
-
-        public static async Task<string> CallString(string Function)
-        {
-            return await JS.InvokeAsync<string>(Function);
-        }
-
-        public static async Task<string> CallString(string Function, int Argument)
-        {
-            return await JS.InvokeAsync<string>(Function, Argument);
-        }
-
-        public static async Task<string> CallString(string Function, bool Argument)
-        {
-            return await JS.InvokeAsync<string>(Function, Argument);
-        }
-
-        public static async Task<string> CallString(string Function, string Argument)
-        {
-            return await JS.InvokeAsync<string>(Function, Argument);
-        }
-
-        public static async Task<string> CallString(string Function, object Argument)
-        {
-            return await JS.InvokeAsync<string>(Function, Argument);
-        }
-
-        public static async Task<string> CallString(string Function, params int[] Arguments)
-        {
-            return await JS.InvokeAsync<string>(Function, Arguments);
-        }
-
-        public static async Task<string> CallString(string Function, params bool[] Arguments)
-        {
-            return await JS.InvokeAsync<string>(Function, Arguments);
-        }
-
-        public static async Task<string> CallString(string Function, params string[] Arguments)
-        {
-            return await JS.InvokeAsync<string>(Function, Arguments);
-        }
-
-        public static async Task<string> CallString(string Function, params object[] Arguments)
-        {
-            return await JS.InvokeAsync<string>(Function, Arguments);
-        }
-
-        public static async Task<int> CallInteger(string Function)
-        {
-            return await JS.InvokeAsync<int>(Function);
-        }
-
-        public static async Task<int> CallInteger(string Function, int Argument)
-        {
-            return await JS.InvokeAsync<int>(Function, Argument);
-        }
-
-        public static async Task<int> CallInteger(string Function, bool Argument)
-        {
-            return await JS.InvokeAsync<int>(Function, Argument);
-        }
-
-        public static async Task<int> CallInteger(string Function, string Argument)
-        {
-            return await JS.InvokeAsync<int>(Function, Argument);
-        }
-
-        public static async Task<int> CallInteger(string Function, object Argument)
-        {
-            return await JS.InvokeAsync<int>(Function, Argument);
-        }
-
-        public static async Task<int> CallInteger(string Function, params int[] Arguments)
+        public static async ValueTask<int> CallInteger(string Function, params object?[]? Arguments)
         {
             return await JS.InvokeAsync<int>(Function, Arguments);
         }
 
-        public static async Task<int> CallInteger(string Function, params bool[] Arguments)
+        public static async ValueTask<string> CallString(string Function, params object?[]? Arguments)
         {
-            return await JS.InvokeAsync<int>(Function, Arguments);
+            return await JS.InvokeAsync<string>(Function, Arguments);
         }
 
-        public static async Task<int> CallInteger(string Function, params string[] Arguments)
+        public static async ValueTask<object> CallObject(string Function, params object?[]? Arguments)
         {
-            return await JS.InvokeAsync<int>(Function, Arguments);
-        }
-
-        public static async Task<int> CallInteger(string Function, params object[] Arguments)
-        {
-            return await JS.InvokeAsync<int>(Function, Arguments);
+            return await JS.InvokeAsync<object>(Function, Arguments);
         }
     }
 }

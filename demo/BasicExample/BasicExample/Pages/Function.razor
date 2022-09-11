@@ -1,30 +1,68 @@
 ﻿@page "/function"
 
+@inject IDialogService DialogService
+
 <a href="">Return Home</a>
 
 <h3>Function</h3>
 
-<button class="btn btn-success" id="53X" @onclick="Call">Click Me</button>
+<button class="btn btn-success" id="53X" @onclick="CallReference">Click Me Reference</button>
 
-<h5>@Text</h5>
+<h5>Reference Text: @ReferenceText</h5>
+
+<button class="btn btn-danger" id="53X" @onclick="CallAssembly">Click Me Assembly</button>
+
+<h5>Assembly Text: @AssemblyText</h5>
 
 @code {
-    private string Text { get; set; } = "Empty";
+    private string ReferenceText { get; set; } = "Empty";
+    private static string AssemblyText { get; set; } = "Empty";
 
-    [JSInvokable("SetText")]
-    //[JSInvokableAttribute("SetText")]
-    public void SetText(string text)
+    [JSInvokable("SetTextReference")]
+    //[JSInvokableAttribute("SetTextReference")]
+    public void SetTextReference(string Text)
     {
-        Text = text;
+        ReferenceText = Text;
 
         StateHasChanged();
     }
 
-    private async void Call()
+    //[JSInvokable("GetBoolReference")]
+    [JSInvokableAttribute("GetBoolReference")]
+    public bool GetBoolReference()
     {
-        await Invoke.Method(DotNetObjectReference.Create(this), "SetText", "Whooaa!");
+        return true;
+    }
 
-        //await Invoke.Method("BasicExample", "SetText", "Whooaa!");
-        //await Invoke.Method(Project.Name, "SetText", "Whooaa!");
+    [JSInvokable("SetTextAssembly")]
+    //[JSInvokableAttribute("SetTextAssembly")]
+    public static void SetTextAssembly(string Text)
+    {
+        AssemblyText = Text;
+    }
+
+    //[JSInvokable("GetBoolAssembly")]
+    [JSInvokableAttribute("GetBoolAssembly")]
+    public static bool GetBoolAssembly()
+    {
+        return false;
+    }
+
+    private async void CallReference()
+    {
+        await Invoke.ReferenceMethod(DotNetObjectReference.Create(this), "SetTextReference", "Whooaa!");
+        
+        await DialogService.DisplayConfirm("Reference Method", $"{await Invoke.ReferenceMethodBool(DotNetObjectReference.Create(this), "GetBoolReference")}", "Ok");
+    }
+
+    private async void CallAssembly()
+    {
+        await Invoke.AssemblyMethod("BasicExample", "SetTextAssembly", "Whooaa!");
+
+        StateHasChanged();
+
+        await DialogService.DisplayConfirm("Assembly Method", $"{await Invoke.AssemblyMethodBool("BasicExample", "GetBoolAssembly")}", "Ok");
+
+        //await DialogService.DisplayConfirm("Assembly Method", $"{await Invoke.AssemblyMethodBool(Project.Name, "GetBoolAssembly", "Whooaa!")}", "Ok");
     }
 }

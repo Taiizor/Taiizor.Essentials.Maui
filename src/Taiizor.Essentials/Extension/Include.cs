@@ -1,6 +1,4 @@
-﻿using Microsoft.JSInterop;
-
-namespace Taiizor.Essentials.Extension
+﻿namespace Taiizor.Essentials.Extension
 {
     public class Include
     {
@@ -11,12 +9,12 @@ namespace Taiizor.Essentials.Extension
 
         public static async Task Font(string Path, string Rel)
         {
-            await Interop.JS.InvokeVoidAsync("IncludeFont", Path, Rel);
+            await Interop.Call("IncludeFont", Path, Rel);
         }
 
         public static async Task Script(string Path)
         {
-            await Interop.JS.InvokeVoidAsync("IncludeJs", Path);
+            await Interop.Call("IncludeJs", Path);
         }
 
         public static async Task Stylesheet(string Path)
@@ -31,7 +29,7 @@ namespace Taiizor.Essentials.Extension
 
         public static async Task Stylesheet(string Path, string Rel, string Type)
         {
-            await Interop.JS.InvokeVoidAsync("IncludeCss", Path, Rel, Type);
+            await Interop.Call("IncludeCss", Path, Rel, Type);
         }
     }
 }
