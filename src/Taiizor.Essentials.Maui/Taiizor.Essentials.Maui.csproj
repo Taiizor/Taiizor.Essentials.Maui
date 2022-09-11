@@ -42,8 +42,9 @@
     <Title>Taiizor.Essentials.Maui</Title>
     <Description>$(Summary)
 .NET MAUI Essentials Library - $(PackageId)</Description>
-    <PackageReleaseNotes>Minor changes have been made.
-Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials/releases</PackageReleaseNotes>
+    <PackageReleaseNotes>
+        Code improvements have been made.
+        Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials/releases</PackageReleaseNotes>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
@@ -53,7 +54,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials/releases</
     <FileVersion>$(Version)</FileVersion>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <AssemblyFileVersion>$(Version)</AssemblyFileVersion>
-    <Version>1.0.1.5</Version>
+    <Version>1.0.1.6</Version>
     <VersionPrefix></VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <PackageVersion>$(VersionPrefix)$(Version)$(VersionSuffix)</PackageVersion>
