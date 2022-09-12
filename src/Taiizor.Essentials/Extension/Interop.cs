@@ -5,7 +5,7 @@ namespace Taiizor.Essentials.Extension
 {
     public class Interop
     {
-        public static IJSRuntime JS = null;
+        private static IJSRuntime JS = null;
 
         public Interop(IJSRuntime JSR, string TaiizorBlazorScript)
         {
@@ -17,7 +17,7 @@ namespace Taiizor.Essentials.Extension
             _ = Call("eval", TaiizorBlazorScript);
         }
 
-        public static async ValueTask Call(string Function, params object?[]? Arguments)
+        public static async Task Call(string Function, params object?[]? Arguments)
         {
             await JS.InvokeVoidAsync(Function, Arguments);
         }

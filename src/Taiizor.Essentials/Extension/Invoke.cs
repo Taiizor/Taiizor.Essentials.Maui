@@ -4,7 +4,7 @@ namespace Taiizor.Essentials.Extension
 {
     public class Invoke
     {
-        public static async ValueTask ReferenceMethod(params object?[]? Arguments)
+        public static async Task ReferenceMethod(params object?[]? Arguments)
         {
             await Interop.Call("InvokeReferenceMethodAsync", Arguments);
         }
@@ -44,7 +44,7 @@ namespace Taiizor.Essentials.Extension
             return await Task.FromResult(await Interop.CallObject("InvokeReferenceMethodAsync", Arguments));
         }
 
-        public static async ValueTask AssemblyMethod(params object?[]? Arguments)
+        public static async Task AssemblyMethod(params object?[]? Arguments)
         {
             await Interop.Call("InvokeMethodAsync", Arguments);
         }
@@ -76,7 +76,7 @@ namespace Taiizor.Essentials.Extension
         
         public static async ValueTask<string> AssemblyMethodString(params object?[]? Arguments)
         {
-            return await Task.FromResult(await Interop.JS.InvokeAsync<string>("InvokeMethodAsync", Arguments));
+            return await Task.FromResult(await Interop.CallString("InvokeMethodAsync", Arguments));
         }
 
         public static async ValueTask<object> AssemblyMethodObject(params object?[]? Arguments)

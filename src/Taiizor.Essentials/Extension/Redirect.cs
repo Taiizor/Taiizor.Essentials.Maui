@@ -2,7 +2,7 @@
 {
     public class Redirect
     {
-        public static async void GoLocation()
+        public static async Task GoLocation()
         {
             await GoLocation("/");
         }

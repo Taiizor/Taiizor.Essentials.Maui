@@ -40,6 +40,14 @@ function IncludeCss(path, rel, type) {
     document.head.appendChild(customStylesheet);
 }
 
+function SetAttribute(elementId, propertyName, propertyValue) {
+    document.getElementById(elementId).setAttribute(propertyName, propertyValue);
+}
+
+function RemoveAttribute(elementId, propertyName) {
+    document.getElementById(elementId).removeAttribute(propertyName);
+}
+
 function SetClass(classId, className) {
     document.getElementById(classId).className = className;
 }

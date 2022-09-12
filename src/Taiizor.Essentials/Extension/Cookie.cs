@@ -1,6 +1,4 @@
-﻿using Microsoft.JSInterop;
-
-namespace Taiizor.Essentials.Extension
+﻿namespace Taiizor.Essentials.Extension
 {
     public class Cookie
     {
@@ -19,12 +17,12 @@ namespace Taiizor.Essentials.Extension
             await Interop.Call("SetCookie", Name, Value, Days, Path);
         }
 
-        public static async Task<string> Get(string Name)
+        public static async ValueTask<string> Get(string Name)
         {
             return await Interop.CallString("GetCookie", Name);
         }
 
-        public static async Task<bool> Check(string Name)
+        public static async ValueTask<bool> Check(string Name)
         {
             return await Interop.CallBool("CheckCookie", Name);
         }
