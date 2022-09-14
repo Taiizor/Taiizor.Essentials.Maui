@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Taiizor.Essentials.Maui.Extension
 {
-    public class Javascript
+    internal class Javascript
     {
         public static string File => LoadFileAsync;
         

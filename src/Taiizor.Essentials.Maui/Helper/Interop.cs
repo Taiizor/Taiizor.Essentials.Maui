@@ -1,6 +1,6 @@
 ﻿using Microsoft.JSInterop;
 
-namespace Taiizor.Essentials.Helper
+namespace Taiizor.Essentials.Maui.Helper
 {
     internal class Interop
     {
@@ -9,14 +9,6 @@ namespace Taiizor.Essentials.Helper
             if (JSR is null)
             {
                 throw new ArgumentNullException(nameof(JSR));
-            }
-        }
-        
-        public static void CheckScript(string Script)
-        {
-            if (Script is null)
-            {
-                throw new ArgumentNullException(nameof(Script));
             }
         }
     }

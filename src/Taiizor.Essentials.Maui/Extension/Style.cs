@@ -1,4 +1,4 @@
-﻿namespace Taiizor.Essentials.Extension
+﻿namespace Taiizor.Essentials.Maui.Extension
 {
     public class Style
     {

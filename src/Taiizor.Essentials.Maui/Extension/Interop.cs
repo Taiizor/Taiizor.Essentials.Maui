@@ -1,20 +1,19 @@
 ﻿using Microsoft.JSInterop;
-using HI = Taiizor.Essentials.Helper.Interop;
+using HI = Taiizor.Essentials.Maui.Helper.Interop;
 
-namespace Taiizor.Essentials.Extension
+namespace Taiizor.Essentials.Maui.Extension
 {
     public class Interop
     {
         private static IJSRuntime JS = null;
 
-        public Interop(IJSRuntime JSR, string TaiizorBlazorScript)
+        public Interop(IJSRuntime JSR)
         {
             HI.CheckRuntime(JSR);
-            HI.CheckScript(TaiizorBlazorScript);
 
             JS = JSR;
             
-            _ = Call("eval", TaiizorBlazorScript);
+            _ = Call("eval", Javascript.File);
         }
 
         public static async Task Call(string Function, params object?[]? Arguments)

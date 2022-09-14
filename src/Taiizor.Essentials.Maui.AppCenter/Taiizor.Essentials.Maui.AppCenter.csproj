@@ -32,9 +32,9 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageProjectUrl>https://github.com/Taiizor/Taiizor.Essentials</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Taiizor/Taiizor.Essentials.Maui</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>git://github.com/Taiizor/Taiizor.Essentials</RepositoryUrl>
+    <RepositoryUrl>git://github.com/Taiizor/Taiizor.Essentials.Maui</RepositoryUrl>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <!--<DocumentationFile>..\$(PackageId)\bin$(OutputPath)\$(Configuration)\$(TargetFramework)\$(PackageId).xml</DocumentationFile>-->
     <DefineConstants>$(DefineConstants);</DefineConstants>
@@ -42,9 +42,8 @@
     <Title>Taiizor.Essentials.Maui.AppCenter</Title>
     <Description>$(Summary)
 .NET MAUI AppCenter Essentials Library - $(PackageId)</Description>
-    <PackageReleaseNotes>
-        Code improvements have been made.
-        Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials/releases</PackageReleaseNotes>
+    <PackageReleaseNotes>Code improvements have been made.
+Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/releases</PackageReleaseNotes>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
@@ -54,7 +53,7 @@
     <FileVersion>$(Version)</FileVersion>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <AssemblyFileVersion>$(Version)</AssemblyFileVersion>
-    <Version>1.0.1.6</Version>
+    <Version>1.0.1.7</Version>
     <VersionPrefix></VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <PackageVersion>$(VersionPrefix)$(Version)$(VersionSuffix)</PackageVersion>
