@@ -154,6 +154,52 @@ function DeleteCookie(cookieName, execute = false) {
     }
 }
 
+function SetLocalStorage(localKey, localValue) {
+    localStorage.setItem(localKey, localValue);
+}
+
+function GetLocalStorage(localKey) {
+    return localStorage.getItem(localKey);
+}
+
+function CheckLocalStorage(localKey) {
+    let localValue = GetLocalStorage(localKey);
+    if (localValue == null || localValue == '') {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function DeleteLocalStorage(localKey, execute = false) {
+    if (CheckLocalStorage(localKey) || execute) {
+        localStorage.removeItem(localKey);
+    }
+}
+
+function SetSessionStorage(sessionKey, sessionValue) {
+    sessionStorage.setItem(sessionKey, sessionValue);
+}
+
+function GetSessionStorage(sessionKey) {
+    return sessionStorage.getItem(sessionKey);
+}
+
+function CheckSessionStorage(sessionKey) {
+    let sessionValue = GetSessionStorage(sessionKey);
+    if (sessionValue == null || sessionValue == '') {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function DeleteSessionStorage(sessionKey, execute = false) {
+    if (CheckSessionStorage(sessionKey) || execute) {
+        sessionStorage.removeItem(sessionKey);
+    }
+}
+
 function InvokeMethodAsync(assemblyName, methodName, arguments) {
     if (arguments != null && arguments.length > 0) {
         return DotNet.invokeMethodAsync(assemblyName, methodName, arguments);
