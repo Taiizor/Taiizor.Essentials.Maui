@@ -35,6 +35,5 @@
     private async Task IncrementCount()
     {
         currentString = await Interop.CallString("Return", ++currentCount);
-        await Local.Set("Taiizor", "ReaLTaiizor");
     }
 }
