@@ -140,8 +140,8 @@ function GetCookie(cookieName) {
 }
 
 function CheckCookie(cookieName) {
-    let cookie = GetCookie(cookieName);
-    if (cookie == null || cookie == '') {
+    let cookieValue = GetCookie(cookieName);
+    if (cookieValue == null || cookieValue == '') {
         return false;
     } else {
         return true;

@@ -22,7 +22,7 @@
 
     <PropertyGroup>
         <PackageId>Taiizor.Essentials.Maui</PackageId>
-        <Summary>Essentials library for projects using .NET MAUI</Summary>
+        <Summary>Essentials library for projects using .NET MAUI Blazor</Summary>
         <Authors>Taiizor</Authors>
         <Owners>$(Authors)</Owners>
         <Company>$(Authors)</Company>
@@ -42,7 +42,7 @@
         <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
         <Title>Taiizor.Essentials.Maui</Title>
         <Description>$(Summary)
-.NET MAUI Essentials Library - $(PackageId)</Description>
+.NET MAUI Blazor Essentials Library - $(PackageId)</Description>
         <PackageReleaseNotes>Code improvements have been made.
 Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/releases</PackageReleaseNotes>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
