@@ -2,6 +2,6 @@
 {
     internal class Internal
     {
-
+        public static readonly string DefaultCulture = "en-GB";
     }
 }
