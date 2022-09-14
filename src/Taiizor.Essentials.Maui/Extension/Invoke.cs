@@ -1,6 +1,4 @@
-﻿using Microsoft.JSInterop;
-
-namespace Taiizor.Essentials.Maui.Extension
+﻿namespace Taiizor.Essentials.Maui.Extension
 {
     public class Invoke
     {
