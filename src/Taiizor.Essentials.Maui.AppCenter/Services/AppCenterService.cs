@@ -189,9 +189,8 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
         {
             AC.SetCountryCode(RegionInfo.CurrentRegion.TwoLetterISORegionName);
             //AC.SetCountryCode(RegionInfo.CurrentRegion.Name);
-
+            
             //AC.SetCountryCode(CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
-            //AC.SetCountryCode(RegionInfo.CurrentRegion.TwoLetterISORegionName);
             //AC.SetCountryCode(CultureInfo.InstalledUICulture.TwoLetterISOLanguageName);
         }
 
