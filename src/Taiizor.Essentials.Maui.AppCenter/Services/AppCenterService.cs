@@ -1,6 +1,7 @@
 ﻿using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using Newtonsoft.Json;
 using System.Globalization;
 using System.Runtime.ExceptionServices;
 using System.Text;
@@ -45,6 +46,8 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
             if (Internal.AppCenterState)
             {
                 Crashes.GenerateTestCrash();
+
+                WatchError("TestCrash");
             }
         }
 
@@ -97,6 +100,8 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
             if (Internal.AppCenterState)
             {
                 Analytics.TrackEvent(Name);
+
+                WatchEvent(Name);
             }
         }
 
@@ -105,6 +110,8 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
             if (Internal.AppCenterState)
             {
                 Analytics.TrackEvent(Name, new Dictionary<string, string>() { { Key, Value } });
+
+                WatchEvent(Name, Key, Value);
             }
         }
 
@@ -113,6 +120,8 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
             if (Internal.AppCenterState)
             {
                 Analytics.TrackEvent(Name, Properties);
+
+                WatchEvent(Name, Properties);
             }
         }
 
@@ -121,6 +130,8 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
             if (Internal.AppCenterState)
             {
                 Crashes.TrackError(Exception);
+
+                WatchError(Exception);
             }
         }
 
@@ -129,6 +140,8 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
             if (Internal.AppCenterState)
             {
                 Crashes.TrackError(Exception, new Dictionary<string, string>() { { Key, Value } });
+
+                WatchError(Exception, Key, Value);
             }
         }
 
@@ -137,6 +150,8 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
             if (Internal.AppCenterState)
             {
                 Crashes.TrackError(Exception, Properties);
+
+                WatchError(Exception, Properties);
             }
         }
 
@@ -161,6 +176,12 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
                     ErrorAttachmentLog.AttachmentWithText(Text, TextFile),
                     ErrorAttachmentLog.AttachmentWithBinary(Image, ImageFile, Extension)
                 });
+
+                WatchError(Exception, Properties, new ErrorAttachmentLog[]
+                {
+                    ErrorAttachmentLog.AttachmentWithText(Text, TextFile),
+                    ErrorAttachmentLog.AttachmentWithBinary(Image, ImageFile, Extension)
+                });
             }
         }
 
@@ -169,22 +190,72 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
             if (Internal.AppCenterState)
             {
                 Crashes.TrackError(Exception, Properties, Attachments);
+                
+                WatchError(Exception, Properties, Attachments);
             }
         }
         
-        private static void WatchEvent()
+        private static void WatchEvent(string Name)
         {
             if (Internal.AppCenterWatch.Event == WatchEnum.Open)
             {
-                TrackEvent(Watch.GetText("Event"));
+                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.EventName), new Dictionary<string, string>() { { "Name", Name } });
             }
         }
 
-        private static void WatchError()
+        private static void WatchEvent(string Name, string Key, string Value)
+        {
+            if (Internal.AppCenterWatch.Event == WatchEnum.Open)
+            {
+                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.EventName), new Dictionary<string, string>() { { Name, $"{Key}: {Value}" } });
+            }
+        }
+
+        private static void WatchEvent(string Name, IDictionary<string, string> Properties)
+        {
+            if (Internal.AppCenterWatch.Event == WatchEnum.Open)
+            {
+                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.EventName), new Dictionary<string, string>() { { Name, JsonConvert.SerializeObject(Properties, Formatting.None) } }); //Formatting.Indented
+            }
+        }
+
+        private static void WatchError(string Name)
         {
             if (Internal.AppCenterWatch.Error == WatchEnum.Open)
             {
-                TrackEvent(Watch.GetText("Error"));
+                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Error", Name } });
+            }
+        }
+
+        private static void WatchError(Exception Exception)
+        {
+            if (Internal.AppCenterWatch.Error == WatchEnum.Open)
+            {
+                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
+            }
+        }
+
+        private static void WatchError(Exception Exception, string Key, string Value)
+        {
+            if (Internal.AppCenterWatch.Error == WatchEnum.Open)
+            {
+                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { Key, Value }, { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
+            }
+        }
+
+        private static void WatchError(Exception Exception, IDictionary<string, string> Properties)
+        {
+            if (Internal.AppCenterWatch.Error == WatchEnum.Open)
+            {
+                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Properties", JsonConvert.SerializeObject(Properties, Formatting.None) }, { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
+            }
+        }
+
+        private static void WatchError(Exception Exception, IDictionary<string, string> Properties, ErrorAttachmentLog[] Attachments)
+        {
+            if (Internal.AppCenterWatch.Error == WatchEnum.Open)
+            {
+                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Properties", JsonConvert.SerializeObject(Properties, Formatting.None) }, { "Attachments", JsonConvert.SerializeObject(Attachments, Formatting.None) }, { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
             }
         }
 

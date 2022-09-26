@@ -12,6 +12,8 @@ namespace Taiizor.Essentials.Maui.AppCenter.Value
             Format = "{0}-{1}{2}-{3}-{4}",
             Event = WatchEnum.Close,
             Error = WatchEnum.Close,
+            EventName = "Event",
+            ErrorName = "Error",
             Prefix = "Prefix",
             Suffix = "Suffix",
             Name = "Watch"
