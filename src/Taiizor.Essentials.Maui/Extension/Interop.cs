@@ -1,4 +1,5 @@
 ﻿using Microsoft.JSInterop;
+using Taiizor.Essentials.Maui.Enum;
 using HI = Taiizor.Essentials.Maui.Helper.Interop;
 
 namespace Taiizor.Essentials.Maui.Extension
@@ -12,8 +13,9 @@ namespace Taiizor.Essentials.Maui.Extension
             HI.CheckRuntime(JSR);
 
             JS = JSR;
-            
-            _ = Call("eval", Javascript.File);
+
+            _ = Call("eval", Javascript.File(JavascriptEnum.Custom));
+            _ = Call("eval", Javascript.File(JavascriptEnum.Taiizor));
         }
 
         public static async Task Call(string Function, params object?[]? Arguments)

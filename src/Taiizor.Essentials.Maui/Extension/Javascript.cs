@@ -1,41 +1,40 @@
 ﻿using System.Reflection;
 using System.Text;
+using Taiizor.Essentials.Maui.Enum;
+using HJ = Taiizor.Essentials.Maui.Helper.Javascript;
 
 namespace Taiizor.Essentials.Maui.Extension
 {
     internal class Javascript
     {
-        public static string File => LoadFileAsync;
-        
-        public static string FileScript
+        public static string File(JavascriptEnum Javascript)
         {
-            get
-            {
-                StringBuilder stringBuilder = new();
+            return LoadFileAsync(Javascript);
+        }
+        
+        public static string FileScript(JavascriptEnum Javascript)
+        {
+            StringBuilder stringBuilder = new ();
 
-                stringBuilder.AppendLine("\t<script type=\"text/javascript\">");
+            stringBuilder.AppendLine("<script type=\"text/javascript\">");
+            
+            stringBuilder.AppendLine(File(Javascript));
 
-                stringBuilder.AppendLine(File);
+            stringBuilder.AppendLine("</script>");
 
-                stringBuilder.AppendLine("\t</script>");
-
-                return stringBuilder.ToString();
-            }
+            return stringBuilder.ToString();
         }
 
-        private static string LoadFileAsync
+        private static string LoadFileAsync(JavascriptEnum Javascript)
         {
-            get
-            {
-                var assembly = Assembly.GetExecutingAssembly();
-                var resourceName = "Taiizor.Essentials.Maui.Resources.Raw.taiizor.blazor.js";
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = HJ.GetFile(Javascript);
 
-                using var stream = assembly.GetManifestResourceStream(resourceName);
-                using var reader = new StreamReader(stream);
-                var result = reader.ReadToEnd();
+            using var stream = assembly.GetManifestResourceStream(resourceName);
+            
+            using var reader = new StreamReader(stream);
 
-                return result;
-            }
+            return reader.ReadToEnd();
         }
     }
 }

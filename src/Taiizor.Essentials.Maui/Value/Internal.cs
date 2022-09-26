@@ -9,5 +9,7 @@
         public static readonly string DataDirectory = FileSystem.Current.AppDataDirectory;
 
         public static readonly string StorageExtension = ".json";
+
+        public static readonly string JavascriptFile = "Taiizor.Essentials.Maui.Resources.Raw.{0}.blazor.js";
     }
 }
