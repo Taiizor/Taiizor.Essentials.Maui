@@ -2,6 +2,7 @@
 {
     public class CrossException
     {
+        
 #if WINDOWS
         private static Exception _lastFirstChanceException;
 #endif

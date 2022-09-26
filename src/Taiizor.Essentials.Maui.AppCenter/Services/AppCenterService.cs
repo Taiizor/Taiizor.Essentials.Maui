@@ -5,14 +5,11 @@ using System.Globalization;
 using System.Runtime.ExceptionServices;
 using System.Text;
 using Taiizor.Essentials.Maui.AppCenter.Enum;
+using Taiizor.Essentials.Maui.AppCenter.Helper;
+using Taiizor.Essentials.Maui.AppCenter.Struct;
 using Taiizor.Essentials.Maui.AppCenter.Value;
 using AC = Microsoft.AppCenter.AppCenter;
-
-#if WINDOWS || ANDROID || MACCATALYST || IOS
-
 using Service = Taiizor.Essentials.Maui.AppCenter.Platforms.Services.AppCenterService;
-
-#endif
 
 #if WINDOWS
 
@@ -26,17 +23,21 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
     {
         public static void Engine(Dictionary<AppEnum, string> Keys)
         {
+            Engine(Keys, Internal.AppCenterWatch);
+        }
+        
+        public static void Engine(Dictionary<AppEnum, string> Keys, WatchStruct Watch)
+        {
+            Internal.AppCenterWatch = Watch;
+            
             Key(Keys);
+            
             Enabled(); //
             Level(); //
             User();
             Country();
 
-#if WINDOWS || ANDROID || MACCATALYST || IOS
-
             Service.Start();
-
-#endif
         }
 
         public static void TestCrash()
@@ -170,6 +171,22 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
                 Crashes.TrackError(Exception, Properties, Attachments);
             }
         }
+        
+        private static void WatchEvent()
+        {
+            if (Internal.AppCenterWatch.Event == WatchEnum.Open)
+            {
+                TrackEvent(Watch.GetText("Event"));
+            }
+        }
+
+        private static void WatchError()
+        {
+            if (Internal.AppCenterWatch.Error == WatchEnum.Open)
+            {
+                TrackEvent(Watch.GetText("Error"));
+            }
+        }
 
         private static void Key(Dictionary<AppEnum, string> Keys)
         {
@@ -187,16 +204,12 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
 
         private static void Country()
         {
-            AC.SetCountryCode(RegionInfo.CurrentRegion.TwoLetterISORegionName);
-            //AC.SetCountryCode(RegionInfo.CurrentRegion.Name);
-            
-            //AC.SetCountryCode(CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
-            //AC.SetCountryCode(CultureInfo.InstalledUICulture.TwoLetterISOLanguageName);
+            AC.SetCountryCode(CountryCode);
         }
 
         private static void User()
         {
-            AC.SetUserId($"{DeviceInfo.Current.Name}-{DeviceInfo.Current.Model}");
+            AC.SetUserId(UserId);
         }
 
         private static void Level()
@@ -207,6 +220,27 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
         private static void Enabled()
         {
             Crashes.SetEnabledAsync(true);
+        }
+
+        internal static string CountryCode
+        {
+            get
+            {
+                return RegionInfo.CurrentRegion.TwoLetterISORegionName;
+
+                //return RegionInfo.CurrentRegion.Name;
+
+                //return CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+                //return CultureInfo.InstalledUICulture.TwoLetterISOLanguageName;
+            }
+        }
+
+        internal static string UserId
+        {
+            get
+            {
+                return $"{DeviceInfo.Current.Name}-{DeviceInfo.Current.Model}";
+            }
         }
     }
 }
