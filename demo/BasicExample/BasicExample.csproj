@@ -52,14 +52,14 @@
         <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
     </ItemGroup>
 
-    <!--<ItemGroup>
-        <PackageReference Include="Taiizor.Essentials.Maui" Version="1.0.2.1" />
-    </ItemGroup>-->
-
     <ItemGroup>
+        <PackageReference Include="Taiizor.Essentials.Maui" Version="1.0.2.2" />
+    </ItemGroup>
+
+    <!--<ItemGroup>
         <Reference Include="Taiizor.Essentials.Maui">
             <HintPath>..\..\src\Taiizor.Essentials.Maui\bin\Release\$(TargetFramework)\Taiizor.Essentials.Maui.dll</HintPath>
         </Reference>
-    </ItemGroup>
+    </ItemGroup>-->
 
 </Project>
