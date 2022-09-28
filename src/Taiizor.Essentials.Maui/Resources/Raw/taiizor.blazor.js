@@ -200,17 +200,17 @@ function DeleteSessionStorage(sessionKey, execute = false) {
     }
 }
 
-function InvokeMethodAsync(assemblyName, methodName, arguments) {
+function InvokeMethodAsync(assemblyName, methodName, ...args) {
     if (arguments != null && arguments.length > 0) {
-        return DotNet.invokeMethodAsync(assemblyName, methodName, arguments);
+        return DotNet.invokeMethodAsync(assemblyName, methodName, ...args);
     } else {
         return DotNet.invokeMethodAsync(assemblyName, methodName);
     }
 }
 
-function InvokeReferenceMethodAsync(objectReference, methodName, arguments) {
+function InvokeReferenceMethodAsync(objectReference, methodName, ...args) {
     if (arguments != null && arguments.length > 0) {
-        return objectReference.invokeMethodAsync(methodName, arguments);
+        return objectReference.invokeMethodAsync(methodName, ...args);
     } else {
         return objectReference.invokeMethodAsync(methodName);
     }
