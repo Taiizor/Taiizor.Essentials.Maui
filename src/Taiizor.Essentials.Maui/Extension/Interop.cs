@@ -16,6 +16,7 @@ namespace Taiizor.Essentials.Maui.Extension
 
             _ = Call("eval", Javascript.File(JavascriptEnum.Custom));
             _ = Call("eval", Javascript.File(JavascriptEnum.Taiizor));
+            _ = Call("eval", Javascript.File(JavascriptEnum.AppCenter));
         }
 
         public static async Task Call(string Function, params object?[]? Arguments)

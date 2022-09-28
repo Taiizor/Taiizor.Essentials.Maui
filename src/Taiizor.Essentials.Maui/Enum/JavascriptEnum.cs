@@ -3,6 +3,7 @@
     public enum JavascriptEnum
     {
         Custom,
-        Taiizor
+        Taiizor,
+        AppCenter
     }
 }

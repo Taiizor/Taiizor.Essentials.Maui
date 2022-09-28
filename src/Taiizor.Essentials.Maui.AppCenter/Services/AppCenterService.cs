@@ -6,7 +6,7 @@ using System.Globalization;
 using System.Runtime.ExceptionServices;
 using System.Text;
 using Taiizor.Essentials.Maui.AppCenter.Enum;
-using Taiizor.Essentials.Maui.AppCenter.Helper;
+using HW = Taiizor.Essentials.Maui.AppCenter.Helper.Watch;
 using Taiizor.Essentials.Maui.AppCenter.Struct;
 using Taiizor.Essentials.Maui.AppCenter.Value;
 using AC = Microsoft.AppCenter.AppCenter;
@@ -194,68 +194,68 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
                 WatchError(Exception, Properties, Attachments);
             }
         }
-        
-        private static void WatchEvent(string Name)
+
+        internal static void WatchEvent(string Name)
         {
-            if (Internal.AppCenterWatch.Event == WatchEnum.Open)
+            if (Internal.AppCenterState && Internal.AppCenterWatch.Event == WatchEnum.Open)
             {
-                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.EventName), new Dictionary<string, string>() { { "Name", Name } });
+                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.EventName), new Dictionary<string, string>() { { "Name", Name } });
             }
         }
 
-        private static void WatchEvent(string Name, string Key, string Value)
+        internal static void WatchEvent(string Name, string Key, string Value)
         {
-            if (Internal.AppCenterWatch.Event == WatchEnum.Open)
+            if (Internal.AppCenterState && Internal.AppCenterWatch.Event == WatchEnum.Open)
             {
-                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.EventName), new Dictionary<string, string>() { { Name, $"{Key}: {Value}" } });
+                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.EventName), new Dictionary<string, string>() { { Name, $"{Key}: {Value}" } });
             }
         }
 
-        private static void WatchEvent(string Name, IDictionary<string, string> Properties)
+        internal static void WatchEvent(string Name, IDictionary<string, string> Properties)
         {
-            if (Internal.AppCenterWatch.Event == WatchEnum.Open)
+            if (Internal.AppCenterState && Internal.AppCenterWatch.Event == WatchEnum.Open)
             {
-                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.EventName), new Dictionary<string, string>() { { Name, JsonConvert.SerializeObject(Properties, Formatting.None) } }); //Formatting.Indented
+                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.EventName), new Dictionary<string, string>() { { Name, JsonConvert.SerializeObject(Properties, Formatting.None) } }); //Formatting.Indented
             }
         }
 
-        private static void WatchError(string Name)
+        internal static void WatchError(string Name)
         {
-            if (Internal.AppCenterWatch.Error == WatchEnum.Open)
+            if (Internal.AppCenterState && Internal.AppCenterWatch.Error == WatchEnum.Open)
             {
-                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Error", Name } });
+                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Error", Name } });
             }
         }
 
-        private static void WatchError(Exception Exception)
+        internal static void WatchError(Exception Exception)
         {
-            if (Internal.AppCenterWatch.Error == WatchEnum.Open)
+            if (Internal.AppCenterState && Internal.AppCenterWatch.Error == WatchEnum.Open)
             {
-                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
+                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
             }
         }
 
-        private static void WatchError(Exception Exception, string Key, string Value)
+        internal static void WatchError(Exception Exception, string Key, string Value)
         {
-            if (Internal.AppCenterWatch.Error == WatchEnum.Open)
+            if (Internal.AppCenterState && Internal.AppCenterWatch.Error == WatchEnum.Open)
             {
-                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { Key, Value }, { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
+                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { Key, Value }, { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
             }
         }
 
-        private static void WatchError(Exception Exception, IDictionary<string, string> Properties)
+        internal static void WatchError(Exception Exception, IDictionary<string, string> Properties)
         {
-            if (Internal.AppCenterWatch.Error == WatchEnum.Open)
+            if (Internal.AppCenterState && Internal.AppCenterWatch.Error == WatchEnum.Open)
             {
-                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Properties", JsonConvert.SerializeObject(Properties, Formatting.None) }, { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
+                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Properties", JsonConvert.SerializeObject(Properties, Formatting.None) }, { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
             }
         }
 
-        private static void WatchError(Exception Exception, IDictionary<string, string> Properties, ErrorAttachmentLog[] Attachments)
+        internal static void WatchError(Exception Exception, IDictionary<string, string> Properties, ErrorAttachmentLog[] Attachments)
         {
-            if (Internal.AppCenterWatch.Error == WatchEnum.Open)
+            if (Internal.AppCenterState && Internal.AppCenterWatch.Error == WatchEnum.Open)
             {
-                Analytics.TrackEvent(Watch.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Properties", JsonConvert.SerializeObject(Properties, Formatting.None) }, { "Attachments", JsonConvert.SerializeObject(Attachments, Formatting.None) }, { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
+                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Properties", JsonConvert.SerializeObject(Properties, Formatting.None) }, { "Attachments", JsonConvert.SerializeObject(Attachments, Formatting.None) }, { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
             }
         }
 

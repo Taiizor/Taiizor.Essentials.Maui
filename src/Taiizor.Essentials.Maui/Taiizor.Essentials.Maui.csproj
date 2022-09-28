@@ -54,7 +54,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
         <FileVersion>$(Version)</FileVersion>
         <AssemblyVersion>$(Version)</AssemblyVersion>
         <AssemblyFileVersion>$(Version)</AssemblyFileVersion>
-        <Version>1.0.2.3</Version>
+        <Version>1.0.2.4</Version>
         <VersionPrefix></VersionPrefix>
         <VersionSuffix></VersionSuffix>
         <PackageVersion>$(VersionPrefix)$(Version)$(VersionSuffix)</PackageVersion>
@@ -69,6 +69,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
     <ItemGroup>
         <EmbeddedResource Include="Resources\Raw\custom.blazor.js" />
         <EmbeddedResource Include="Resources\Raw\taiizor.blazor.js" />
+        <EmbeddedResource Include="Resources\Raw\appcenter.blazor.js" />
     </ItemGroup>
   
     <ItemGroup>
