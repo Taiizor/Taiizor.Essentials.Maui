@@ -6,10 +6,10 @@ using System.Globalization;
 using System.Runtime.ExceptionServices;
 using System.Text;
 using Taiizor.Essentials.Maui.AppCenter.Enum;
-using HW = Taiizor.Essentials.Maui.AppCenter.Helper.Watch;
 using Taiizor.Essentials.Maui.AppCenter.Struct;
 using Taiizor.Essentials.Maui.AppCenter.Value;
 using AC = Microsoft.AppCenter.AppCenter;
+using HW = Taiizor.Essentials.Maui.AppCenter.Helper.Watch;
 using Service = Taiizor.Essentials.Maui.AppCenter.Platforms.Services.AppCenterService;
 
 #if WINDOWS
@@ -26,13 +26,13 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
         {
             Engine(Keys, Internal.AppCenterWatch);
         }
-        
+
         public static void Engine(Dictionary<AppEnum, string> Keys, WatchStruct Watch)
         {
             Internal.AppCenterWatch = Watch;
-            
+
             Key(Keys);
-            
+
             Enabled(); //
             Level(); //
             User();
@@ -190,7 +190,7 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
             if (Internal.AppCenterState)
             {
                 Crashes.TrackError(Exception, Properties, Attachments);
-                
+
                 WatchError(Exception, Properties, Attachments);
             }
         }
@@ -293,25 +293,8 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
             Crashes.SetEnabledAsync(true);
         }
 
-        internal static string CountryCode
-        {
-            get
-            {
-                return RegionInfo.CurrentRegion.TwoLetterISORegionName;
+        internal static string CountryCode => RegionInfo.CurrentRegion.TwoLetterISORegionName;//return RegionInfo.CurrentRegion.Name;//return CultureInfo.CurrentCulture.TwoLetterISOLanguageName;//return CultureInfo.InstalledUICulture.TwoLetterISOLanguageName;
 
-                //return RegionInfo.CurrentRegion.Name;
-
-                //return CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-                //return CultureInfo.InstalledUICulture.TwoLetterISOLanguageName;
-            }
-        }
-
-        internal static string UserId
-        {
-            get
-            {
-                return $"{DeviceInfo.Current.Name}-{DeviceInfo.Current.Model}";
-            }
-        }
+        internal static string UserId => $"{DeviceInfo.Current.Name}-{DeviceInfo.Current.Model}";
     }
 }

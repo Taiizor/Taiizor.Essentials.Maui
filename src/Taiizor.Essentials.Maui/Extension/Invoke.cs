@@ -71,7 +71,7 @@
         {
             return await Task.FromResult(await Interop.CallInteger("InvokeMethodAsync", Arguments));
         }
-        
+
         public static async ValueTask<string> AssemblyMethodString(params object?[]? Arguments)
         {
             return await Task.FromResult(await Interop.CallString("InvokeMethodAsync", Arguments));

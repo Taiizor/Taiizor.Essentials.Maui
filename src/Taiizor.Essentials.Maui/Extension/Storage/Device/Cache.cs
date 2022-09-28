@@ -1,5 +1,5 @@
-﻿using Taiizor.Essentials.Maui.Value;
-using Taiizor.Essentials.Maui.Helper;
+﻿using Taiizor.Essentials.Maui.Helper;
+using Taiizor.Essentials.Maui.Value;
 
 namespace Taiizor.Essentials.Maui.Extension.Storage.Device
 {
@@ -8,12 +8,12 @@ namespace Taiizor.Essentials.Maui.Extension.Storage.Device
         public static async Task Save(string Name, string Content)
         {
             using FileStream fileStream = File.OpenWrite(Combine.FullPath(Internal.CacheDirectory, Name, Internal.StorageExtension));
-            
+
             using StreamWriter streamWriter = new(fileStream);
 
             await streamWriter.WriteAsync(Content);
         }
-        
+
         public static async ValueTask<string> Read(string Name)
         {
             if (Check(Name))

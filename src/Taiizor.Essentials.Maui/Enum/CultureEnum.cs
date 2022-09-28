@@ -7,7 +7,7 @@
         ThreadCulture,
         ThreadUICulture
     }
-    
+
     public enum GetCultureEnum
     {
         Culture,

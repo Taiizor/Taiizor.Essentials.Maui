@@ -5,7 +5,7 @@
         public static async ValueTask<string> Read(string Name)
         {
             bool Exists = await Check(Name);
-            
+
             if (Exists)
             {
                 using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync(Name);
@@ -18,7 +18,7 @@
                 return string.Empty;
             }
         }
-        
+
         public static async ValueTask<bool> Check(string Name)
         {
             return await FileSystem.Current.AppPackageFileExistsAsync(Name);

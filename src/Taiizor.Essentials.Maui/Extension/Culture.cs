@@ -11,7 +11,7 @@ namespace Taiizor.Essentials.Maui.Extension
         {
             Set(HC.ConvertCulture(Culture, Override));
         }
-        
+
         public static void Set(CultureInfo Culture)
         {
             Set(SetCultureEnum.Culture, Culture);
@@ -19,7 +19,7 @@ namespace Taiizor.Essentials.Maui.Extension
             Set(SetCultureEnum.ThreadCulture, Culture);
             Set(SetCultureEnum.ThreadUICulture, Culture);
         }
-        
+
         public static void Set(SetCultureEnum Type, string Culture, bool Override = false)
         {
             Set(Type, HC.ConvertCulture(Culture, Override));

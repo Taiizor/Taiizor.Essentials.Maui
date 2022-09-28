@@ -6,12 +6,12 @@
         {
             Preferences.Set(Key, Value);
         }
-        
+
         public static void Set(string Key, long Value)
         {
             Preferences.Set(Key, Value);
         }
-        
+
         public static void Set(string Key, float Value)
         {
             Preferences.Set(Key, Value);
@@ -51,7 +51,7 @@
         {
             return Preferences.Get(Key, Value);
         }
-        
+
         public static double Get(string Key, double Value = 0d)
         {
             return Preferences.Get(Key, Value);

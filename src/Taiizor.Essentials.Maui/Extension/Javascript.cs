@@ -11,13 +11,13 @@ namespace Taiizor.Essentials.Maui.Extension
         {
             return LoadFileAsync(Javascript);
         }
-        
+
         public static string FileScript(JavascriptEnum Javascript)
         {
-            StringBuilder stringBuilder = new ();
+            StringBuilder stringBuilder = new();
 
             stringBuilder.AppendLine("<script type=\"text/javascript\">");
-            
+
             stringBuilder.AppendLine(File(Javascript));
 
             stringBuilder.AppendLine("</script>");
@@ -27,12 +27,12 @@ namespace Taiizor.Essentials.Maui.Extension
 
         private static string LoadFileAsync(JavascriptEnum Javascript)
         {
-            var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = HJ.GetFile(Javascript);
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string resourceName = HJ.GetFile(Javascript);
 
-            using var stream = assembly.GetManifestResourceStream(resourceName);
-            
-            using var reader = new StreamReader(stream);
+            using Stream? stream = assembly.GetManifestResourceStream(resourceName);
+
+            using StreamReader reader = new(stream);
 
             return reader.ReadToEnd();
         }

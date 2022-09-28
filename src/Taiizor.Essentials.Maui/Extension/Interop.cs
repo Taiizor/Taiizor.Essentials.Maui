@@ -28,7 +28,7 @@ namespace Taiizor.Essentials.Maui.Extension
         {
             return await JS.InvokeAsync<bool>(Function, Arguments);
         }
-        
+
         public static async ValueTask<byte> CallByte(string Function, params object?[]? Arguments)
         {
             return await JS.InvokeAsync<byte>(Function, Arguments);
@@ -38,7 +38,7 @@ namespace Taiizor.Essentials.Maui.Extension
         {
             return await JS.InvokeAsync<char>(Function, Arguments);
         }
-        
+
         public static async ValueTask<long> CallLong(string Function, params object?[]? Arguments)
         {
             return await JS.InvokeAsync<long>(Function, Arguments);
