@@ -10,6 +10,6 @@
 
         public static readonly string StorageExtension = ".json";
 
-        public static readonly string JavascriptFile = "Taiizor.Essentials.Maui.Resources.Raw.{0}.blazor.js";
+        public static readonly string JavascriptFile = "Taiizor.Essentials.Maui.Resources.Raw.{0}.Blazor.js";
     }
 }

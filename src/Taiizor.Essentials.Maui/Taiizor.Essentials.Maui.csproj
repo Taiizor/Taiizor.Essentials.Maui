@@ -67,9 +67,14 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
     </PropertyGroup>
 
     <ItemGroup>
-        <EmbeddedResource Include="Resources\Raw\custom.blazor.js" />
-        <EmbeddedResource Include="Resources\Raw\taiizor.blazor.js" />
-        <EmbeddedResource Include="Resources\Raw\appcenter.blazor.js" />
+      <None Remove="Resources\Raw\None.Blazor.js" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Resources\Raw\None.Blazor.js" />
+        <EmbeddedResource Include="Resources\Raw\Custom.Blazor.js" />
+        <EmbeddedResource Include="Resources\Raw\Taiizor.Blazor.js" />
+        <EmbeddedResource Include="Resources\Raw\AppCenter.Blazor.js" />
     </ItemGroup>
   
     <ItemGroup>

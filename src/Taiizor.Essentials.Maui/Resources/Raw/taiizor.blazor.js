@@ -2,16 +2,16 @@ console.log('%cTaiizor Blazor Javascript has started.', 'color: #DC143C');
 
 var Taiizor = {};
 
-Taiizor.Reload = function() {
+Taiizor.Reload = function () {
     window.location.reload();
 }
 
-Taiizor.GoLocation = function(uriLocation = '/') {
+Taiizor.GoLocation = function (uriLocation = '/') {
     location.href = uriLocation;
     //window.location.href = uriLocation;
 }
 
-Taiizor.ReloadElement = function(elementId, methodType) {
+Taiizor.ReloadElement = function (elementId, methodType) {
     if (methodType === true) {
         var container = document.getElementById(elementId);
         var content = container.innerHTML;
@@ -21,20 +21,20 @@ Taiizor.ReloadElement = function(elementId, methodType) {
     }
 }
 
-Taiizor.IncludeFont = function(path, rel) {
+Taiizor.IncludeFont = function (path, rel) {
     var customFont = document.createElement('link');
     customFont.setAttribute('href', path);
     customFont.setAttribute('rel', rel);
     document.head.appendChild(customFont);
 }
 
-Taiizor.IncludeJs = function(path) {
+Taiizor.IncludeJs = function (path) {
     var customScript = document.createElement('script');
     customScript.setAttribute('src', path);
     document.body.appendChild(customScript);
 }
 
-Taiizor.IncludeCss = function(path, rel, type) {
+Taiizor.IncludeCss = function (path, rel, type) {
     var customStylesheet = document.createElement('link');
     customStylesheet.setAttribute('href', path);
     customStylesheet.setAttribute('rel', rel);
@@ -42,42 +42,42 @@ Taiizor.IncludeCss = function(path, rel, type) {
     document.head.appendChild(customStylesheet);
 }
 
-Taiizor.SetAttribute = function(elementId, propertyName, propertyValue) {
+Taiizor.SetAttribute = function (elementId, propertyName, propertyValue) {
     document.getElementById(elementId).setAttribute(propertyName, propertyValue);
 }
 
-Taiizor.RemoveAttribute = function(elementId, propertyName) {
+Taiizor.RemoveAttribute = function (elementId, propertyName) {
     document.getElementById(elementId).removeAttribute(propertyName);
 }
 
-Taiizor.SetClass = function(classId, className) {
+Taiizor.SetClass = function (classId, className) {
     document.getElementById(classId).className = className;
 }
 
-Taiizor.AddClass = function(classId, className) {
+Taiizor.AddClass = function (classId, className) {
     document.getElementById(classId).classList.add(className);
 }
 
-Taiizor.ToggleClass = function(classId, className) {
+Taiizor.ToggleClass = function (classId, className) {
     document.getElementById(classId).classList.toggle(className);
 }
 
-Taiizor.RemoveClass = function(classId, className) {
+Taiizor.RemoveClass = function (classId, className) {
 
     document.getElementById(classId).classList.remove(className);
 }
 
-Taiizor.SetStyle = function(styleId, stylePair) {
+Taiizor.SetStyle = function (styleId, stylePair) {
     document.getElementById(styleId).style = stylePair;
 }
 
-Taiizor.AddStyle = function(styleId, styleName, styleValue) {
+Taiizor.AddStyle = function (styleId, styleName, styleValue) {
     document.getElementById(styleId).style.setProperty(styleName, styleValue);
 }
 
 Taiizor.styles = [];
 
-Taiizor.ToggleStyle = function(styleId) {
+Taiizor.ToggleStyle = function (styleId) {
     var style = document.getElementById(styleId).style.cssText;
 
     if (style != '') {
@@ -89,19 +89,19 @@ Taiizor.ToggleStyle = function(styleId) {
     }
 }
 
-Taiizor.RemoveStyle = function(styleId, styleName) {
+Taiizor.RemoveStyle = function (styleId, styleName) {
     document.getElementById(styleId).style.removeProperty(styleName);
 }
 
-Taiizor.HeadAdd = function(tagHtml) {
+Taiizor.HeadAdd = function (tagHtml) {
     document.head.appendChild(document.createRange().createContextualFragment(tagHtml));
 }
 
-Taiizor.BodyAdd = function(tagHtml) {
+Taiizor.BodyAdd = function (tagHtml) {
     document.body.appendChild(document.createRange().createContextualFragment(tagHtml));
 }
 
-Taiizor.HeadScriptAdd = function(textNode) {
+Taiizor.HeadScriptAdd = function (textNode) {
     var element = document.createElement('script');
     element.setAttribute('type', 'text/javascript');
 
@@ -109,7 +109,7 @@ Taiizor.HeadScriptAdd = function(textNode) {
     document.head.appendChild(element);
 }
 
-Taiizor.BodyScriptAdd = function(textNode) {
+Taiizor.BodyScriptAdd = function (textNode) {
     var element = document.createElement('script');
     element.setAttribute('type', 'text/javascript');
 
@@ -117,7 +117,7 @@ Taiizor.BodyScriptAdd = function(textNode) {
     document.body.appendChild(element);
 }
 
-Taiizor.SetCookie = function(cookieName, cookieValue, exDays, path) {
+Taiizor.SetCookie = function (cookieName, cookieValue, exDays, path) {
     const d = new Date();
     d.setTime(d.getTime() + (exDays * 24 * 60 * 60 * 1000));
     let expires = 'expires=' + d.toUTCString();
@@ -125,7 +125,7 @@ Taiizor.SetCookie = function(cookieName, cookieValue, exDays, path) {
     document.cookie = cookieName + '=' + cookieValue + ';' + expires + ';' + paths;
 }
 
-Taiizor.GetCookie = function(cookieName) {
+Taiizor.GetCookie = function (cookieName) {
     let name = cookieName + '=';
     let ca = document.cookie.split(';');
     for (let i = 0; i < ca.length; i++) {
@@ -141,8 +141,8 @@ Taiizor.GetCookie = function(cookieName) {
     return '';
 }
 
-Taiizor.CheckCookie = function(cookieName) {
-    let cookieValue = GetCookie(cookieName);
+Taiizor.CheckCookie = function (cookieName) {
+    let cookieValue = Taiizor.GetCookie(cookieName);
     if (cookieValue == null || cookieValue == '') {
         return false;
     } else {
@@ -150,22 +150,22 @@ Taiizor.CheckCookie = function(cookieName) {
     }
 }
 
-Taiizor.DeleteCookie = function(cookieName, execute = false) {
-    if (CheckCookie(cookieName) || execute) {
+Taiizor.DeleteCookie = function (cookieName, execute = false) {
+    if (Taiizor.CheckCookie(cookieName) || execute) {
         document.cookie = cookieName + '=; Max-Age=-99999999;'; 
     }
 }
 
-Taiizor.SetLocalStorage = function(localKey, localValue) {
+Taiizor.SetLocalStorage = function (localKey, localValue) {
     localStorage.setItem(localKey, localValue);
 }
 
-Taiizor.GetLocalStorage = function(localKey) {
+Taiizor.GetLocalStorage = function (localKey) {
     return localStorage.getItem(localKey);
 }
 
-Taiizor.CheckLocalStorage = function(localKey) {
-    let localValue = GetLocalStorage(localKey);
+Taiizor.CheckLocalStorage = function (localKey) {
+    let localValue = Taiizor.GetLocalStorage(localKey);
     if (localValue == null || localValue == '') {
         return false;
     } else {
@@ -173,22 +173,22 @@ Taiizor.CheckLocalStorage = function(localKey) {
     }
 }
 
-Taiizor.DeleteLocalStorage = function(localKey, execute = false) {
-    if (CheckLocalStorage(localKey) || execute) {
+Taiizor.DeleteLocalStorage = function (localKey, execute = false) {
+    if (Taiizor.CheckLocalStorage(localKey) || execute) {
         localStorage.removeItem(localKey);
     }
 }
 
-Taiizor.SetSessionStorage = function(sessionKey, sessionValue) {
+Taiizor.SetSessionStorage = function (sessionKey, sessionValue) {
     sessionStorage.setItem(sessionKey, sessionValue);
 }
 
-Taiizor.GetSessionStorage = function(sessionKey) {
+Taiizor.GetSessionStorage = function (sessionKey) {
     return sessionStorage.getItem(sessionKey);
 }
 
-Taiizor.CheckSessionStorage = function(sessionKey) {
-    let sessionValue = GetSessionStorage(sessionKey);
+Taiizor.CheckSessionStorage = function (sessionKey) {
+    let sessionValue = Taiizor.GetSessionStorage(sessionKey);
     if (sessionValue == null || sessionValue == '') {
         return false;
     } else {
@@ -196,41 +196,41 @@ Taiizor.CheckSessionStorage = function(sessionKey) {
     }
 }
 
-Taiizor.DeleteSessionStorage = function(sessionKey, execute = false) {
-    if (CheckSessionStorage(sessionKey) || execute) {
+Taiizor.DeleteSessionStorage = function (sessionKey, execute = false) {
+    if (Taiizor.CheckSessionStorage(sessionKey) || execute) {
         sessionStorage.removeItem(sessionKey);
     }
 }
 
-Taiizor.SetLangHtml = function(languageCode) {
+Taiizor.SetLangHtml = function (languageCode) {
     document.documentElement.lang = languageCode;
 }
 
-Taiizor.GetLangHtml = function() {
+Taiizor.GetLangHtml = function () {
     return document.documentElement.lang;
 }
 
-Taiizor.SetLangHead = function(languageCode) {
+Taiizor.SetLangHead = function (languageCode) {
     document.head.lang = languageCode;
 }
 
-Taiizor.GetLangHead = function() {
+Taiizor.GetLangHead = function () {
     return document.head.lang;
 }
 
-Taiizor.SetLangBody = function(languageCode) {
+Taiizor.SetLangBody = function (languageCode) {
     document.body.lang = languageCode;
 }
 
-Taiizor.GetLangBody = function() {
+Taiizor.GetLangBody = function () {
     return document.body.lang;
 }
 
-Taiizor.SetLang = function(tagHtml, languageCode) {
+Taiizor.SetLang = function (tagHtml, languageCode) {
     document.getElementById(tagHtml).lang = languageCode;
 }
 
-Taiizor.GetLang = function(tagHtml) {
+Taiizor.GetLang = function (tagHtml) {
     try {
         return document.getElementById(tagHtml).lang;
     } catch {
@@ -238,29 +238,25 @@ Taiizor.GetLang = function(tagHtml) {
     }
 }
 
-Taiizor.CheckLang = function(tagHtml) {
-    try {
-        let langValue = document.getElementById(tagHtml).lang;
-        if (langValue == null || langValue == '') {
-            return false;
-        } else {
-            return true;
-        }
-    } catch {
+Taiizor.CheckLang = function (tagHtml) {
+    let langValue = Taiizor.GetLang(tagHtml);
+    if (langValue == null || langValue == '') {
         return false;
+    } else {
+        return true;
     }
 }
 
-Taiizor.SetTitle = function(title) {
+Taiizor.SetTitle = function (title) {
     document.title = title;
 }
 
-Taiizor.GetTitle = function() {
+Taiizor.GetTitle = function () {
     return document.title;
 }
 
-Taiizor.CheckTitle = function() {
-    let titleValue = document.title;
+Taiizor.CheckTitle = function () {
+    let titleValue = Taiizor.GetTitle();
     if (titleValue == null || titleValue == '') {
         return true;
     }
@@ -269,7 +265,7 @@ Taiizor.CheckTitle = function() {
     }
 }
 
-Taiizor.InvokeMethodAsync = function(assemblyName, methodName, ...args) {
+Taiizor.InvokeMethodAsync = function (assemblyName, methodName, ...args) {
     if (arguments != null && arguments.length > 0) {
         return DotNet.invokeMethodAsync(assemblyName, methodName, ...args);
     } else {
@@ -277,7 +273,7 @@ Taiizor.InvokeMethodAsync = function(assemblyName, methodName, ...args) {
     }
 }
 
-Taiizor.InvokeReferenceMethodAsync = function(objectReference, methodName, ...args) {
+Taiizor.InvokeReferenceMethodAsync = function (objectReference, methodName, ...args) {
     if (arguments != null && arguments.length > 0) {
         return objectReference.invokeMethodAsync(methodName, ...args);
     } else {
