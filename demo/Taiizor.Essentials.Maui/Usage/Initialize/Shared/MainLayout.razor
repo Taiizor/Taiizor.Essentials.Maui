@@ -1,0 +1,19 @@
+﻿@inject IJSRuntime JS
+@inherits LayoutComponentBase
+
+<div class="page">
+	<main>
+		<article class="content px-4">
+			@Body
+		</article>
+	</main>
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        _ = new Interop(JS);
+
+        base.OnInitialized();
+    }
+}

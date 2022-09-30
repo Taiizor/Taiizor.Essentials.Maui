@@ -10,6 +10,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Taiizor.Essentials.Maui", "Taiizor.Essentials.Maui", "{51EBCE87-4BB0-480B-B449-A1D7ED441486}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Taiizor.Essentials.Maui.AppCenter", "Taiizor.Essentials.Maui.AppCenter", "{CCE35AF2-646D-4B12-B420-51DD98C6DD26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Usage", "Usage", "{B285700E-F3E5-4BF6-918E-7F20E9836FD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Usage", "Usage", "{6FF039BA-A53C-487A-804B-EC085B7E3BFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Initialize", "Taiizor.Essentials.Maui\Usage\Initialize\Initialize.csproj", "{24CF7145-01FF-427F-9706-0DDA7242286A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,9 +32,20 @@ Global
 		{C3F9619C-A296-46B9-961E-B63C5D469048}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3F9619C-A296-46B9-961E-B63C5D469048}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C3F9619C-A296-46B9-961E-B63C5D469048}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{24CF7145-01FF-427F-9706-0DDA7242286A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24CF7145-01FF-427F-9706-0DDA7242286A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24CF7145-01FF-427F-9706-0DDA7242286A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{24CF7145-01FF-427F-9706-0DDA7242286A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24CF7145-01FF-427F-9706-0DDA7242286A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24CF7145-01FF-427F-9706-0DDA7242286A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B285700E-F3E5-4BF6-918E-7F20E9836FD9} = {51EBCE87-4BB0-480B-B449-A1D7ED441486}
+		{6FF039BA-A53C-487A-804B-EC085B7E3BFC} = {CCE35AF2-646D-4B12-B420-51DD98C6DD26}
+		{24CF7145-01FF-427F-9706-0DDA7242286A} = {B285700E-F3E5-4BF6-918E-7F20E9836FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
