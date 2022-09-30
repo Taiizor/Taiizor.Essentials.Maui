@@ -1,73 +1,75 @@
 console.log('%cAppCenter Blazor Javascript has started.', 'color: #1E90FF');
 
-function TrackEventBasic(Name) {
+var AppCenter = {};
+
+AppCenter.TrackEventBasic = function(Name) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "TrackEventBasic", Name);
 }
 
-function TrackEventNormal(Name, Key, Value) {
+AppCenter.TrackEventNormal = function(Name, Key, Value) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "TrackEventNormal", Name, Key, Value);
 }
 
-function TrackEventAdvanced(Name, Properties) {
+AppCenter.TrackEventAdvanced = function(Name, Properties) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "TrackEventAdvanced", Name, Properties);
 }
 
 
-function WatchEventBasic(Name) {
+AppCenter.WatchEventBasic = function(Name) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "WatchEventBasic", Name);
 }
 
-function WatchEventNormal(Name, Key, Value) {
+AppCenter.WatchEventNormal = function(Name, Key, Value) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "WatchEventNormal", Name, Key, Value);
 }
 
-function WatchEventAdvanced(Name, Properties) {
+AppCenter.WatchEventAdvanced = function(Name, Properties) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "WatchEventAdvanced", Name, Properties);
 }
 
 
 
-function TrackErrorBasic(Exception) {
+AppCenter.TrackErrorBasic = function(Exception) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "TrackErrorBasic", Exception);
 }
 
-function TrackErrorNormal(Exception, Key, Value) {
+AppCenter.TrackErrorNormal = function(Exception, Key, Value) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "TrackErrorNormal", Exception, Key, Value);
 }
 
-function TrackErrorAdvanced(Exception, Properties) {
+AppCenter.TrackErrorAdvanced = function(Exception, Properties) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "TrackErrorAdvanced", Exception, Properties);
 }
 
-function TrackErrorHard(Exception, Properties, Text, TextFile, Image, ImageFile, Extension) {
+AppCenter.TrackErrorHard = function(Exception, Properties, Text, TextFile, Image, ImageFile, Extension) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "TrackErrorHard", Exception, Properties, Text, TextFile, Image, ImageFile, Extension);
 }
 
-function TrackErrorExpert(Exception, Properties, Text, TextFile, Image, ImageFile, Extension) {
+AppCenter.TrackErrorExpert = function(Exception, Properties, Text, TextFile, Image, ImageFile, Extension) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "TrackErrorExpert", Exception, Properties, Text, TextFile, Image, ImageFile, Extension);
 }
 
-function TrackErrorGod(Exception, Properties, Attachments) {
+AppCenter.TrackErrorGod = function(Exception, Properties, Attachments) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "TrackErrorGod", Exception, Properties, Attachments);
 }
 
 
-function WatchErrorBaby(Name) {
+AppCenter.WatchErrorBaby = function(Name) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "WatchErrorBaby", Name);
 }
 
-function WatchErrorBasic(Exception) {
+AppCenter.WatchErrorBasic = function(Exception) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "WatchErrorBasic", Exception);
 }
 
-function WatchErrorNormal(Exception, Key, Value) {
+AppCenter.WatchErrorNormal = function(Exception, Key, Value) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "WatchErrorNormal", Exception, Key, Value);
 }
 
-function WatchErrorAdvanced(Exception, Properties) {
+AppCenter.WatchErrorAdvanced = function(Exception, Properties) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "WatchErrorAdvanced", Exception, Properties);
 }
 
-function WatchErrorHard(Exception, Properties, Attachments) {
+AppCenter.WatchErrorHard = function(Exception, Properties, Attachments) {
     InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "WatchErrorHard", Exception, Properties, Attachments);
 }

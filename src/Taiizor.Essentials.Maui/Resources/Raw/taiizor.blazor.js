@@ -1,5 +1,7 @@
 console.log('%cTaiizor Blazor Javascript has started.', 'color: #DC143C');
 
+var Taiizor = {};
+
 function Reload() {
     window.location.reload();
 }
