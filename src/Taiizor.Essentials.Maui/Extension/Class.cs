@@ -4,7 +4,7 @@
     {
         public static async Task Add(string Identify, string Class)
         {
-            await Interop.Call("AddClass", Identify, Class);
+            await Interop.Call("Taiizor.AddClass", Identify, Class);
         }
 
         public static async Task Add(string Identify, params string[] Classes)
@@ -17,12 +17,12 @@
 
         public static async Task Set(string Identify, string Class)
         {
-            await Interop.Call("SetClass", Identify, Class);
+            await Interop.Call("Taiizor.SetClass", Identify, Class);
         }
 
         public static async Task Toggle(string Identify, string Class)
         {
-            await Interop.Call("ToggleClass", Identify, Class);
+            await Interop.Call("Taiizor.ToggleClass", Identify, Class);
         }
 
         public static async Task Toggle(string Identify, params string[] Classes)
@@ -35,7 +35,7 @@
 
         public static async Task Remove(string Identify, string Class)
         {
-            await Interop.Call("RemoveClass", Identify, Class);
+            await Interop.Call("Taiizor.RemoveClass", Identify, Class);
         }
 
         public static async Task Remove(string Identify, params string[] Classes)
