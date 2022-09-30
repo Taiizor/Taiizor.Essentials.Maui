@@ -11,7 +11,7 @@
         {
             return await Interop.CallString("GetLang", Identify);
         }
-        
+
         public static async ValueTask<bool> Check(string Identify)
         {
             return await Interop.CallBool("CheckLang", Identify);

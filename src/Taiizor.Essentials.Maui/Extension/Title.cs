@@ -11,7 +11,7 @@
         {
             return await Interop.CallString("GetTitle");
         }
-        
+
         public static async ValueTask<bool> Check()
         {
             return await Interop.CallBool("CheckTitle");
