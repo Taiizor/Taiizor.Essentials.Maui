@@ -26,7 +26,17 @@
         {
             return await Interop.CallString("GetLangHtml");
         }
-        
+
+        public static async Task SetHead(string Language)
+        {
+            await Interop.Call("SetLangHead", Language);
+        }
+
+        public static async ValueTask<string> GetHead()
+        {
+            return await Interop.CallString("GetLangHead");
+        }
+
         public static async Task SetBody(string Language)
         {
             await Interop.Call("SetLangBody", Language);

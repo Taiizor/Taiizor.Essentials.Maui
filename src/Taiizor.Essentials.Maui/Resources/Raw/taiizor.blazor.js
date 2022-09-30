@@ -208,6 +208,14 @@ function GetLangHtml() {
     return document.documentElement.lang;
 }
 
+function SetLangHead(languageCode) {
+    document.head.lang = languageCode;
+}
+
+function GetLangHead() {
+    return document.head.lang;
+}
+
 function SetLangBody(languageCode) {
     document.body.lang = languageCode;
 }
