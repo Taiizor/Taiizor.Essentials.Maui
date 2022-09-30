@@ -9,7 +9,7 @@
 
         public static async Task GoLocation(string Uri)
         {
-            await Interop.Call("GoLocation", Uri);
+            await Interop.Call("Taiizor.GoLocation", Uri);
         }
     }
 }

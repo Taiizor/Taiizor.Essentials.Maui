@@ -2,16 +2,16 @@ console.log('%cTaiizor Blazor Javascript has started.', 'color: #DC143C');
 
 var Taiizor = {};
 
-function Reload() {
+Taiizor.Reload = function() {
     window.location.reload();
 }
 
-function GoLocation(uriLocation = '/') {
+Taiizor.GoLocation = function(uriLocation = '/') {
     location.href = uriLocation;
     //window.location.href = uriLocation;
 }
 
-function ReloadElement(elementId, methodType) {
+Taiizor.ReloadElement = function(elementId, methodType) {
     if (methodType === true) {
         var container = document.getElementById(elementId);
         var content = container.innerHTML;
@@ -202,35 +202,35 @@ function DeleteSessionStorage(sessionKey, execute = false) {
     }
 }
 
-function SetLangHtml(languageCode) {
+Taiizor.SetLangHtml = function(languageCode) {
     document.documentElement.lang = languageCode;
 }
 
-function GetLangHtml() {
+Taiizor.GetLangHtml = function() {
     return document.documentElement.lang;
 }
 
-function SetLangHead(languageCode) {
+Taiizor.SetLangHead = function(languageCode) {
     document.head.lang = languageCode;
 }
 
-function GetLangHead() {
+Taiizor.GetLangHead = function() {
     return document.head.lang;
 }
 
-function SetLangBody(languageCode) {
+Taiizor.SetLangBody = function(languageCode) {
     document.body.lang = languageCode;
 }
 
-function GetLangBody() {
+Taiizor.GetLangBody = function() {
     return document.body.lang;
 }
 
-function SetLang(tagHtml, languageCode) {
+Taiizor.SetLang = function(tagHtml, languageCode) {
     document.getElementById(tagHtml).lang = languageCode;
 }
 
-function GetLang(tagHtml) {
+Taiizor.GetLang = function(tagHtml) {
     try {
         return document.getElementById(tagHtml).lang;
     } catch {
@@ -238,7 +238,7 @@ function GetLang(tagHtml) {
     }
 }
 
-function CheckLang(tagHtml) {
+Taiizor.CheckLang = function(tagHtml) {
     try {
         let langValue = document.getElementById(tagHtml).lang;
         if (langValue == null || langValue == '') {
@@ -251,15 +251,15 @@ function CheckLang(tagHtml) {
     }
 }
 
-function SetTitle(title) {
+Taiizor.SetTitle = function(title) {
     document.title = title;
 }
 
-function GetTitle() {
+Taiizor.GetTitle = function() {
     return document.title;
 }
 
-function CheckTitle() {
+Taiizor.CheckTitle = function() {
     let titleValue = document.title;
     if (titleValue == null || titleValue == '') {
         return true;
