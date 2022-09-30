@@ -1,8 +1,6 @@
 console.log('%cTaiizor Blazor Javascript has started.', 'color: #DC143C');
 
-var Taiizor = {
-    styles = []
-};
+var Taiizor = {};
 
 Taiizor.Reload = function() {
     window.location.reload();
@@ -23,20 +21,20 @@ Taiizor.ReloadElement = function(elementId, methodType) {
     }
 }
 
-function IncludeFont(path, rel) {
+Taiizor.IncludeFont = function(path, rel) {
     var customFont = document.createElement('link');
     customFont.setAttribute('href', path);
     customFont.setAttribute('rel', rel);
     document.head.appendChild(customFont);
 }
 
-function IncludeJs(path) {
+Taiizor.IncludeJs = function(path) {
     var customScript = document.createElement('script');
     customScript.setAttribute('src', path);
     document.body.appendChild(customScript);
 }
 
-function IncludeCss(path, rel, type) {
+Taiizor.IncludeCss = function(path, rel, type) {
     var customStylesheet = document.createElement('link');
     customStylesheet.setAttribute('href', path);
     customStylesheet.setAttribute('rel', rel);
@@ -44,11 +42,11 @@ function IncludeCss(path, rel, type) {
     document.head.appendChild(customStylesheet);
 }
 
-function SetAttribute(elementId, propertyName, propertyValue) {
+Taiizor.SetAttribute = function(elementId, propertyName, propertyValue) {
     document.getElementById(elementId).setAttribute(propertyName, propertyValue);
 }
 
-function RemoveAttribute(elementId, propertyName) {
+Taiizor.RemoveAttribute = function(elementId, propertyName) {
     document.getElementById(elementId).removeAttribute(propertyName);
 }
 
@@ -76,6 +74,8 @@ Taiizor.SetStyle = function(styleId, stylePair) {
 Taiizor.AddStyle = function(styleId, styleName, styleValue) {
     document.getElementById(styleId).style.setProperty(styleName, styleValue);
 }
+
+Taiizor.styles = [];
 
 Taiizor.ToggleStyle = function(styleId) {
     var style = document.getElementById(styleId).style.cssText;
