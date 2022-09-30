@@ -200,6 +200,65 @@ function DeleteSessionStorage(sessionKey, execute = false) {
     }
 }
 
+function SetLangHtml(languageCode) {
+    document.documentElement.lang = languageCode;
+}
+
+function GetLangHtml() {
+    return document.documentElement.lang;
+}
+
+function SetLangBody(languageCode) {
+    document.body.lang = languageCode;
+}
+
+function GetLangBody() {
+    return document.body.lang;
+}
+
+function SetLang(tagHtml, languageCode) {
+    document.getElementById(tagHtml).lang = languageCode;
+}
+
+function GetLang(tagHtml) {
+    try {
+        return document.getElementById(tagHtml).lang;
+    } catch {
+        return '';
+    }
+}
+
+function CheckLang(tagHtml) {
+    try {
+        let langValue = document.getElementById(tagHtml).lang;
+        if (langValue == null || langValue == '') {
+            return false;
+        } else {
+            return true;
+        }
+    } catch {
+        return false;
+    }
+}
+
+function SetTitle(title) {
+    document.title = title;
+}
+
+function GetTitle() {
+    return document.title;
+}
+
+function CheckTitle() {
+    let titleValue = document.title;
+    if (titleValue == null || titleValue == '') {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 function InvokeMethodAsync(assemblyName, methodName, ...args) {
     if (arguments != null && arguments.length > 0) {
         return DotNet.invokeMethodAsync(assemblyName, methodName, ...args);
