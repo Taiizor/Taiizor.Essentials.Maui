@@ -32,6 +32,7 @@
             ObjCRuntime.Runtime.MarshalManagedException += (_, args) =>
             {
                 args.ExceptionMode = ObjCRuntime.MarshalManagedExceptionMode.UnwindNativeCode;
+                UnhandledException?.Invoke(_, new UnhandledExceptionEventArgs(args.Exception, true));
             };
 
 #elif ANDROID

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Maui.LifecycleEvents;
 using Taiizor.Essentials.Maui.AppCenter.Enum;
 using Taiizor.Essentials.Maui.AppCenter.Services;
+using Taiizor.Essentials.Maui.Cross;
 
 #if WINDOWS
 
@@ -31,13 +32,13 @@ namespace Initialize
 
 #if WINDOWS
 			    events.AddWindows(windows => windows
-			        .OnLaunching((window, args) => AppCenter()));
+			        .OnLaunching((window, args) => Initialize()));
 #elif ANDROID
                 events.AddAndroid(android => android
-                    .OnCreate((activity, bundle) => AppCenter()));
+                    .OnCreate((activity, bundle) => Initialize()));
 #elif IOS || MACCATALYST
                 events.AddiOS(ios => ios
-                    .FinishedLaunching((app, dict) => AppCenter()));
+                    .FinishedLaunching((app, dict) => Initialize()));
 #endif
 
             });
@@ -45,7 +46,7 @@ namespace Initialize
             return builder.Build();
         }
 
-        private static bool AppCenter()
+        private static bool Initialize()
         {
             AppCenterService.Engine(new()
             {
@@ -55,6 +56,10 @@ namespace Initialize
                 { AppEnum.Windows, "{Your Windows App secret here}" }
             });
 
+            // ======================================================================= \\
+            
+            //Taiizor.Essentials.Maui.AppCenter - Basic usage
+            
             AppDomain.CurrentDomain.FirstChanceException += ExceptionService.Set;
             AppDomain.CurrentDomain.UnhandledException += ExceptionService.Set;
             TaskScheduler.UnobservedTaskException += ExceptionService.Set;
@@ -62,6 +67,23 @@ namespace Initialize
 #if WINDOWS
             Application.Current.UnhandledException += ExceptionService.Set;
 #endif
+
+            //Taiizor.Essentials.Maui.AppCenter - Basic usage
+
+
+            // ========================== Use only 1 method ========================== \\
+
+
+            //Taiizor.Essentials.Maui - Basic usage
+
+            CrossException.UnhandledException += (sender, args) =>
+            {
+                AppCenterService.Exception(args);
+            };
+
+            //Taiizor.Essentials.Maui - Basic usage
+
+            // ======================================================================= \\
 
             return true;
         }
