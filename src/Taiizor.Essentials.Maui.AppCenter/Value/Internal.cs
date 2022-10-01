@@ -26,5 +26,7 @@ namespace Taiizor.Essentials.Maui.AppCenter.Value
             { AppEnum.Android, "{Your Android App secret here}" },
             { AppEnum.Windows, "{Your Windows App secret here}" }
         };
+
+        public static string AppCenterKeyFormat = "ios={0};macos={1};android={2};windowsdesktop={3};";
     }
 }

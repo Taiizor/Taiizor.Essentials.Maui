@@ -1,8 +1,8 @@
 ﻿using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
-using Taiizor.Essentials.Maui.AppCenter.Enum;
 using Taiizor.Essentials.Maui.AppCenter.Value;
 using AC = Microsoft.AppCenter.AppCenter;
+using HK = Taiizor.Essentials.Maui.AppCenter.Helper.Key;
 
 namespace Taiizor.Essentials.Maui.AppCenter.Platforms.Services
 {
@@ -10,7 +10,7 @@ namespace Taiizor.Essentials.Maui.AppCenter.Platforms.Services
     {
         public static void Start()
         {
-            AC.Start(Internal.AppCenterKey[AppEnum.Android], typeof(Analytics), typeof(Crashes));
+            AC.Start(HK.GetText(Internal.AppCenterKey), typeof(Analytics), typeof(Crashes)); //Internal.AppCenterKey[AppEnum.Android]
 
             Internal.AppCenterState = true;
         }
