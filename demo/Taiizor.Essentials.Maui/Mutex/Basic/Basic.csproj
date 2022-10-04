@@ -53,7 +53,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Taiizor.Essentials.Maui" Version="1.0.2.5" />
+      <PackageReference Include="Taiizor.Essentials.Maui" Version="1.0.2.8" />
     </ItemGroup>
 
 </Project>
