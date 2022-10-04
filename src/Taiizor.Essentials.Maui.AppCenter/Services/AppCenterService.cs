@@ -300,7 +300,10 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
             Crashes.SetEnabledAsync(true);
         }
 
-        internal static string CountryCode => RegionInfo.CurrentRegion.TwoLetterISORegionName;//return RegionInfo.CurrentRegion.Name;//return CultureInfo.CurrentCulture.TwoLetterISOLanguageName;//return CultureInfo.InstalledUICulture.TwoLetterISOLanguageName;
+        //return RegionInfo.CurrentRegion.Name;
+        //return CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+        //return CultureInfo.InstalledUICulture.TwoLetterISOLanguageName;
+        internal static string CountryCode => RegionInfo.CurrentRegion.TwoLetterISORegionName;
 
         internal static string UserId => $"{DeviceInfo.Current.Name}-{DeviceInfo.Current.Model}";
     }
