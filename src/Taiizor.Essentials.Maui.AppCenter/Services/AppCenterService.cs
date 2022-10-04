@@ -10,7 +10,7 @@ using Taiizor.Essentials.Maui.AppCenter.Struct;
 using Taiizor.Essentials.Maui.AppCenter.Value;
 using AC = Microsoft.AppCenter.AppCenter;
 using HW = Taiizor.Essentials.Maui.AppCenter.Helper.Watch;
-using Service = Taiizor.Essentials.Maui.AppCenter.Platforms.Services.AppCenterService;
+using HK = Taiizor.Essentials.Maui.AppCenter.Helper.Key;
 
 #if WINDOWS
 
@@ -38,7 +38,7 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
             User();
             Country();
 
-            Service.Start();
+            Start();
         }
 
         public static void TestCrash()
@@ -271,6 +271,13 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
                     }
                 }
             }
+        }
+
+        private static void Start()
+        {
+            AC.Start(HK.GetText(Internal.AppCenterKey), typeof(Analytics), typeof(Crashes)); //Internal.AppCenterKey[AppEnum.Android]
+
+            Internal.AppCenterState = true;
         }
 
         private static void Country()

@@ -98,4 +98,10 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
         <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Update="Platforms\Android\PlatformTest.cs">
+        <ExcludeFromCurrentConfiguration>true</ExcludeFromCurrentConfiguration>
+      </Compile>
+    </ItemGroup>
+
 </Project>
