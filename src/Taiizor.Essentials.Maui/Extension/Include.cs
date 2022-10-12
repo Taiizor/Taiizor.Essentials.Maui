@@ -7,9 +7,24 @@
             await Font(Path, "stylesheet");
         }
 
+        public static async Task FontProtected(string Path, string Pathname)
+        {
+            await FontProtected(Path, "stylesheet", Pathname);
+        }
+
         public static async Task Font(string Path, string Rel)
         {
             await Interop.Call("Taiizor.IncludeFont", Path, Rel);
+        }
+
+        public static async Task FontProtected(string Path, string Rel, string Pathname)
+        {
+            string Result = await Location.GetPathname();
+
+            if (Pathname == Result)
+            {
+                await Font(Path, Rel);
+            }
         }
 
         public static async Task Script(string Path)
@@ -17,9 +32,24 @@
             await Interop.Call("Taiizor.IncludeJs", Path);
         }
 
+        public static async Task ScriptProtected(string Path, string Pathname)
+        {
+            string Result = await Location.GetPathname();
+
+            if (Pathname == Result)
+            {
+                await Script(Path);
+            }
+        }
+
         public static async Task Stylesheet(string Path)
         {
             await Stylesheet(Path, "stylesheet");
+        }
+
+        public static async Task StylesheetProtected(string Path, string Pathname)
+        {
+            await StylesheetProtected(Path, "stylesheet", Pathname);
         }
 
         public static async Task Stylesheet(string Path, string Rel)
@@ -27,9 +57,24 @@
             await Stylesheet(Path, Rel, "text/css");
         }
 
+        public static async Task StylesheetProtected(string Path, string Rel, string Pathname)
+        {
+            await StylesheetProtected(Path, Rel, "text/css", Pathname);
+        }
+
         public static async Task Stylesheet(string Path, string Rel, string Type)
         {
             await Interop.Call("Taiizor.IncludeCss", Path, Rel, Type);
+        }
+
+        public static async Task StylesheetProtected(string Path, string Rel, string Type, string Pathname)
+        {
+            string Result = await Location.GetPathname();
+
+            if (Pathname == Result)
+            {
+                await Stylesheet(Path, Rel, Type);
+            }
         }
     }
 }
