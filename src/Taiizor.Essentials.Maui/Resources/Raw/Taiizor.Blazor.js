@@ -265,6 +265,42 @@ Taiizor.CheckTitle = function () {
     }
 }
 
+Taiizor.GetHref = function () {
+    return window.location.href;
+}
+
+Taiizor.GetHost = function () {
+    return window.location.host;
+}
+
+Taiizor.GetHostname = function () {
+    return window.location.hostname;
+}
+
+Taiizor.GetOrigin = function () {
+    return window.location.origin;
+}
+
+Taiizor.GetPathname = function () {
+    return window.location.pathname;
+}
+
+Taiizor.GetPort = function () {
+    return window.location.port;
+}
+
+Taiizor.GetProtocol = function () {
+    return window.location.protocol;
+}
+
+Taiizor.GetSearch = function () {
+    return window.location.search;
+}
+
+Taiizor.GetHash = function () {
+    return window.location.hash;
+}
+
 Taiizor.InvokeMethodAsync = function (assemblyName, methodName, ...args) {
     if (arguments != null && arguments.length > 0) {
         return DotNet.invokeMethodAsync(assemblyName, methodName, ...args);
