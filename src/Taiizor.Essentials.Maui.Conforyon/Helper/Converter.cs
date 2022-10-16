@@ -18,7 +18,7 @@ namespace Taiizor.Essentials.Maui.Conforyon.Helper
 
             return Back;
         }
-        
+
         public static Enums.ColorType Convert(string Type, Enums.ColorType Back = Internal.ColorEnumType)
         {
             foreach (Enums.ColorType Types in (Enums.ColorType[])Enum.GetValues(typeof(Enums.ColorType)))

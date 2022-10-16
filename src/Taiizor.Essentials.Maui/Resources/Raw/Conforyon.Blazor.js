@@ -44,6 +44,11 @@ Conforyon.Color.Rgb = {};
 Conforyon.Color.Type = "RGB1";
 Conforyon.Color.Sharp = false;
 
+Conforyon.Unicode = {};
+Conforyon.Unicode.Char = {};
+Conforyon.Unicode.Ascii = {};
+Conforyon.Unicode.Bracket = ',';
+
 Conforyon.Storage = {};
 Conforyon.Storage.Auto = {};
 Conforyon.Storage.Normal = {};
@@ -594,4 +599,63 @@ Conforyon.Time.Normal.ConvertObject = function (InputVariable, InputType, TypeCo
 
 Conforyon.Time.Normal.ConvertText = function (InputVariable, InputType, TypeConvert, Decimal = Conforyon.Time.Decimal, Comma = Conforyon.Time.Comma, PostComma = Conforyon.Time.PostComma, Error = Conforyon.Error) {
     return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TimeNormalConvertText", InputVariable, InputType, TypeConvert, Decimal, Comma, PostComma, Error);
+}
+
+
+
+Conforyon.Unicode.Ascii.CharInteger = function (Ascii, Bracket = Conforyon.Unicode.Bracket, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "UnicodeAsciiCharInteger", Ascii, Bracket, Error);
+}
+
+Conforyon.Unicode.Ascii.CharLong = function (Ascii, Bracket = Conforyon.Unicode.Bracket, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "UnicodeAsciiCharLong", Ascii, Bracket, Error);
+}
+
+Conforyon.Unicode.Ascii.CharDouble = function (Ascii, Bracket = Conforyon.Unicode.Bracket, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "UnicodeAsciiCharDouble", Ascii, Bracket, Error);
+}
+
+Conforyon.Unicode.Ascii.CharFloat = function (Ascii, Bracket = Conforyon.Unicode.Bracket, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "UnicodeAsciiCharFloat", Ascii, Bracket, Error);
+}
+
+Conforyon.Unicode.Ascii.CharChar = function (Ascii, Bracket = Conforyon.Unicode.Bracket, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "UnicodeAsciiCharChar", Ascii, Bracket, Error);
+}
+
+Conforyon.Unicode.Ascii.CharObject = function (Ascii, Bracket = Conforyon.Unicode.Bracket, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "UnicodeAsciiCharObject", Ascii, Bracket, Error);
+}
+
+Conforyon.Unicode.Ascii.CharText = function (Ascii, Bracket = Conforyon.Unicode.Bracket, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "UnicodeAsciiCharText", Ascii, Bracket, Error);
+}
+
+
+Conforyon.Unicode.Char.AsciiInteger = function (Char, Bracket = Conforyon.Unicode.Bracket, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "UnicodeCharAsciiInteger", Char, Bracket, Error);
+}
+
+Conforyon.Unicode.Char.AsciiLong = function (Char, Bracket = Conforyon.Unicode.Bracket, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "UnicodeCharAsciiLong", Char, Bracket, Error);
+}
+
+Conforyon.Unicode.Char.AsciiDouble = function (Char, Bracket = Conforyon.Unicode.Bracket, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "UnicodeCharAsciiDouble", Char, Bracket, Error);
+}
+
+Conforyon.Unicode.Char.AsciiFloat = function (Char, Bracket = Conforyon.Unicode.Bracket, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "UnicodeCharAsciiFloat", Char, Bracket, Error);
+}
+
+Conforyon.Unicode.Char.AsciiChar = function (Char, Bracket = Conforyon.Unicode.Bracket, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "UnicodeCharAsciiChar", Char, Bracket, Error);
+}
+
+Conforyon.Unicode.Char.AsciiObject = function (Char, Bracket = Conforyon.Unicode.Bracket, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "UnicodeCharAsciiObject", Char, Bracket, Error);
+}
+
+Conforyon.Unicode.Char.AsciiText = function (Char, Bracket = Conforyon.Unicode.Bracket, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "UnicodeCharAsciiText", Char, Bracket, Error);
 }

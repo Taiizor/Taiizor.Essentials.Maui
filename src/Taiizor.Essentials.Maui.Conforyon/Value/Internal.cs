@@ -9,14 +9,22 @@ namespace Taiizor.Essentials.Maui.Conforyon.Value
         public const string Empty = "Empty!";
         public const string Error = "Error!";
 
+        public const bool HashUppercase = false;
+
+        public const int TimePostComma = 0;
+        public const bool TimeComma = false;
+        public const bool TimeDecimal = false;
+        public const bool TimeTypeText = false;
+        public const Enums.TimeType TimeEnumType = Enums.TimeType.Nanosecond;
+
         public const bool ColorSharp = false;
         public const string ColorType = "RGB1";
         public const Enums.ColorType ColorEnumType = Enums.ColorType.RGB1;
 
-        public const bool HashUppercase = false;
-
         public const bool SpeedText = true;
         public const int SpeedPostComma = 0;
+
+        public const char UnicodeBracket = ',';
 
         public const int StoragePostComma = 0;
         public const bool StorageComma = false;
@@ -32,11 +40,5 @@ namespace Taiizor.Essentials.Maui.Conforyon.Value
 
         public const bool TemperatureText = true;
         public const int TemperaturePostComma = 0;
-
-        public const int TimePostComma = 0;
-        public const bool TimeComma = false;
-        public const bool TimeDecimal = false;
-        public const bool TimeTypeText = false;
-        public const Enums.TimeType TimeEnumType = Enums.TimeType.Nanosecond;
     }
 }
