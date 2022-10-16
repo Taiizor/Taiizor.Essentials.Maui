@@ -9,6 +9,8 @@
         public const bool ColorSharp = false;
         public const string ColorType = "RGB1";
 
+        public const bool HashUppercase = false;
+
         public const string CryptologyMode = "CBC";
         public const bool CryptologyUppercase = false;
         public const string CryptologyIV = "QxQsRoZQws61N46H";

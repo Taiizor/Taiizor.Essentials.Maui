@@ -9,6 +9,9 @@ Conforyon.Empty = "Empty!";
 Conforyon.Error = "Error!";
 
 
+Conforyon.Hash = {};
+Conforyon.Hash.Uppercase = false;
+
 Conforyon.Board = {};
 Conforyon.Board.Text = {};
 Conforyon.Board.Audio = {};
@@ -294,4 +297,50 @@ Conforyon.Cryptology.Text.Sha512.EncryptObject = function (Value, Uppercase = Co
 
 Conforyon.Cryptology.Text.Sha512.EncryptText = function (Text, Uppercase = Conforyon.Cryptology.Uppercase, Error = Conforyon.Error) {
     return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "CryptologyTextSha512EncryptText", Text, Uppercase, Error);
+}
+
+
+
+Conforyon.Hash.File.Md5.EncryptObject = function (Path, Uppercase = Conforyon.Hash.Uppercase, Error = Conforyon.Error) {
+    Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HashFileMd5EncryptObject", Path, Uppercase, Error);
+}
+
+Conforyon.Hash.File.Md5.EncryptText = function (Path, Uppercase = Conforyon.Hash.Uppercase, Error = Conforyon.Error) {
+    Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HashFileMd5EncryptText", Path, Uppercase, Error);
+}
+
+
+Conforyon.Hash.File.Sha1.EncryptObject = function (Path, Uppercase = Conforyon.Hash.Uppercase, Error = Conforyon.Error) {
+    Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HashFileSha1EncryptObject", Path, Uppercase, Error);
+}
+
+Conforyon.Hash.File.Sha1.EncryptText = function (Path, Uppercase = Conforyon.Hash.Uppercase, Error = Conforyon.Error) {
+    Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HashFileSha1EncryptText", Path, Uppercase, Error);
+}
+
+
+Conforyon.Hash.File.Sha256.EncryptObject = function (Path, Uppercase = Conforyon.Hash.Uppercase, Error = Conforyon.Error) {
+    Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HashFileSha256EncryptObject", Path, Uppercase, Error);
+}
+
+Conforyon.Hash.File.Sha256.EncryptText = function (Path, Uppercase = Conforyon.Hash.Uppercase, Error = Conforyon.Error) {
+    Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HashFileSha256EncryptText", Path, Uppercase, Error);
+}
+
+
+Conforyon.Hash.File.Sha384.EncryptObject = function (Path, Uppercase = Conforyon.Hash.Uppercase, Error = Conforyon.Error) {
+    Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HashFileSha384EncryptObject", Path, Uppercase, Error);
+}
+
+Conforyon.Hash.File.Sha384.EncryptText = function (Path, Uppercase = Conforyon.Hash.Uppercase, Error = Conforyon.Error) {
+    Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HashFileSha384EncryptText", Path, Uppercase, Error);
+}
+
+
+Conforyon.Hash.File.Sha512.EncryptObject = function (Path, Uppercase = Conforyon.Hash.Uppercase, Error = Conforyon.Error) {
+    Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HashFileSha512EncryptObject", Path, Uppercase, Error);
+}
+
+Conforyon.Hash.File.Sha512.EncryptText = function (Path, Uppercase = Conforyon.Hash.Uppercase, Error = Conforyon.Error) {
+    Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HashFileSha512EncryptText", Path, Uppercase, Error);
 }
