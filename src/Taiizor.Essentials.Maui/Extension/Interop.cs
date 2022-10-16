@@ -1,6 +1,9 @@
 ﻿using Microsoft.JSInterop;
+using System.Reflection;
 using Taiizor.Essentials.Maui.Enum;
 using Taiizor.Essentials.Maui.Value;
+using HC = Taiizor.Essentials.Maui.Helper.Combine;
+using HD = Taiizor.Essentials.Maui.Helper.Directory;
 using HI = Taiizor.Essentials.Maui.Helper.Interop;
 
 namespace Taiizor.Essentials.Maui.Extension
@@ -25,6 +28,23 @@ namespace Taiizor.Essentials.Maui.Extension
                 if (!Files.ContainsKey(File.Key) || Files[File.Key])
                 {
                     _ = Call("eval", Javascript.File(File.Key));
+
+                    try
+                    {
+                        if (File.Key is JavascriptEnum.Conforyon or JavascriptEnum.AppCenter)
+                        {
+                            string Path = HC.FullPath(HD.GetDirectory, $"Taiizor.Essentials.Maui.{File.Key}", ".dll");
+
+                            if (System.IO.File.Exists(Path))
+                            {
+                                Assembly.LoadFile(Path);
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        //
+                    }
                 }
             }
         }

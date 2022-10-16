@@ -4,25 +4,25 @@
 
 <p>Welcome to your new app.</p>
 
-<button class="btn-success" @onclick="CopyPath">Copy Path</button>
+<button class="btn-success" @onclick="CopyText">Copy Text</button>
 
-<button class="btn-primary" @onclick="CopyByte">Copy Byte</button>
+<button class="btn-primary" @onclick="CopyNumber">Copy Number</button>
 
-<button class="btn-danger" @onclick="PasteStream">Paste Stream</button>
+<button class="btn-danger" @onclick="AlertText">Alert Value</button>
 
 @code {
-    private void CopyPath()
+    private async void CopyText()
     {
-        Board.Audio.CopyPath("H:\\Music\\OLD\\FreeDOS\\AintHeSweet.ogg");
+        await Interop.Call("Conforyon.Board.Text.CopyText", "Taiizor is King!");
     }
 
-    private void CopyByte()
+    private async void CopyNumber()
     {
-        Board.Audio.CopyByte(File.ReadAllBytes("H:\\Music\\OLD\\FreeDOS\\AintHeSweet.ogg"));
+        await Interop.Call("Conforyon.Board.Text.CopyInteger", 1001);
     }
 
-    private async void PasteStream()
+    private async void AlertText()
     {
-        await Interop.Call("alert", Board.Audio.PasteStream(false).Length);
+        await Interop.Call("alert", await Interop.CallString("Conforyon.Board.Text.PasteText", true, "Value is Empty!"));
     }
 }
