@@ -1,5 +1,4 @@
 ﻿using Microsoft.JSInterop;
-using System.Security.Cryptography;
 using Taiizor.Essentials.Maui.Conforyon.Value;
 using CCAES = Conforyon.Cryptology.AES;
 using CCBASE = Conforyon.Cryptology.BASE;
@@ -16,56 +15,56 @@ namespace Taiizor.Essentials.Maui.Conforyon.Extension
             //[JSInvokableAttribute("CryptologyAesEncryptInteger")]
             public static string EncryptInteger(int Number, string IV = Internal.CryptologyIV, string Key = Internal.CryptologyKey, string Mode = Internal.CryptologyMode, string Error = Internal.Error)
             {
-                return CCAES.Encrypt(Number, IV, Key, HC.Convert(Mode, CipherMode.CBC), Error);
+                return CCAES.Encrypt(Number, IV, Key, HC.Convert(Mode, Internal.CryptologyCipherMode), Error);
             }
 
             [JSInvokable("CryptologyAesEncryptLong")]
             //[JSInvokableAttribute("CryptologyAesEncryptLong")]
             public static string EncryptLong(long Number, string IV = Internal.CryptologyIV, string Key = Internal.CryptologyKey, string Mode = Internal.CryptologyMode, string Error = Internal.Error)
             {
-                return CCAES.Encrypt(Number, IV, Key, HC.Convert(Mode, CipherMode.CBC), Error);
+                return CCAES.Encrypt(Number, IV, Key, HC.Convert(Mode, Internal.CryptologyCipherMode), Error);
             }
 
             [JSInvokable("CryptologyAesEncryptDouble")]
             //[JSInvokableAttribute("CryptologyAesEncryptDouble")]
             public static string EncryptDouble(double Number, string IV = Internal.CryptologyIV, string Key = Internal.CryptologyKey, string Mode = Internal.CryptologyMode, string Error = Internal.Error)
             {
-                return CCAES.Encrypt(Number, IV, Key, HC.Convert(Mode, CipherMode.CBC), Error);
+                return CCAES.Encrypt(Number, IV, Key, HC.Convert(Mode, Internal.CryptologyCipherMode), Error);
             }
 
             [JSInvokable("CryptologyAesEncryptFloat")]
             //[JSInvokableAttribute("CryptologyAesEncryptFloat")]
             public static string EncryptFloat(float Number, string IV = Internal.CryptologyIV, string Key = Internal.CryptologyKey, string Mode = Internal.CryptologyMode, string Error = Internal.Error)
             {
-                return CCAES.Encrypt(Number, IV, Key, HC.Convert(Mode, CipherMode.CBC), Error);
+                return CCAES.Encrypt(Number, IV, Key, HC.Convert(Mode, Internal.CryptologyCipherMode), Error);
             }
 
             [JSInvokable("CryptologyAesEncryptObject")]
             //[JSInvokableAttribute("CryptologyAesEncryptObject")]
             public static string EncryptObject(object Value, string IV = Internal.CryptologyIV, string Key = Internal.CryptologyKey, string Mode = Internal.CryptologyMode, string Error = Internal.Error)
             {
-                return CCAES.Encrypt(Value, IV, Key, HC.Convert(Mode, CipherMode.CBC), Error);
+                return CCAES.Encrypt(Value, IV, Key, HC.Convert(Mode, Internal.CryptologyCipherMode), Error);
             }
 
             [JSInvokable("CryptologyAesEncryptText")]
             //[JSInvokableAttribute("CryptologyAesEncryptText")]
             public static string EncryptText(string Text, string IV = Internal.CryptologyIV, string Key = Internal.CryptologyKey, string Mode = Internal.CryptologyMode, string Error = Internal.Error)
             {
-                return CCAES.Encrypt(Text, IV, Key, HC.Convert(Mode, CipherMode.CBC), Error);
+                return CCAES.Encrypt(Text, IV, Key, HC.Convert(Mode, Internal.CryptologyCipherMode), Error);
             }
 
             [JSInvokable("CryptologyAesDecryptObject")]
             //[JSInvokableAttribute("CryptologyAesDecryptObject")]
             public static string DecryptObject(object Base, string IV = Internal.CryptologyIV, string Key = Internal.CryptologyKey, string Mode = Internal.CryptologyMode, string Error = Internal.Error)
             {
-                return CCAES.Decrypt(Base, IV, Key, HC.Convert(Mode, CipherMode.CBC), Error);
+                return CCAES.Decrypt(Base, IV, Key, HC.Convert(Mode, Internal.CryptologyCipherMode), Error);
             }
 
             [JSInvokable("CryptologyAesDecryptText")]
             //[JSInvokableAttribute("CryptologyAesDecryptText")]
             public static string DecryptText(string Base, string IV = Internal.CryptologyIV, string Key = Internal.CryptologyKey, string Mode = Internal.CryptologyMode, string Error = Internal.Error)
             {
-                return CCAES.Decrypt(Base, IV, Key, HC.Convert(Mode, CipherMode.CBC), Error);
+                return CCAES.Decrypt(Base, IV, Key, HC.Convert(Mode, Internal.CryptologyCipherMode), Error);
             }
         }
 

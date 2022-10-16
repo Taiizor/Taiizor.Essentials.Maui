@@ -1,4 +1,7 @@
-﻿namespace Taiizor.Essentials.Maui.Conforyon.Value
+﻿using Conforyon.Enum;
+using System.Security.Cryptography;
+
+namespace Taiizor.Essentials.Maui.Conforyon.Value
 {
     internal class Internal
     {
@@ -8,14 +11,23 @@
 
         public const bool ColorSharp = false;
         public const string ColorType = "RGB1";
-
-        public const int PostComma = 0;
-        public const bool HashText = true;
+        public const Enums.ColorType ColorEnumType = Enums.ColorType.RGB1;
+        
         public const bool HashUppercase = false;
+
+        public const bool SpeedText = true;
+        public const int SpeedPostComma = 0;
+
+        public const int StoragePostComma = 0;
+        public const bool StorageComma = false;
+        public const bool StorageDecimal = false;
+        public const bool StorageTypeText = false;
+        public const Enums.StorageType StorageEnumType = Enums.StorageType.Bit;
 
         public const string CryptologyMode = "CBC";
         public const bool CryptologyUppercase = false;
         public const string CryptologyIV = "QxQsRoZQws61N46H";
+        public const CipherMode CryptologyCipherMode = CipherMode.CBC;
         public const string CryptologyKey = "uS830kWPrPSPyZK0pS7Pgw3wP3SvLOGr";
     }
 }

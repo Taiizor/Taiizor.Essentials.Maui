@@ -77,9 +77,9 @@ namespace Taiizor.Essentials.Maui.Conforyon.Extension
 
             [JSInvokable("BoardTextPasteText")]
             //[JSInvokableAttribute("BoardTextPasteText")]
-            public static string PasteText(bool Clear = Internal.Clear, string Empty = Internal.Empty)
+            public static string PasteText(bool Clear = Internal.Clear, string Back = Internal.Empty)
             {
-                return CBT.Paste(Clear);
+                return CBT.Paste(Clear, Back);
             }
         }
     }

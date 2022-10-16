@@ -1,5 +1,4 @@
-﻿using Conforyon.Enum;
-using Microsoft.JSInterop;
+﻿using Microsoft.JSInterop;
 using Taiizor.Essentials.Maui.Conforyon.Value;
 using CCHEX = Conforyon.Color.HEX;
 using CCRGB = Conforyon.Color.RGB;
@@ -15,14 +14,14 @@ namespace Taiizor.Essentials.Maui.Conforyon.Extension
             //[JSInvokableAttribute("ColorHexRgbObject")]
             public static string RgbObject(object Hex, string Type = Internal.ColorType, string Error = Internal.Error)
             {
-                return CCHEX.RGB(Hex, HC.Convert(Type, Enums.ColorType.RGB1), Error);
+                return CCHEX.RGB(Hex, HC.Convert(Type, Internal.ColorEnumType), Error);
             }
 
             [JSInvokable("ColorHexRgbText")]
             //[JSInvokableAttribute("ColorHexRgbText")]
             public static string RgbText(string Hex, string Type = Internal.ColorType, string Error = Internal.Error)
             {
-                return CCHEX.RGB(Hex, HC.Convert(Type, Enums.ColorType.RGB1), Error);
+                return CCHEX.RGB(Hex, HC.Convert(Type, Internal.ColorEnumType), Error);
             }
         }
 
