@@ -12,7 +12,7 @@ namespace Taiizor.Essentials.Maui.Conforyon.Value
         public const bool ColorSharp = false;
         public const string ColorType = "RGB1";
         public const Enums.ColorType ColorEnumType = Enums.ColorType.RGB1;
-        
+
         public const bool HashUppercase = false;
 
         public const bool SpeedText = true;
@@ -29,5 +29,8 @@ namespace Taiizor.Essentials.Maui.Conforyon.Value
         public const string CryptologyIV = "QxQsRoZQws61N46H";
         public const CipherMode CryptologyCipherMode = CipherMode.CBC;
         public const string CryptologyKey = "uS830kWPrPSPyZK0pS7Pgw3wP3SvLOGr";
+
+        public const bool TemperatureText = true;
+        public const int TemperaturePostComma = 0;
     }
 }

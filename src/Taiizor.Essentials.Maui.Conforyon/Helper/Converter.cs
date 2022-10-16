@@ -18,7 +18,7 @@ namespace Taiizor.Essentials.Maui.Conforyon.Helper
 
             return Back;
         }
-        
+
         public static Enums.StorageType Convert(string Type, Enums.StorageType Back = Internal.StorageEnumType)
         {
             foreach (Enums.StorageType Types in (Enums.StorageType[])Enum.GetValues(typeof(Enums.StorageType)))

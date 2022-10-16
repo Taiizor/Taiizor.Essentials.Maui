@@ -37,7 +37,7 @@ namespace Taiizor.Essentials.Maui.Conforyon.Extension
                 return CSDS.AutoDataConvert(InputVariable, HC.Convert(InputType, Internal.StorageEnumType), TypeText, Decimal, Comma, PostComma, Error);
             }
         }
-        
+
         public class Normal
         {
             [JSInvokable("StorageNormalConvertInteger")]

@@ -40,7 +40,7 @@ namespace Taiizor.Essentials.Maui.Conforyon.Extension
                 }
             }
         }
-        
+
         public class Mph
         {
             public class Kph
