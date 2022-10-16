@@ -1,0 +1,29 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+<p>Welcome to your new app.</p>
+
+<button class="btn-success" @onclick="CopyPath">Copy Path</button>
+
+<button class="btn-primary" @onclick="CopyByte">Copy Byte</button>
+
+<button class="btn-danger" @onclick="PasteStream">Paste Stream</button>
+
+@code {
+    private void CopyPath()
+    {
+        Board.Audio.CopyPath("H:\\Music\\OLD\\FreeDOS\\AintHeSweet.ogg");
+    }
+
+    private void CopyByte()
+    {
+        Board.Audio.CopyByte(File.ReadAllBytes("H:\\Music\\OLD\\FreeDOS\\AintHeSweet.ogg"));
+    }
+
+    private void PasteStream()
+    {
+        _ = Interop.Call("alert", "53X");
+        _ = Interop.Call("alert", Board.Audio.PasteStream(false));
+    }
+}

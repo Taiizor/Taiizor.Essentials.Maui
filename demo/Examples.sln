@@ -26,7 +26,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mutex", "Mutex", "{22E5110B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basic", "Taiizor.Essentials.Maui\Mutex\Basic\Basic.csproj", "{E8FFF323-6F1B-46F8-8B90-62A70CE5077D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple", "Taiizor.Essentials.Maui\Mutex\Simple\Simple.csproj", "{9B22B057-EAB5-4F79-AABB-E5CB3B49F6C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple", "Taiizor.Essentials.Maui\Mutex\Simple\Simple.csproj", "{9B22B057-EAB5-4F79-AABB-E5CB3B49F6C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Taiizor.Essentials.Maui.Conforyon", "Taiizor.Essentials.Maui.Conforyon", "{18C553AC-4512-48D7-BBAF-74B09C0ECC6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Usage", "Usage", "{434C6207-BB8D-49B8-AED3-470636AD9172}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Initialize", "Taiizor.Essentials.Maui.Conforyon\Usage\Initialize\Initialize.csproj", "{3CF61D04-953D-4FDA-B464-F4F10E6588B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +70,10 @@ Global
 		{9B22B057-EAB5-4F79-AABB-E5CB3B49F6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B22B057-EAB5-4F79-AABB-E5CB3B49F6C3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9B22B057-EAB5-4F79-AABB-E5CB3B49F6C3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3CF61D04-953D-4FDA-B464-F4F10E6588B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF61D04-953D-4FDA-B464-F4F10E6588B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF61D04-953D-4FDA-B464-F4F10E6588B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF61D04-953D-4FDA-B464-F4F10E6588B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +86,8 @@ Global
 		{22E5110B-8A7F-4757-8A5C-C9ACA2F975CA} = {51EBCE87-4BB0-480B-B449-A1D7ED441486}
 		{E8FFF323-6F1B-46F8-8B90-62A70CE5077D} = {22E5110B-8A7F-4757-8A5C-C9ACA2F975CA}
 		{9B22B057-EAB5-4F79-AABB-E5CB3B49F6C3} = {22E5110B-8A7F-4757-8A5C-C9ACA2F975CA}
+		{434C6207-BB8D-49B8-AED3-470636AD9172} = {18C553AC-4512-48D7-BBAF-74B09C0ECC6C}
+		{3CF61D04-953D-4FDA-B464-F4F10E6588B0} = {434C6207-BB8D-49B8-AED3-470636AD9172}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}

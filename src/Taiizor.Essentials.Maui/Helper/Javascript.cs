@@ -12,6 +12,7 @@ namespace Taiizor.Essentials.Maui.Helper
                 JavascriptEnum.Custom => string.Format(Internal.JavascriptFile, "Custom"),
                 JavascriptEnum.Taiizor => string.Format(Internal.JavascriptFile, "Taiizor"),
                 JavascriptEnum.AppCenter => string.Format(Internal.JavascriptFile, "AppCenter"),
+                JavascriptEnum.Conforyon => string.Format(Internal.JavascriptFile, "Conforyon"),
                 _ => string.Format(Internal.JavascriptFile, "None"),
             };
         }

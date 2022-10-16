@@ -4,6 +4,7 @@
     {
         Custom,
         Taiizor,
-        AppCenter
+        AppCenter,
+        Conforyon
     }
 }

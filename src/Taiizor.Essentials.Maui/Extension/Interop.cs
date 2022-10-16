@@ -1,5 +1,6 @@
 ﻿using Microsoft.JSInterop;
 using Taiizor.Essentials.Maui.Enum;
+using Taiizor.Essentials.Maui.Value;
 using HI = Taiizor.Essentials.Maui.Helper.Interop;
 
 namespace Taiizor.Essentials.Maui.Extension
@@ -10,13 +11,22 @@ namespace Taiizor.Essentials.Maui.Extension
 
         public Interop(IJSRuntime JSR)
         {
-            HI.CheckRuntime(JSR);
+            _ = new Interop(JSR, Internal.JavascriptFiles);
+        }
 
+        public Interop(IJSRuntime JSR, Dictionary<JavascriptEnum, bool> Files)
+        {
+            HI.CheckRuntime(JSR);
+            
             JS = JSR;
 
-            _ = Call("eval", Javascript.File(JavascriptEnum.Custom));
-            _ = Call("eval", Javascript.File(JavascriptEnum.Taiizor));
-            _ = Call("eval", Javascript.File(JavascriptEnum.AppCenter));
+            foreach (KeyValuePair<JavascriptEnum, bool> File in Internal.JavascriptFiles)
+            {
+                if (!Files.ContainsKey(File.Key) || Files[File.Key])
+                {
+                    _ = Call("eval", Javascript.File(File.Key));
+                }
+            }
         }
 
         public static async Task Call(string Function, params object?[]? Arguments)

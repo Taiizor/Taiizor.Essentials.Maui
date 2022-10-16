@@ -12,7 +12,13 @@
 @code{
 	protected override void OnInitialized()
 	{
-		_ = new Interop(JS);
+        _ = new Interop(JS, new()
+        {
+            { Taiizor.Essentials.Maui.Enum.JavascriptEnum.Custom, false },
+            { Taiizor.Essentials.Maui.Enum.JavascriptEnum.Taiizor, true },
+            { Taiizor.Essentials.Maui.Enum.JavascriptEnum.AppCenter, false },
+            { Taiizor.Essentials.Maui.Enum.JavascriptEnum.Conforyon, false }
+        });
         
 		base.OnInitialized();
 	}

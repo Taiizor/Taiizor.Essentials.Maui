@@ -6,7 +6,6 @@
         <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
         <!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
         <UseMaui>true</UseMaui>
-        <Nullable>enable</Nullable>
         <SingleProject>true</SingleProject>
         <ImplicitUsings>enable</ImplicitUsings>
         <AnalysisLevel>preview</AnalysisLevel>
@@ -21,13 +20,13 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <PackageId>Taiizor.Essentials.Maui</PackageId>
-        <Summary>Essentials library for projects using .NET MAUI Blazor</Summary>
+        <PackageId>Taiizor.Essentials.Maui.Conforyon</PackageId>
+        <Summary>Essentials library for projects using .NET MAUI Conforyon</Summary>
         <Authors>Taiizor</Authors>
         <Owners>$(Authors)</Owners>
         <Company>$(Authors)</Company>
         <NeutralLanguage>en-GB</NeutralLanguage>
-        <Product>Taiizor.Essentials.Maui (net6.0)</Product>
+        <Product>Taiizor.Essentials.Maui.Conforyon (net6.0)</Product>
         <Copyright>Copyright © $([System.DateTime]::Today.ToString(yyyy)) $(Authors)</Copyright>
         <PackageDescription>$(Description)</PackageDescription>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -40,16 +39,16 @@
         <!--<DocumentationFile>..\$(PackageId)\bin$(OutputPath)\$(Configuration)\$(TargetFramework)\$(PackageId).xml</DocumentationFile>-->
         <DefineConstants>$(DefineConstants);</DefineConstants>
         <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
-        <Title>Taiizor.Essentials.Maui</Title>
+        <Title>Taiizor.Essentials.Maui.Conforyon</Title>
         <Description>$(Summary)
-.NET MAUI Blazor Essentials Library - $(PackageId)</Description>
+.NET MAUI Conforyon Essentials Library - $(PackageId)</Description>
         <PackageReleaseNotes>Code improvements have been made.
 Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/releases</PackageReleaseNotes>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-        <PackageIcon>Taiizor.Essentials.Maui.png</PackageIcon>
-        <ApplicationIcon>Resources\Taiizor.Essentials.Maui.ico</ApplicationIcon>
+        <PackageIcon>Taiizor.Essentials.Maui.Conforyon.png</PackageIcon>
+        <ApplicationIcon>Resources\Taiizor.Essentials.Maui.Conforyon.ico</ApplicationIcon>
         <Product>$(AssemblyName) ($(TargetFramework))</Product>
         <FileVersion>$(Version)</FileVersion>
         <AssemblyVersion>$(Version)</AssemblyVersion>
@@ -58,7 +57,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
         <VersionPrefix></VersionPrefix>
         <VersionSuffix></VersionSuffix>
         <PackageVersion>$(VersionPrefix)$(Version)$(VersionSuffix)</PackageVersion>
-        <PackageTags>Taiizor Soferity Vegalya Essentials Maui Blazor Class Library C# CSharp VBC VB VisualBasic DotNET .NET NET</PackageTags>
+        <PackageTags>Taiizor Soferity Vegalya Essentials Maui Blazor Conforyon Class Library C# CSharp VBC VB VisualBasic DotNET .NET NET</PackageTags>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -67,20 +66,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
     </PropertyGroup>
 
     <ItemGroup>
-      <None Remove="Resources\Raw\Conforyon.Blazor.js" />
-      <None Remove="Resources\Raw\None.Blazor.js" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Include="Resources\Raw\Conforyon.Blazor.js" />
-        <EmbeddedResource Include="Resources\Raw\None.Blazor.js" />
-        <EmbeddedResource Include="Resources\Raw\Custom.Blazor.js" />
-        <EmbeddedResource Include="Resources\Raw\Taiizor.Blazor.js" />
-        <EmbeddedResource Include="Resources\Raw\AppCenter.Blazor.js" />
-    </ItemGroup>
-  
-    <ItemGroup>
-        <None Include="Resources\Taiizor.Essentials.Maui.png">
+        <None Include="Resources\Taiizor.Essentials.Maui.Conforyon.png">
             <Pack>True</Pack>
             <PackagePath></PackagePath>
         </None>
@@ -105,6 +91,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Conforyon" Version="2.0.0.2" />
         <PackageReference Include="Microsoft.JSInterop" Version="6.0.10" />
     </ItemGroup>
 

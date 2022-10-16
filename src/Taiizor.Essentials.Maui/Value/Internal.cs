@@ -1,4 +1,6 @@
-﻿namespace Taiizor.Essentials.Maui.Value
+﻿using Taiizor.Essentials.Maui.Enum;
+
+namespace Taiizor.Essentials.Maui.Value
 {
     internal class Internal
     {
@@ -11,5 +13,14 @@
         public static readonly string StorageExtension = ".json";
 
         public static readonly string JavascriptFile = "Taiizor.Essentials.Maui.Resources.Raw.{0}.Blazor.js";
+
+
+        public static Dictionary<JavascriptEnum, bool> JavascriptFiles = new()
+        {
+            { JavascriptEnum.Custom, true },
+            { JavascriptEnum.Taiizor, true },
+            { JavascriptEnum.AppCenter, true },
+            { JavascriptEnum.Conforyon, true }
+        };
     }
 }
