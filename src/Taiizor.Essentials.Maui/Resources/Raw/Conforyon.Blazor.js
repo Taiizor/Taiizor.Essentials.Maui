@@ -10,11 +10,25 @@ Conforyon.Error = "Error!";
 
 
 Conforyon.Hash = {};
+Conforyon.Hash.File = {};
+Conforyon.Hash.File.Md5 = {};
+Conforyon.Hash.File.Sha1 = {};
+Conforyon.Hash.File.Sha256 = {};
+Conforyon.Hash.File.Sha384 = {};
+Conforyon.Hash.File.Sha512 = {};
 Conforyon.Hash.Uppercase = false;
 
 Conforyon.Board = {};
 Conforyon.Board.Text = {};
 Conforyon.Board.Audio = {};
+
+Conforyon.Speed = {};
+Conforyon.Speed.Mph = {};
+Conforyon.Speed.Kph = {};
+Conforyon.Speed.Mph.Kph = {};
+Conforyon.Speed.Kph.Mph = {};
+Conforyon.Speed.PostComma = 0;
+Conforyon.Speed.HashText = true;
 
 Conforyon.Color = {};
 Conforyon.Color.Hex = {};
@@ -343,4 +357,39 @@ Conforyon.Hash.File.Sha512.EncryptObject = function (Path, Uppercase = Conforyon
 
 Conforyon.Hash.File.Sha512.EncryptText = function (Path, Uppercase = Conforyon.Hash.Uppercase, Error = Conforyon.Error) {
     Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HashFileSha512EncryptText", Path, Uppercase, Error);
+}
+
+
+
+Conforyon.Speed.Kph.Mph.ConvertInteger = function (Kilometers, Decimal, Comma, PostComma = Conforyon.Speed.PostComma, Text = Conforyon.Speed.HashText, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "SpeedKphMphConvertInteger", Kilometers, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Speed.Kph.Mph.ConvertLong = function (Kilometers, Decimal, Comma, PostComma = Conforyon.Speed.PostComma, Text = Conforyon.Speed.HashText, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "SpeedKphMphConvertLong", Kilometers, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Speed.Kph.Mph.ConvertObject = function (Kilometers, Decimal, Comma, PostComma = Conforyon.Speed.PostComma, Text = Conforyon.Speed.HashText, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "SpeedKphMphConvertObject", Kilometers, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Speed.Kph.Mph.ConvertText = function (Kilometers, Decimal, Comma, PostComma = Conforyon.Speed.PostComma, Text = Conforyon.Speed.HashText, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "SpeedKphMphConvertText", Kilometers, Decimal, Comma, PostComma, Text, Error);
+}
+
+
+Conforyon.Speed.Mph.Kph.ConvertInteger = function (Miles, Decimal, Comma, PostComma = Conforyon.Speed.PostComma, Text = Conforyon.Speed.HashText, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "SpeedMphKphConvertInteger", Miles, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Speed.Mph.Kph.ConvertLong = function (Miles, Decimal, Comma, PostComma = Conforyon.Speed.PostComma, Text = Conforyon.Speed.HashText, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "SpeedMphKphConvertLong", Miles, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Speed.Mph.Kph.ConvertObject = function (Miles, Decimal, Comma, PostComma = Conforyon.Speed.PostComma, Text = Conforyon.Speed.HashText, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "SpeedMphKphConvertObject", Miles, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Speed.Mph.Kph.ConvertText = function (Miles, Decimal, Comma, PostComma = Conforyon.Speed.PostComma, Text = Conforyon.Speed.HashText, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "SpeedMphKphConvertText", Miles, Decimal, Comma, PostComma, Text, Error);
 }

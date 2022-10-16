@@ -1,6 +1,6 @@
 ﻿using Microsoft.JSInterop;
 using Taiizor.Essentials.Maui.Conforyon.Value;
-using CCFILE = Conforyon.Hash.FILE;
+using CHFILE = Conforyon.Hash.FILE;
 
 namespace Taiizor.Essentials.Maui.Conforyon.Extension
 {
@@ -14,14 +14,14 @@ namespace Taiizor.Essentials.Maui.Conforyon.Extension
                 //[JSInvokableAttribute("HashFileMd5EncryptObject")]
                 public static string EncryptObject(object Path, bool Uppercase = Internal.HashUppercase, string Error = Internal.Error)
                 {
-                    return CCFILE.MD5(Path, Uppercase, Error);
+                    return CHFILE.MD5(Path, Uppercase, Error);
                 }
 
                 [JSInvokable("HashFileMd5EncryptText")]
                 //[JSInvokableAttribute("HashFileMd5EncryptText")]
                 public static string EncryptText(string Path, bool Uppercase = Internal.HashUppercase, string Error = Internal.Error)
                 {
-                    return CCFILE.MD5(Path, Uppercase, Error);
+                    return CHFILE.MD5(Path, Uppercase, Error);
                 }
             }
 
@@ -31,14 +31,14 @@ namespace Taiizor.Essentials.Maui.Conforyon.Extension
                 //[JSInvokableAttribute("HashFileSha1EncryptObject")]
                 public static string EncryptObject(object Path, bool Uppercase = Internal.HashUppercase, string Error = Internal.Error)
                 {
-                    return CCFILE.SHA1(Path, Uppercase, Error);
+                    return CHFILE.SHA1(Path, Uppercase, Error);
                 }
 
                 [JSInvokable("HashFileSha1EncryptText")]
                 //[JSInvokableAttribute("HashFileSha1EncryptText")]
                 public static string EncryptText(string Path, bool Uppercase = Internal.HashUppercase, string Error = Internal.Error)
                 {
-                    return CCFILE.SHA1(Path, Uppercase, Error);
+                    return CHFILE.SHA1(Path, Uppercase, Error);
                 }
             }
 
@@ -48,14 +48,14 @@ namespace Taiizor.Essentials.Maui.Conforyon.Extension
                 //[JSInvokableAttribute("HashFileSha256EncryptObject")]
                 public static string EncryptObject(object Path, bool Uppercase = Internal.HashUppercase, string Error = Internal.Error)
                 {
-                    return CCFILE.SHA256(Path, Uppercase, Error);
+                    return CHFILE.SHA256(Path, Uppercase, Error);
                 }
 
                 [JSInvokable("HashFileSha256EncryptText")]
                 //[JSInvokableAttribute("HashFileSha256EncryptText")]
                 public static string EncryptText(string Path, bool Uppercase = Internal.HashUppercase, string Error = Internal.Error)
                 {
-                    return CCFILE.SHA256(Path, Uppercase, Error);
+                    return CHFILE.SHA256(Path, Uppercase, Error);
                 }
             }
 
@@ -65,14 +65,14 @@ namespace Taiizor.Essentials.Maui.Conforyon.Extension
                 //[JSInvokableAttribute("HashFileSha384EncryptObject")]
                 public static string EncryptObject(object Path, bool Uppercase = Internal.HashUppercase, string Error = Internal.Error)
                 {
-                    return CCFILE.SHA384(Path, Uppercase, Error);
+                    return CHFILE.SHA384(Path, Uppercase, Error);
                 }
 
                 [JSInvokable("HashFileSha384EncryptText")]
                 //[JSInvokableAttribute("HashFileSha384EncryptText")]
                 public static string EncryptText(string Path, bool Uppercase = Internal.HashUppercase, string Error = Internal.Error)
                 {
-                    return CCFILE.SHA384(Path, Uppercase, Error);
+                    return CHFILE.SHA384(Path, Uppercase, Error);
                 }
             }
 
@@ -82,14 +82,14 @@ namespace Taiizor.Essentials.Maui.Conforyon.Extension
                 //[JSInvokableAttribute("HashFileSha512EncryptObject")]
                 public static string EncryptObject(object Path, bool Uppercase = Internal.HashUppercase, string Error = Internal.Error)
                 {
-                    return CCFILE.SHA512(Path, Uppercase, Error);
+                    return CHFILE.SHA512(Path, Uppercase, Error);
                 }
 
                 [JSInvokable("HashFileSha512EncryptText")]
                 //[JSInvokableAttribute("HashFileSha512EncryptText")]
                 public static string EncryptText(string Path, bool Uppercase = Internal.HashUppercase, string Error = Internal.Error)
                 {
-                    return CCFILE.SHA512(Path, Uppercase, Error);
+                    return CHFILE.SHA512(Path, Uppercase, Error);
                 }
             }
         }

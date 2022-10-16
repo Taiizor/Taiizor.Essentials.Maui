@@ -9,6 +9,8 @@
         public const bool ColorSharp = false;
         public const string ColorType = "RGB1";
 
+        public const int PostComma = 0;
+        public const bool HashText = true;
         public const bool HashUppercase = false;
 
         public const string CryptologyMode = "CBC";
