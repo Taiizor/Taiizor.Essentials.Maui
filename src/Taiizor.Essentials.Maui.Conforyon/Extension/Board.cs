@@ -1,5 +1,6 @@
 ﻿using Microsoft.JSInterop;
 using CBA = Conforyon.Board.Audio;
+using CBT = Conforyon.Board.Text;
 
 namespace Taiizor.Essentials.Maui.Conforyon.Extension
 {
@@ -31,11 +32,53 @@ namespace Taiizor.Essentials.Maui.Conforyon.Extension
 
         public class Text
         {
-            [JSInvokable("TrackEventBasic")]
-            //[JSInvokableAttribute("TrackEventBasic")]
-            public static void TrackBasic(string Name)
+            [JSInvokable("BoardTextCopyInteger")]
+            //[JSInvokableAttribute("BoardTextCopyInteger")]
+            public static void CopyInteger(int Number)
             {
-                Console.WriteLine(Name);
+                CBT.Copy(Number);
+            }
+
+            [JSInvokable("BoardTextCopyLong")]
+            //[JSInvokableAttribute("BoardTextCopyLong")]
+            public static void CopyLong(long Number)
+            {
+                CBT.Copy(Number);
+            }
+
+            [JSInvokable("BoardTextCopyDouble")]
+            //[JSInvokableAttribute("BoardTextCopyDouble")]
+            public static void CopyDouble(double Number)
+            {
+                CBT.Copy(Number);
+            }
+
+            [JSInvokable("BoardTextCopyFloat")]
+            //[JSInvokableAttribute("BoardTextCopyFloat")]
+            public static void CopyFloat(float Number)
+            {
+                CBT.Copy(Number);
+            }
+
+            [JSInvokable("BoardTextCopyObject")]
+            //[JSInvokableAttribute("BoardTextCopyObject")]
+            public static void CopyObject(object Value)
+            {
+                CBT.Copy(Value);
+            }
+
+            [JSInvokable("BoardTextCopyText")]
+            //[JSInvokableAttribute("BoardTextCopyText")]
+            public static void CopyText(string Text)
+            {
+                CBT.Copy(Text);
+            }
+            
+            [JSInvokable("BoardTextPasteText")]
+            //[JSInvokableAttribute("BoardTextPasteText")]
+            public static string PasteText(bool Clear = false, string Empty = "Empty!")
+            {
+                return CBT.Paste(Clear);
             }
         }
     }
