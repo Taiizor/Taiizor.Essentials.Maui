@@ -17,7 +17,7 @@ namespace Taiizor.Essentials.Maui.Conforyon.Helper
 
             return Back;
         }
-        
+
         public static CipherMode Convert(string Type, CipherMode Back = CipherMode.CBC)
         {
             foreach (CipherMode Types in (CipherMode[])Enum.GetValues(typeof(CipherMode)))

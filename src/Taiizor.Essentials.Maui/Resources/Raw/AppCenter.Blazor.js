@@ -1,6 +1,8 @@
 console.log('%cAppCenter Blazor Javascript has started.', 'color: #1E90FF');
 
+
 var AppCenter = {};
+
 
 AppCenter.TrackEventBasic = function (Name) {
     Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "TrackEventBasic", Name);

@@ -1,4 +1,5 @@
 ﻿using Microsoft.JSInterop;
+using Taiizor.Essentials.Maui.Conforyon.Value;
 using CBA = Conforyon.Board.Audio;
 using CBT = Conforyon.Board.Text;
 
@@ -24,7 +25,7 @@ namespace Taiizor.Essentials.Maui.Conforyon.Extension
 
             [JSInvokable("BoardAudioPasteStream")]
             //[JSInvokableAttribute("BoardAudioPasteStream")]
-            public static Stream PasteStream(bool Clear = false)
+            public static Stream PasteStream(bool Clear = Internal.Clear)
             {
                 return CBA.Paste(Clear);
             }
@@ -73,10 +74,10 @@ namespace Taiizor.Essentials.Maui.Conforyon.Extension
             {
                 CBT.Copy(Text);
             }
-            
+
             [JSInvokable("BoardTextPasteText")]
             //[JSInvokableAttribute("BoardTextPasteText")]
-            public static string PasteText(bool Clear = false, string Empty = "Empty!")
+            public static string PasteText(bool Clear = Internal.Clear, string Empty = Internal.Empty)
             {
                 return CBT.Paste(Clear);
             }
