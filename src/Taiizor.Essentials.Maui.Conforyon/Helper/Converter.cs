@@ -6,6 +6,19 @@ namespace Taiizor.Essentials.Maui.Conforyon.Helper
 {
     public class Converter
     {
+        public static Enums.TimeType Convert(string Type, Enums.TimeType Back = Internal.TimeEnumType)
+        {
+            foreach (Enums.TimeType Types in (Enums.TimeType[])Enum.GetValues(typeof(Enums.TimeType)))
+            {
+                if (Check(Type, Types))
+                {
+                    return Types;
+                }
+            }
+
+            return Back;
+        }
+        
         public static Enums.ColorType Convert(string Type, Enums.ColorType Back = Internal.ColorEnumType)
         {
             foreach (Enums.ColorType Types in (Enums.ColorType[])Enum.GetValues(typeof(Enums.ColorType)))

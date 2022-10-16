@@ -32,5 +32,11 @@ namespace Taiizor.Essentials.Maui.Conforyon.Value
 
         public const bool TemperatureText = true;
         public const int TemperaturePostComma = 0;
+
+        public const int TimePostComma = 0;
+        public const bool TimeComma = false;
+        public const bool TimeDecimal = false;
+        public const bool TimeTypeText = false;
+        public const Enums.TimeType TimeEnumType = Enums.TimeType.Nanosecond;
     }
 }

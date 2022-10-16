@@ -9,6 +9,14 @@ Conforyon.Empty = "Empty!";
 Conforyon.Error = "Error!";
 
 
+Conforyon.Time = {};
+Conforyon.Time.Auto = {};
+Conforyon.Time.Normal = {};
+Conforyon.Time.Comma = false;
+Conforyon.Time.PostComma = 0;
+Conforyon.Time.Decimal = false;
+Conforyon.Time.TypeText = false;
+
 Conforyon.Hash = {};
 Conforyon.Hash.File = {};
 Conforyon.Hash.File.Md5 = {};
@@ -551,4 +559,39 @@ Conforyon.Temperature.Fahrenheit.Celsius.ConvertObject = function (Fahrenheit, D
 
 Conforyon.Temperature.Fahrenheit.Celsius.ConvertText = function (Fahrenheit, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
     return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureFahrenheitCelsiusConvertText", Fahrenheit, Decimal, Comma, PostComma, Text, Error);
+}
+
+
+
+Conforyon.Time.Auto.ConvertInteger = function (InputVariable, InputType, TypeText = Conforyon.Time.TypeText, Decimal = Conforyon.Time.Decimal, Comma = Conforyon.Time.Comma, PostComma = Conforyon.Time.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TimeAutoConvertInteger", InputVariable, InputType, TypeText, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Time.Auto.ConvertLong = function (InputVariable, InputType, TypeText = Conforyon.Time.TypeText, Decimal = Conforyon.Time.Decimal, Comma = Conforyon.Time.Comma, PostComma = Conforyon.Time.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TimeAutoConvertLong", InputVariable, InputType, TypeText, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Time.Auto.ConvertObject = function (InputVariable, InputType, TypeText = Conforyon.Time.TypeText, Decimal = Conforyon.Time.Decimal, Comma = Conforyon.Time.Comma, PostComma = Conforyon.Time.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TimeAutoConvertObject", InputVariable, InputType, TypeText, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Time.Auto.ConvertText = function (InputVariable, InputType, TypeText = Conforyon.Time.TypeText, Decimal = Conforyon.Time.Decimal, Comma = Conforyon.Time.Comma, PostComma = Conforyon.Time.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TimeAutoConvertText", InputVariable, InputType, TypeText, Decimal, Comma, PostComma, Error);
+}
+
+
+Conforyon.Time.Normal.ConvertInteger = function (InputVariable, InputType, TypeConvert, Decimal = Conforyon.Time.Decimal, Comma = Conforyon.Time.Comma, PostComma = Conforyon.Time.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TimeNormalConvertInteger", InputVariable, InputType, TypeConvert, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Time.Normal.ConvertLong = function (InputVariable, InputType, TypeConvert, Decimal = Conforyon.Time.Decimal, Comma = Conforyon.Time.Comma, PostComma = Conforyon.Time.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TimeNormalConvertLong", InputVariable, InputType, TypeConvert, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Time.Normal.ConvertObject = function (InputVariable, InputType, TypeConvert, Decimal = Conforyon.Time.Decimal, Comma = Conforyon.Time.Comma, PostComma = Conforyon.Time.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TimeNormalConvertObject", InputVariable, InputType, TypeConvert, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Time.Normal.ConvertText = function (InputVariable, InputType, TypeConvert, Decimal = Conforyon.Time.Decimal, Comma = Conforyon.Time.Comma, PostComma = Conforyon.Time.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TimeNormalConvertText", InputVariable, InputType, TypeConvert, Decimal, Comma, PostComma, Error);
 }
