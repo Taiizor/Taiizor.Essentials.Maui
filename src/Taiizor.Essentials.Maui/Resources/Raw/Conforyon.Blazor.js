@@ -452,6 +452,40 @@ Conforyon.Storage.Normal.ConvertText = function (InputVariable, InputType, TypeC
 
 
 
+Conforyon.Temperature.Kelvin.Celsius.ConvertInteger = function (Kelvin, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureKelvinCelsiusConvertInteger", Kelvin, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Temperature.Kelvin.Celsius.ConvertLong = function (Kelvin, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureKelvinCelsiusConvertLong", Kelvin, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Temperature.Kelvin.Celsius.ConvertObject = function (Kelvin, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureKelvinCelsiusConvertObject", Kelvin, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Temperature.Kelvin.Celsius.ConvertText = function (Kelvin, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureKelvinCelsiusConvertText", Kelvin, Decimal, Comma, PostComma, Text, Error);
+}
+
+
+Conforyon.Temperature.Kelvin.Fahrenheit.ConvertInteger = function (Kelvin, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureKelvinFahrenheitConvertInteger", Kelvin, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Temperature.Kelvin.Fahrenheit.ConvertLong = function (Kelvin, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureKelvinFahrenheitConvertLong", Kelvin, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Temperature.Kelvin.Fahrenheit.ConvertObject = function (Kelvin, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureKelvinFahrenheitConvertObject", Kelvin, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Temperature.Kelvin.Fahrenheit.ConvertText = function (Kelvin, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureKelvinFahrenheitConvertText", Kelvin, Decimal, Comma, PostComma, Text, Error);
+}
+
+
 Conforyon.Temperature.Celsius.Kelvin.ConvertInteger = function (Celsius, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
     return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureCelsiusKelvinConvertInteger", Celsius, Decimal, Comma, PostComma, Text, Error);
 }
@@ -483,4 +517,38 @@ Conforyon.Temperature.Celsius.Fahrenheit.ConvertObject = function (Celsius, Deci
 
 Conforyon.Temperature.Celsius.Fahrenheit.ConvertText = function (Celsius, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
     return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureCelsiusFahrenheitConvertText", Celsius, Decimal, Comma, PostComma, Text, Error);
+}
+
+
+Conforyon.Temperature.Fahrenheit.Kelvin.ConvertInteger = function (Fahrenheit, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureFahrenheitKelvinConvertInteger", Fahrenheit, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Temperature.Fahrenheit.Kelvin.ConvertLong = function (Fahrenheit, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureFahrenheitKelvinConvertLong", Fahrenheit, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Temperature.Fahrenheit.Kelvin.ConvertObject = function (Fahrenheit, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureFahrenheitKelvinConvertObject", Fahrenheit, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Temperature.Fahrenheit.Kelvin.ConvertText = function (Fahrenheit, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureFahrenheitKelvinConvertText", Fahrenheit, Decimal, Comma, PostComma, Text, Error);
+}
+
+
+Conforyon.Temperature.Fahrenheit.Celsius.ConvertInteger = function (Fahrenheit, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureFahrenheitCelsiusConvertInteger", Fahrenheit, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Temperature.Fahrenheit.Celsius.ConvertLong = function (Fahrenheit, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureFahrenheitCelsiusConvertLong", Fahrenheit, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Temperature.Fahrenheit.Celsius.ConvertObject = function (Fahrenheit, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureFahrenheitCelsiusConvertObject", Fahrenheit, Decimal, Comma, PostComma, Text, Error);
+}
+
+Conforyon.Temperature.Fahrenheit.Celsius.ConvertText = function (Fahrenheit, Decimal, Comma, PostComma = Conforyon.Temperature.PostComma, Text = Conforyon.Temperature.Text, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TemperatureFahrenheitCelsiusConvertText", Fahrenheit, Decimal, Comma, PostComma, Text, Error);
 }
