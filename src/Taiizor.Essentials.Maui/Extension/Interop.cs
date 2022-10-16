@@ -17,7 +17,7 @@ namespace Taiizor.Essentials.Maui.Extension
         public Interop(IJSRuntime JSR, Dictionary<JavascriptEnum, bool> Files)
         {
             HI.CheckRuntime(JSR);
-            
+
             JS = JSR;
 
             foreach (KeyValuePair<JavascriptEnum, bool> File in Internal.JavascriptFiles)

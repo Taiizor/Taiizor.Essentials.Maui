@@ -49,6 +49,18 @@ Conforyon.Unicode.Char = {};
 Conforyon.Unicode.Ascii = {};
 Conforyon.Unicode.Bracket = ',';
 
+Conforyon.Typology = {};
+Conforyon.Typology.Cm = {};
+Conforyon.Typology.Px = {};
+Conforyon.Typology.Inch = {};
+Conforyon.Typology.Cm.Px = {};
+Conforyon.Typology.Px.Cm = {};
+Conforyon.Typology.Cm.Inch = {};
+Conforyon.Typology.Px.Inch = {};
+Conforyon.Typology.Inch.Cm = {};
+Conforyon.Typology.Inch.Px = {};
+Conforyon.Typology.PostComma = 0;
+
 Conforyon.Storage = {};
 Conforyon.Storage.Auto = {};
 Conforyon.Storage.Normal = {};
@@ -599,6 +611,109 @@ Conforyon.Time.Normal.ConvertObject = function (InputVariable, InputType, TypeCo
 
 Conforyon.Time.Normal.ConvertText = function (InputVariable, InputType, TypeConvert, Decimal = Conforyon.Time.Decimal, Comma = Conforyon.Time.Comma, PostComma = Conforyon.Time.PostComma, Error = Conforyon.Error) {
     return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TimeNormalConvertText", InputVariable, InputType, TypeConvert, Decimal, Comma, PostComma, Error);
+}
+
+
+
+Conforyon.Typology.Cm.Px.ConvertInteger = function (Centimeter, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyCmPxConvertInteger", Centimeter, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Cm.Px.ConvertLong = function (Centimeter, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyCmPxConvertLong", Centimeter, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Cm.Px.ConvertObject = function (Centimeter, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyCmPxConvertObject", Centimeter, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Cm.Px.ConvertText = function (Centimeter, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyCmPxConvertText", Centimeter, Decimal, Comma, PostComma, Error);
+}
+
+
+Conforyon.Typology.Cm.Inch.ConvertInteger = function (Centimeter, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyCmInchConvertInteger", Centimeter, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Cm.Inch.ConvertLong = function (Centimeter, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyCmInchConvertLong", Centimeter, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Cm.Inch.ConvertObject = function (Centimeter, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyCmInchConvertObject", Centimeter, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Cm.Inch.ConvertText = function (Centimeter, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyCmInchConvertText", Centimeter, Decimal, Comma, PostComma, Error);
+}
+
+
+Conforyon.Typology.Px.Cm.ConvertInteger = function (Pixel, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyPxCmConvertInteger", Pixel, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Px.Cm.ConvertLong = function (Pixel, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyPxCmConvertLong", Pixel, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Px.Cm.ConvertObject = function (Pixel, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyPxCmConvertObject", Pixel, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Px.Cm.ConvertText = function (Pixel, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyPxCmConvertText", Pixel, Decimal, Comma, PostComma, Error);
+}
+
+
+Conforyon.Typology.Px.Inch.ConvertInteger = function (Pixel, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyPxInchConvertInteger", Pixel, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Px.Inch.ConvertLong = function (Pixel, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyPxInchConvertLong", Pixel, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Px.Inch.ConvertObject = function (Pixel, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyPxInchConvertObject", Pixel, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Px.Inch.ConvertText = function (Pixel, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyPxInchConvertText", Pixel, Decimal, Comma, PostComma, Error);
+}
+
+
+Conforyon.Typology.Inch.Cm.ConvertInteger = function (Inch, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyInchCmConvertInteger", Inch, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Inch.Cm.ConvertLong = function (Inch, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyInchCmConvertLong", Inch, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Inch.Cm.ConvertObject = function (Inch, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyInchCmConvertObject", Inch, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Inch.Cm.ConvertText = function (Inch, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyInchCmConvertText", Inch, Decimal, Comma, PostComma, Error);
+}
+
+
+Conforyon.Typology.Inch.Px.ConvertInteger = function (Inch, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyInchPxConvertInteger", Inch, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Inch.Px.ConvertLong = function (Inch, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyInchPxConvertLong", Inch, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Inch.Px.ConvertObject = function (Inch, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyInchPxConvertObject", Inch, Decimal, Comma, PostComma, Error);
+}
+
+Conforyon.Typology.Inch.Px.ConvertText = function (Inch, Decimal, Comma, PostComma = Conforyon.Typology.PostComma, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "TypologyInchPxConvertText", Inch, Decimal, Comma, PostComma, Error);
 }
 
 

@@ -21,8 +21,8 @@
         Board.Audio.CopyByte(File.ReadAllBytes("H:\\Music\\OLD\\FreeDOS\\AintHeSweet.ogg"));
     }
 
-    private void PasteStream()
+    private async void PasteStream()
     {
-        _ = Interop.Call("alert", Board.Audio.PasteStream(false));
+        await Interop.Call("alert", Board.Audio.PasteStream(false).Length);
     }
 }

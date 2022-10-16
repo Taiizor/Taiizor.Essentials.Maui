@@ -26,6 +26,8 @@ namespace Taiizor.Essentials.Maui.Conforyon.Value
 
         public const char UnicodeBracket = ',';
 
+        public const int TypologyPostComma = 0;
+
         public const int StoragePostComma = 0;
         public const bool StorageComma = false;
         public const bool StorageDecimal = false;
