@@ -2,7 +2,7 @@
 
 namespace Taiizor.Essentials.Maui.AppCenter.Helper
 {
-    public class App
+    internal class App
     {
         public static string GetApp(AppEnum App)
         {
