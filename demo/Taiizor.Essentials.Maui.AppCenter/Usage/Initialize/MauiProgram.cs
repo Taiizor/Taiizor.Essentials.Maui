@@ -50,10 +50,10 @@ namespace Initialize
         {
             AppCenterService.Engine(new()
             {
-                { AppEnum.iOS, "96d269eb-2c51-49e6-bdda-72ec977c3769" },
-                { AppEnum.macOS, "b2ec4587-0ecf-41a5-8109-ddf028bd0c1f" },
-                { AppEnum.Android, "86acdee1-f5f9-4512-bd5c-5c54f77dc48c" },
-                { AppEnum.Windows, "40d6b7c6-0d0a-4e5a-94d3-faec48873da1" }
+                { AppEnum.iOS, "{Your iOS App secret here}" },
+                { AppEnum.macOS, "{Your macOS App secret here}" },
+                { AppEnum.Android, "{Your Android App secret here}" },
+                { AppEnum.Windows, "{Your Windows App secret here}" }
             });
 
             // ======================================================================= \\
