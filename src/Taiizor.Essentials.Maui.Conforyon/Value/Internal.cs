@@ -42,5 +42,16 @@ namespace Taiizor.Essentials.Maui.Conforyon.Value
 
         public const bool TemperatureText = true;
         public const int TemperaturePostComma = 0;
+
+        public const bool CultureOverride = false;
+        public const string CultureName = "en-GB";
+
+        public const string ValueFirst = "Bit";
+        public const string ValueLast = "Byte";
+        public const string ValueValue = "8";
+        public const string ValueMethod = "DataStorage";
+        public const string ErrorMethod = "Error";
+        public const Enums.MethodType ErrorMethodEnumType = Enums.MethodType.Error;
+        public const Enums.MethodType MethodEnumType = Enums.MethodType.DataStorage;
     }
 }

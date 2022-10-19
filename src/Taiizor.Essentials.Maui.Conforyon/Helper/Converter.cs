@@ -45,6 +45,19 @@ namespace Taiizor.Essentials.Maui.Conforyon.Helper
             return Back;
         }
 
+        public static Enums.MethodType Convert(string Type, Enums.MethodType Back = Internal.MethodEnumType)
+        {
+            foreach (Enums.MethodType Types in (Enums.MethodType[])Enum.GetValues(typeof(Enums.MethodType)))
+            {
+                if (Check(Type, Types))
+                {
+                    return Types;
+                }
+            }
+
+            return Back;
+        }
+
         public static CipherMode Convert(string Type, CipherMode Back = Internal.CryptologyCipherMode)
         {
             foreach (CipherMode Types in (CipherMode[])Enum.GetValues(typeof(CipherMode)))
@@ -58,7 +71,7 @@ namespace Taiizor.Essentials.Maui.Conforyon.Helper
             return Back;
         }
 
-        public static bool Check(object Text, object Type)
+        private static bool Check(object Text, object Type)
         {
             return Check($"{Text}", $"{Type}");
         }

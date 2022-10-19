@@ -9,6 +9,132 @@ Conforyon.Empty = "Empty!";
 Conforyon.Error = "Error!";
 
 
+Conforyon.Enum = {};
+
+Conforyon.Enum.ColorType = {
+    RGB1: "RGB1",
+    RGB2: "RGB2",
+    RGB3: "RGB3",
+    RRGGBB1: "RRGGBB1",
+    RRGGBB2: "RRGGBB2",
+    RRGGBB3: "RRGGBB3",
+    RR: "RR",
+    GG: "GG",
+    BB: "BB",
+    OnlyR: "OnlyR",
+    OnlyG: "OnlyG",
+    OnlyB: "OnlyB"
+};
+
+Conforyon.Enum.CryptologyType = {
+    AES: "AES",
+    MD5: "MD5",
+    SHA1: "SHA1",
+    SHA256: "SHA256",
+    SHA384: "SHA384",
+    SHA512: "SHA512",
+    TEXT: "TEXT",
+    BASE: "BASE"
+};
+
+Conforyon.Enum.CryptologyCipherMode = {
+    CBC: "CBC",
+    ECB: "ECB",
+    OFB: "OFB",
+    CFB: "CFB",
+    CTS: "CTS"
+};
+
+Conforyon.Enum.HashType = {
+    MD5: "MD5",
+    SHA1: "SHA1",
+    SHA256: "SHA256",
+    SHA384: "SHA384",
+    SHA512: "SHA512"
+};
+
+Conforyon.Enum.LengthType = {
+    MM: "MM",
+    CM: "CM",
+    DM: "DM",
+    M: "M",
+    DAM: "DAM",
+    HM: "HM",
+    KM: "KM"
+};
+
+Conforyon.Enum.SpeedType = {
+    MPH: "MPH",
+    KPH: "KPH"
+};
+
+Conforyon.Enum.StorageType = {
+    Bit: "Bit",
+    Byte: "Byte",
+    KB: "KB",
+    MB: "MB",
+    GB: "GB",
+    TB: "TB",
+    PB: "PB",
+    EB: "EB",
+    ZB: "ZB",
+    YB: "YB"
+}
+
+Conforyon.Enum.TimeType = {
+    Nanosecond: "Nanosecond",
+    Microsecond: "Microsecond",
+    Millisecond: "Millisecond",
+    Second: "Second",
+    Minute: "Minute",
+    Hour: "Hour",
+    Day: "Day",
+    Week: "Week",
+    Year: "Year",
+    Century: "Century",
+    Millennium: "Millennium"
+}
+
+Conforyon.Enum.WeightType = {
+    Milligram: "Milligram",
+    Gram: "Gram",
+    KG: "KG"
+};
+
+Conforyon.Enum.TypographyType = {
+    INCH: "INCH",
+    CM: "CM",
+    PX: "PX"
+};
+
+Conforyon.Enum.TemperatureType = {
+    Kelvin: "Kelvin",
+    Celsius: "Celsius",
+    Fahrenheit: "Fahrenheit"
+};
+
+Conforyon.Enum.MethodType = {
+    DataStorage: "DataStorage",
+    Temperature: "Temperature",
+    Typography: "Typography",
+    Speed: "Speed",
+    Error: "Error",
+    Time: "Time"
+};
+
+
+Conforyon.Helper = {};
+Conforyon.Helper.Value = {};
+Conforyon.Helper.Culture = {};
+Conforyon.Helper.Value.Value = "8";
+Conforyon.Helper.Value.First = "Bit";
+Conforyon.Helper.Value.Last = "Byte";
+Conforyon.Helper.Culture.Name = "en-GB";
+Conforyon.Helper.Culture.Override = false;
+Conforyon.Helper.Value.ErrorMethod = Conforyon.Enum.MethodType.Error;
+Conforyon.Helper.Value.ValueMethod = Conforyon.Enum.MethodType.DataStorage;
+
+
 Conforyon.Time = {};
 Conforyon.Time.Auto = {};
 Conforyon.Time.Normal = {};
@@ -41,8 +167,8 @@ Conforyon.Speed.PostComma = 0;
 Conforyon.Color = {};
 Conforyon.Color.Hex = {};
 Conforyon.Color.Rgb = {};
-Conforyon.Color.Type = "RGB1";
 Conforyon.Color.Sharp = false;
+Conforyon.Color.Type = Conforyon.Enum.ColorType.RGB1;
 
 Conforyon.Unicode = {};
 Conforyon.Unicode.Char = {};
@@ -76,13 +202,13 @@ Conforyon.Cryptology.Text = {};
 Conforyon.Cryptology.Text.Md5 = {};
 Conforyon.Cryptology.Text.Sha1 = {};
 Conforyon.Cryptology.Text.Base = {};
-Conforyon.Cryptology.Mode = "CBC";
 Conforyon.Cryptology.Text.Sha256 = {};
 Conforyon.Cryptology.Text.Sha384 = {};
 Conforyon.Cryptology.Text.Sha512 = {};
 Conforyon.Cryptology.Uppercase = false;
 Conforyon.Cryptology.IV = "QxQsRoZQws61N46H";
 Conforyon.Cryptology.Key = "uS830kWPrPSPyZK0pS7Pgw3wP3SvLOGr";
+Conforyon.Cryptology.Mode = Conforyon.Enum.CryptologyCipherMode.CBC;
 
 Conforyon.Temperature = {};
 Conforyon.Temperature.Text = true;
@@ -96,6 +222,66 @@ Conforyon.Temperature.Kelvin.Fahrenheit = {};
 Conforyon.Temperature.Fahrenheit.Kelvin = {};
 Conforyon.Temperature.Celsius.Fahrenheit = {};
 Conforyon.Temperature.Fahrenheit.Celsius = {};
+
+
+
+Conforyon.Helper.Value.Get = function (Method = Conforyon.Helper.Value.ValueMethod, First = Conforyon.Helper.Value.First, Last = Conforyon.Helper.Value.Last, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HelperGetValue", Method, First, Last, Error);
+}
+
+Conforyon.Helper.Value.Set = function (Method = Conforyon.Helper.Value.ValueMethod, First = Conforyon.Helper.Value.First, Last = Conforyon.Helper.Value.Last, Value = Conforyon.Helper.Value.Value, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HelperSetValue", Method, First, Last, Value, Error);
+}
+
+Conforyon.Helper.Value.List = function (Method = Conforyon.Helper.Value.ErrorMethod, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HelperListValue", Method, Error);
+}
+
+Conforyon.Helper.Value.ListJson = function (Method = Conforyon.Helper.Value.ErrorMethod, Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HelperListValueJson", Method, Error);
+}
+
+Conforyon.Helper.Value.Reset = function () {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HelperResetValue");
+}
+
+
+Conforyon.Helper.Culture.GetName = function (Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HelperGetCultureName", Error);
+}
+
+Conforyon.Helper.Culture.GetUiName = function (Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HelperGetUICultureName", Error);
+}
+
+Conforyon.Helper.Culture.GetThreadName = function (Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HelperGetThreadCultureName", Error);
+}
+
+Conforyon.Helper.Culture.GetThreadUiName = function (Error = Conforyon.Error) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HelperGetThreadUICultureName", Error);
+}
+
+Conforyon.Helper.Culture.Set = function (Name = Conforyon.Helper.Culture.Name, Override = Conforyon.Helper.Culture.Override) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HelperSetCulture", Name, Override);
+}
+
+Conforyon.Helper.Culture.SetAll = function (Name = Conforyon.Helper.Culture.Name, Override = Conforyon.Helper.Culture.Override) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HelperSetAllCulture", Name, Override);
+}
+
+Conforyon.Helper.Culture.SetUi = function (Name = Conforyon.Helper.Culture.Name, Override = Conforyon.Helper.Culture.Override) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HelperSetUICulture", Name, Override);
+}
+
+Conforyon.Helper.Culture.SetThread = function (Name = Conforyon.Helper.Culture.Name, Override = Conforyon.Helper.Culture.Override) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HelperSetThreadCulture", Name, Override);
+}
+
+Conforyon.Helper.Culture.SetThreadUi = function (Name = Conforyon.Helper.Culture.Name, Override = Conforyon.Helper.Culture.Override) {
+    return Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.Conforyon", "HelperSetThreadUICulture", Name, Override);
+}
+
 
 
 Conforyon.Board.Audio.CopyPath = function (Path) {

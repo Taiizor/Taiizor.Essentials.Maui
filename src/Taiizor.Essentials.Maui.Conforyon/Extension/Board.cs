@@ -2,6 +2,8 @@
 using Taiizor.Essentials.Maui.Conforyon.Value;
 using CBA = Conforyon.Board.Audio;
 using CBT = Conforyon.Board.Text;
+using XOX = Conforyon.Enum.Enums.MethodType;
+using XXX = Conforyon.Value.Values;
 
 namespace Taiizor.Essentials.Maui.Conforyon.Extension
 {
@@ -14,6 +16,7 @@ namespace Taiizor.Essentials.Maui.Conforyon.Extension
             public static void CopyPath(string Path)
             {
                 CBA.Copy(Path);
+                XXX.ListValue(XOX.Error, "53X");
             }
 
             [JSInvokable("BoardAudioCopyByte")]
