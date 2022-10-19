@@ -4,7 +4,7 @@ using Taiizor.Essentials.Maui.Conforyon.Value;
 
 namespace Taiizor.Essentials.Maui.Conforyon.Helper
 {
-    public class Converter
+    internal class Converter
     {
         public static Enums.TimeType Convert(string Type, Enums.TimeType Back = Internal.TimeEnumType)
         {
