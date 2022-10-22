@@ -54,8 +54,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Taiizor.Essentials.Maui" Version="1.0.3.3" />
-      <PackageReference Include="Taiizor.Essentials.Maui.Conforyon" Version="1.0.3.2" />
+      <PackageReference Include="Taiizor.Essentials.Maui" Version="1.0.3.5" />
+      <PackageReference Include="Taiizor.Essentials.Maui.Conforyon" Version="1.0.3.4" />
     </ItemGroup>
 
     <!--<ItemGroup>
