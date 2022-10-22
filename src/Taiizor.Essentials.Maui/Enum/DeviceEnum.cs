@@ -3,9 +3,9 @@
     public enum DeviceEnum
     {
         iPhone,
-        Windows,
         Android,
-        MacBook
+        MacBook,
+        Windows
     }
 
     public enum DeviceTypeEnum
