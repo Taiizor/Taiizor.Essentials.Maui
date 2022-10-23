@@ -298,13 +298,29 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
         private static void Enabled()
         {
             Crashes.SetEnabledAsync(true);
+            Analytics.SetEnabledAsync(true);
+        }
+        
+        internal static string CountryCode
+        {
+            get
+            {
+                //return RegionInfo.CurrentRegion.Name;
+                return RegionInfo.CurrentRegion.TwoLetterISORegionName;
+                //return CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+                //return CultureInfo.InstalledUICulture.TwoLetterISOLanguageName;
+            }
         }
 
-        //return RegionInfo.CurrentRegion.Name;
-        //return CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-        //return CultureInfo.InstalledUICulture.TwoLetterISOLanguageName;
-        internal static string CountryCode => RegionInfo.CurrentRegion.TwoLetterISORegionName;
+        internal static string UserId
+        {
+            get
+            {
+                string Name = string.IsNullOrEmpty(DeviceInfo.Current.Name) ? Internal.Unknown : DeviceInfo.Current.Name;
+                string Model = string.IsNullOrEmpty(DeviceInfo.Current.Model) ? Internal.Unknown : DeviceInfo.Current.Model;
 
-        internal static string UserId => $"{DeviceInfo.Current.Name}-{DeviceInfo.Current.Model}";
+                return $"{Name}-{Model}";
+            }
+        }
     }
 }

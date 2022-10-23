@@ -5,6 +5,8 @@ namespace Taiizor.Essentials.Maui.AppCenter.Value
 {
     internal class Internal
     {
+        public static string Unknown = "Unknown";
+
         public static bool AppCenterState = false;
 
         public static WatchStruct AppCenterWatch = new()
