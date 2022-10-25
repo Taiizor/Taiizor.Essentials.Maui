@@ -1,5 +1,6 @@
 ﻿using Microsoft.Maui.LifecycleEvents;
 using Taiizor.Essentials.Maui.AppCenter.Enum;
+using Taiizor.Essentials.Maui.AppCenter.Extension;
 using Taiizor.Essentials.Maui.AppCenter.Services;
 using Taiizor.Essentials.Maui.Cross;
 
@@ -27,28 +28,7 @@ namespace Initialize
 #if DEBUG
 		    builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
-            builder.ConfigureLifecycleEvents(events =>
-            {
-
-#if WINDOWS
-			    events.AddWindows(windows => windows
-			        .OnLaunching((window, args) => Initialize()));
-#elif ANDROID
-                events.AddAndroid(android => android
-                    .OnCreate((activity, bundle) => Initialize()));
-#elif IOS || MACCATALYST
-                events.AddiOS(ios => ios
-                    .FinishedLaunching((app, dict) => Initialize()));
-#endif
-
-            });
-
-            return builder.Build();
-        }
-
-        private static bool Initialize()
-        {
-            AppCenterService.Engine(new()
+            builder.UseAppCenter(new()
             {
                 { AppEnum.iOS, "{Your iOS App secret here}" },
                 { AppEnum.macOS, "{Your macOS App secret here}" },
@@ -56,6 +36,13 @@ namespace Initialize
                 { AppEnum.Windows, "{Your Windows App secret here}" }
             });
 
+            Initialize();
+            
+            return builder.Build();
+        }
+
+        private static void Initialize()
+        {
             // ======================================================================= \\
             
             //Taiizor.Essentials.Maui.AppCenter - Basic usage
@@ -84,8 +71,6 @@ namespace Initialize
             //Taiizor.Essentials.Maui - Basic usage
 
             // ======================================================================= \\
-
-            return true;
         }
     }
 }
