@@ -9,12 +9,12 @@ namespace Taiizor.Essentials.Maui.AppCenter.Extension
 {
     public static class Configure
     {
-        public static void AppCenter(this MauiAppBuilder Builder, Dictionary<AppEnum, string> Keys)
+        public static void UseAppCenter(this MauiAppBuilder Builder, Dictionary<AppEnum, string> Keys)
         {
-            AppCenter(Builder, Keys, Internal.AppCenterWatch);
+            UseAppCenter(Builder, Keys, Internal.AppCenterWatch);
         }
 
-        public static void AppCenter(this MauiAppBuilder Builder, Dictionary<AppEnum, string> Keys, WatchStruct Watch)
+        public static void UseAppCenter(this MauiAppBuilder Builder, Dictionary<AppEnum, string> Keys, WatchStruct Watch)
         {
             Builder.ConfigureLifecycleEvents(events =>
             {
