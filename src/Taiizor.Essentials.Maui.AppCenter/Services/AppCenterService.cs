@@ -22,12 +22,12 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
 {
     public class AppCenterService
     {
-        public static void Engine(Dictionary<AppEnum, string> Keys)
+        internal static bool Engine(Dictionary<AppEnum, string> Keys)
         {
-            Engine(Keys, Internal.AppCenterWatch);
+            return Engine(Keys, Internal.AppCenterWatch);
         }
 
-        public static void Engine(Dictionary<AppEnum, string> Keys, WatchStruct Watch)
+        internal static bool Engine(Dictionary<AppEnum, string> Keys, WatchStruct Watch)
         {
             Internal.AppCenterWatch = Watch;
 
@@ -39,6 +39,8 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
             Country();
 
             Start();
+
+            return true;
         }
 
         public static void TestCrash()
@@ -300,7 +302,7 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
             Crashes.SetEnabledAsync(true);
             Analytics.SetEnabledAsync(true);
         }
-        
+
         internal static string CountryCode
         {
             get
