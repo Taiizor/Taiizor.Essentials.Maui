@@ -3,6 +3,9 @@
 #if WINDOWS
 using Microsoft.UI.Windowing;
 using Microsoft.UI;
+#elif MACCATALYST || IOS
+using UIKit;
+using Foundation;
 #elif ANDROID
 using Android.Views;
 #endif
@@ -41,13 +44,49 @@ namespace Taiizor.Essentials.Maui.Extension
                         activity.Window?.AddFlags(WindowManagerFlags.Fullscreen);
                     })
                 );
-//#elif IOS || MACCATALYST
-//                events.AddiOS(ios => ios
-//                    .OnActivated((app) => LogEvent("OnActivated"))
-//                    .OnResignActivation((app) => LogEvent("OnResignActivation"))
-//                    .DidEnterBackground((app) => LogEvent("DidEnterBackground"))
-//                    .FinishedLaunching((app, dict) => AppCenterService.Engine(Keys, Watch)) //Start //LogEvent("FinishedLaunching", $"{dict}")
-//                    .WillTerminate((app) => LogEvent("WillTerminate"))); //End
+#elif IOS || MACCATALYST
+                events.AddiOS(ios => ios
+                    .FinishedLaunching((app, dict) =>
+                    {
+                        app.KeyWindow.RootViewController.ModalPresentationCapturesStatusBarAppearance = false;
+
+                        app.SetStatusBarHidden(true, UIStatusBarAnimation.None);
+                        UIApplication.SharedApplication.SetStatusBarHidden(true, UIStatusBarAnimation.None);
+
+                        static UIView GetStatusBar()
+                        {
+                            UIView statusBar;
+
+                            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+                            {
+                                int tag = 123; //Customize this tag as you want so we don't create it over and over
+
+                                UIWindow window = UIApplication.SharedApplication.Windows.FirstOrDefault();
+
+                                statusBar = window.ViewWithTag(tag);
+
+                                if (statusBar == null)
+                                {
+                                    statusBar = new UIView(UIApplication.SharedApplication.StatusBarFrame);
+                                    statusBar.Tag = tag;
+                                    statusBar.BackgroundColor = UIColor.Red; //Customize the view
+
+                                    window.AddSubview(statusBar);
+                                }
+                            }
+                            else
+                            {
+                                statusBar = UIApplication.SharedApplication.ValueForKey(new NSString("statusBar")) as UIView;
+                            }
+
+                            return statusBar;
+                        }
+
+                        GetStatusBar().Hidden = true;
+
+                        return true;
+                    })
+                );
 #endif
             });
         }
