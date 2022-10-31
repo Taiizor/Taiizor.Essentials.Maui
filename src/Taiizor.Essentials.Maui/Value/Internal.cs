@@ -14,6 +14,14 @@ namespace Taiizor.Essentials.Maui.Value
 
         public static readonly string JavascriptFile = "Taiizor.Essentials.Maui.Resources.Raw.{0}.Blazor.js";
 
+        public static Dictionary<AppEnum, bool> AppFullscreen = new()
+        {
+            { AppEnum.iOS, true },
+            { AppEnum.macOS, true },
+            { AppEnum.Android, true },
+            { AppEnum.Windows, true }
+        };
+
         public static Dictionary<JavascriptEnum, bool> JavascriptFiles = new()
         {
             { JavascriptEnum.Custom, true },
