@@ -201,7 +201,7 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
         {
             if (Internal.AppCenterState && Internal.AppCenterWatch.Event == WatchEnum.Open)
             {
-                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.EventName), new Dictionary<string, string>() { { "Name", Name } });
+                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.EventName), new Dictionary<string, string>() { { Internal.AppCenterWatch.PropertiesEvent, Name } });
             }
         }
 
@@ -225,7 +225,7 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
         {
             if (Internal.AppCenterState && Internal.AppCenterWatch.Error == WatchEnum.Open)
             {
-                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Error", Name } });
+                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { Internal.AppCenterWatch.PropertiesError, Name } });
             }
         }
 
@@ -233,7 +233,7 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
         {
             if (Internal.AppCenterState && Internal.AppCenterWatch.Error == WatchEnum.Open)
             {
-                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
+                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { Internal.AppCenterWatch.PropertiesError, JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
             }
         }
 
@@ -241,7 +241,7 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
         {
             if (Internal.AppCenterState && Internal.AppCenterWatch.Error == WatchEnum.Open)
             {
-                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { Key, Value }, { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
+                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { Key, Value }, { Internal.AppCenterWatch.PropertiesError, JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
             }
         }
 
@@ -249,7 +249,7 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
         {
             if (Internal.AppCenterState && Internal.AppCenterWatch.Error == WatchEnum.Open)
             {
-                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Properties", JsonConvert.SerializeObject(Properties, Formatting.None) }, { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
+                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { Internal.AppCenterWatch.Properties, JsonConvert.SerializeObject(Properties, Formatting.None) }, { Internal.AppCenterWatch.PropertiesError, JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
             }
         }
 
@@ -257,7 +257,7 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
         {
             if (Internal.AppCenterState && Internal.AppCenterWatch.Error == WatchEnum.Open)
             {
-                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { "Properties", JsonConvert.SerializeObject(Properties, Formatting.None) }, { "Attachments", JsonConvert.SerializeObject(Attachments, Formatting.None) }, { "Error", JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
+                Analytics.TrackEvent(HW.GetText(Internal.AppCenterWatch.ErrorName), new Dictionary<string, string>() { { Internal.AppCenterWatch.Properties, JsonConvert.SerializeObject(Properties, Formatting.None) }, { Internal.AppCenterWatch.Attachments, JsonConvert.SerializeObject(Attachments, Formatting.None) }, { Internal.AppCenterWatch.PropertiesError, JsonConvert.SerializeObject(Exception, Formatting.None) } }); //Formatting.Indented
             }
         }
 

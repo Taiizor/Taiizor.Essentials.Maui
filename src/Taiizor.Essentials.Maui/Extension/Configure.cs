@@ -21,8 +21,10 @@ namespace Taiizor.Essentials.Maui.Extension
             UseFullscreen(Builder, Internal.AppFullscreen);
         }
 
-        public static void UseFullscreen(this MauiAppBuilder Builder, Dictionary<AppEnum, bool> App)
+        public static void UseFullscreen(this MauiAppBuilder Builder, Dictionary<AppEnum, bool> Apps)
         {
+            App(Apps);
+            
             Builder.ConfigureLifecycleEvents(events =>
             {
 #if WINDOWS
@@ -30,7 +32,7 @@ namespace Taiizor.Essentials.Maui.Extension
                 {
                     windows.OnWindowCreated(window =>
                     {
-                        if (App[AppEnum.Windows])
+                        if (Internal.AppFullscreen[AppEnum.Windows])
                         {
                             window.ExtendsContentIntoTitleBar = false;
 
@@ -51,7 +53,7 @@ namespace Taiizor.Essentials.Maui.Extension
 #elif ANDROID
                 events.AddAndroid(android => android
                     .OnCreate((activity, bundle) => {
-                        if (App[AppEnum.Android])
+                        if (Internal.AppFullscreen[AppEnum.Android])
                         {
                             activity.Window?.AddFlags(WindowManagerFlags.Fullscreen);
                         }
@@ -61,7 +63,7 @@ namespace Taiizor.Essentials.Maui.Extension
                 events.AddiOS(ios => ios
                     .FinishedLaunching((app, dict) =>
                     {
-                        if (App[AppEnum.iOS] || App[AppEnum.macOS])
+                        if (Internal.AppFullscreen[AppEnum.iOS] || Internal.AppFullscreen[AppEnum.macOS])
                         {
                             app.KeyWindow.RootViewController.ModalPresentationCapturesStatusBarAppearance = false;
 
@@ -70,7 +72,7 @@ namespace Taiizor.Essentials.Maui.Extension
 
                             static UIView GetStatusBar()
                             {
-                                UIView statusBar;
+                                UIView? statusBar;
 
                                 if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
                                 {
@@ -105,6 +107,17 @@ namespace Taiizor.Essentials.Maui.Extension
                 );
 #endif
             });
+        }
+        
+        private static void App(Dictionary<AppEnum, bool> Apps)
+        {
+            if (Apps != null && Apps.Keys.Count > 0)
+            {
+                foreach (AppEnum App in Apps.Keys)
+                {
+                    Internal.AppFullscreen[App] = Apps[App];
+                }
+            }
         }
     }
 }

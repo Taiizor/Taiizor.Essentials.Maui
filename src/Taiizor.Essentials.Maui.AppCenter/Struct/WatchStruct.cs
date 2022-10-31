@@ -14,5 +14,9 @@ namespace Taiizor.Essentials.Maui.AppCenter.Struct
         public WatchEnum Error;
         public string EventName;
         public string ErrorName;
+        public string Properties;
+        public string Attachments;
+        public string PropertiesEvent;
+        public string PropertiesError;
     }
 }

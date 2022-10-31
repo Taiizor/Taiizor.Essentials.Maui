@@ -14,6 +14,10 @@ namespace Taiizor.Essentials.Maui.AppCenter.Value
         public static WatchStruct AppCenterWatch = new()
         {
             Format = "{0}-{1}{2}-{3}-{4}",
+            Attachments = "Attachments",
+            Properties = "Properties",
+            PropertiesError = "Error",
+            PropertiesEvent = "Name",
             Event = WatchEnum.Close,
             Error = WatchEnum.Close,
             EventName = "Event",
