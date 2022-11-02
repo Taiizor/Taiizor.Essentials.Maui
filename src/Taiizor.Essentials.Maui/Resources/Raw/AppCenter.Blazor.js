@@ -14,6 +14,7 @@ AppCenter.Watch.Event = {};
 AppCenter.Watch.Error = {};
 
 
+
 AppCenter.Track.Event.Basic = function (Name) {
     Taiizor.InvokeMethodAsync("Taiizor.Essentials.Maui.AppCenter", "TrackEventBasic", Name);
 }

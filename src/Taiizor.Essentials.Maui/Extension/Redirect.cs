@@ -2,14 +2,14 @@
 {
     public class Redirect
     {
-        public static async Task GoLocation()
+        public static async Task Location()
         {
-            await GoLocation("/");
+            await Location("/");
         }
 
-        public static async Task GoLocation(string Uri)
+        public static async Task Location(string Uri)
         {
-            await Interop.Call("Taiizor.GoLocation", Uri);
+            await Interop.Call("Taiizor.Redirect.Location", Uri);
         }
     }
 }

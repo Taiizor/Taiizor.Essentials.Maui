@@ -11,7 +11,7 @@
         {
             if (Redirect)
             {
-                await Interop.Call("Taiizor.Reload");
+                await Interop.Call("Taiizor.Reload.Page");
             }
         }
 
@@ -22,7 +22,7 @@
 
         public static async Task Element(string Identify, bool Method)
         {
-            await Interop.Call("Taiizor.ReloadElement", Identify, Method);
+            await Interop.Call("Taiizor.Reload.Element", Identify, Method);
         }
     }
 }

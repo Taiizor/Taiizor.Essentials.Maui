@@ -4,7 +4,23 @@ console.log('%cTaiizor Blazor Javascript has started.', 'color: #DC143C');
 var Taiizor = {};
 
 
+Taiizor.Style = {};
+Taiizor.Title = {};
 Taiizor.Invoke = {};
+Taiizor.Reload = {};
+Taiizor.Redirect = {};
+Taiizor.Location = {};
+Taiizor.Style.Styles = [];
+Taiizor.Location.Href = {};
+Taiizor.Location.Host = {};
+Taiizor.Location.Port = {};
+Taiizor.Location.Hash = {};
+Taiizor.Location.Origin = {};
+Taiizor.Location.Search = {};
+Taiizor.Location.Pathname = {};
+Taiizor.Location.Hostname = {};
+Taiizor.Location.Protocol = {};
+
 
 
 Taiizor.Invoke.MethodAsync = function (assemblyName, methodName, ...args) {
@@ -26,16 +42,92 @@ Taiizor.Invoke.ReferenceMethodAsync = function (objectReference, methodName, ...
 }
 
 
-Taiizor.Reload = function () {
+Taiizor.Location.Href.Set = function (href = '') {
+    window.location.href = href;
+}
+
+Taiizor.Location.Href.Get = function () {
+    return window.location.href;
+}
+
+Taiizor.Location.Host.Set = function (host = '') {
+    window.location.host = host;
+}
+
+Taiizor.Location.Host.Get = function () {
+    return window.location.host;
+}
+
+Taiizor.Location.Hostname.Set = function (hostname = '') {
+    window.location.hostname = hostname;
+}
+
+Taiizor.Location.Hostname.Get = function () {
+    return window.location.hostname;
+}
+
+Taiizor.Location.Origin.Set = function (origin = '') {
+    window.location.origin = origin;
+}
+
+Taiizor.Location.Origin.Get = function () {
+    return window.location.origin;
+}
+
+Taiizor.Location.Pathname.Set = function (pathname = '') {
+    window.location.pathname = pathname;
+}
+
+Taiizor.Location.Pathname.Get = function () {
+    return window.location.pathname;
+}
+
+Taiizor.Location.Port.Set = function (port = '443') {
+    window.location.port = port;
+}
+
+Taiizor.Location.Port.Get = function () {
+    return window.location.port;
+}
+
+Taiizor.Location.Protocol.Set = function (protocol = 'https:') {
+    window.location.protocol = protocol;
+}
+
+Taiizor.Location.Protocol.Get = function () {
+    return window.location.protocol;
+}
+
+Taiizor.Location.Search.Set = function (search = '') {
+    window.location.search = search;
+}
+
+Taiizor.Location.Search.Get = function () {
+    return window.location.search;
+}
+
+Taiizor.Location.Hash.Set = function (hash = '') {
+    window.location.hash = hash;
+}
+
+Taiizor.Location.Hash.Get = function () {
+    return window.location.hash;
+}
+
+
+
+Taiizor.Redirect.Location = function (uri = '/') {
+    location.href = uri;
+    //window.location.href = uri;
+}
+
+
+
+Taiizor.Reload.Page = function () {
     window.location.reload();
 }
 
-Taiizor.GoLocation = function (uriLocation = '/') {
-    location.href = uriLocation;
-    //window.location.href = uriLocation;
-}
-
-Taiizor.ReloadElement = function (elementId, methodType) {
+Taiizor.Reload.Element = function (elementId, methodType) {
     if (methodType === true) {
         var container = document.getElementById(elementId);
         var content = container.innerHTML;
@@ -44,6 +136,75 @@ Taiizor.ReloadElement = function (elementId, methodType) {
         document.getElementById(elementId).innerHTML = document.getElementById(elementId).innerHTML;
     }
 }
+
+
+
+Taiizor.Style.Set = function (styleId, stylePair) {
+    document.getElementById(styleId).style = stylePair;
+}
+
+Taiizor.Style.Add = function (styleId, styleName, styleValue) {
+    document.getElementById(styleId).style.setProperty(styleName, styleValue);
+}
+
+Taiizor.Style.Toggle = function (styleId) {
+    var style = document.getElementById(styleId).style.cssText;
+
+    if (style != '') {
+        Taiizor.Style.Styles[styleId] = document.getElementById(styleId).style.cssText;
+        document.getElementById(styleId).style.cssText = null;
+    } else if (Taiizor.Style.Styles[styleId] != null) {
+        document.getElementById(styleId).style.cssText = Taiizor.Style.Styles[styleId];
+        Taiizor.Style.Styles[styleId] = null;
+    }
+}
+
+Taiizor.Style.Remove = function (styleId, styleName) {
+    document.getElementById(styleId).style.removeProperty(styleName);
+}
+
+
+
+Taiizor.Title.Set = function (title) {
+    document.title = title;
+}
+
+Taiizor.Title.Get = function () {
+    return document.title;
+}
+
+Taiizor.Title.Check = function () {
+    let titleValue = Taiizor.Title.Get();
+    if (titleValue == null || titleValue == '') {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Taiizor.IncludeFont = function (path, rel) {
     var customFont = document.createElement('link');
@@ -91,31 +252,7 @@ Taiizor.RemoveClass = function (classId, className) {
     document.getElementById(classId).classList.remove(className);
 }
 
-Taiizor.SetStyle = function (styleId, stylePair) {
-    document.getElementById(styleId).style = stylePair;
-}
 
-Taiizor.AddStyle = function (styleId, styleName, styleValue) {
-    document.getElementById(styleId).style.setProperty(styleName, styleValue);
-}
-
-Taiizor.styles = [];
-
-Taiizor.ToggleStyle = function (styleId) {
-    var style = document.getElementById(styleId).style.cssText;
-
-    if (style != '') {
-        Taiizor.styles[styleId] = document.getElementById(styleId).style.cssText;
-        document.getElementById(styleId).style.cssText = null;
-    } else if (Taiizor.styles[styleId] != null) {
-        document.getElementById(styleId).style.cssText = Taiizor.styles[styleId];
-        Taiizor.styles[styleId] = null;
-    }
-}
-
-Taiizor.RemoveStyle = function (styleId, styleName) {
-    document.getElementById(styleId).style.removeProperty(styleName);
-}
 
 Taiizor.HeadAdd = function (tagHtml) {
     document.head.appendChild(document.createRange().createContextualFragment(tagHtml));
@@ -271,56 +408,3 @@ Taiizor.CheckLang = function (tagHtml) {
     }
 }
 
-Taiizor.SetTitle = function (title) {
-    document.title = title;
-}
-
-Taiizor.GetTitle = function () {
-    return document.title;
-}
-
-Taiizor.CheckTitle = function () {
-    let titleValue = Taiizor.GetTitle();
-    if (titleValue == null || titleValue == '') {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
-Taiizor.GetHref = function () {
-    return window.location.href;
-}
-
-Taiizor.GetHost = function () {
-    return window.location.host;
-}
-
-Taiizor.GetHostname = function () {
-    return window.location.hostname;
-}
-
-Taiizor.GetOrigin = function () {
-    return window.location.origin;
-}
-
-Taiizor.GetPathname = function () {
-    return window.location.pathname;
-}
-
-Taiizor.GetPort = function () {
-    return window.location.port;
-}
-
-Taiizor.GetProtocol = function () {
-    return window.location.protocol;
-}
-
-Taiizor.GetSearch = function () {
-    return window.location.search;
-}
-
-Taiizor.GetHash = function () {
-    return window.location.hash;
-}

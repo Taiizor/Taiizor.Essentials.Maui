@@ -4,6 +4,7 @@ console.log('%cCustom Blazor Javascript has started.', 'color: #2E8B57');
 var Custom = {};
 
 
+
 if (!String.prototype.format) {
     String.prototype.format = function () {
         var args = arguments;
