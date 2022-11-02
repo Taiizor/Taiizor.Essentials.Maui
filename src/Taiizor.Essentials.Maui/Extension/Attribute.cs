@@ -9,12 +9,12 @@
 
         public static async Task Set(string Identify, string Name, string Value)
         {
-            await Interop.Call("Taiizor.SetAttribute", Identify, Name, Value);
+            await Interop.Call("Taiizor.Attribute.Set", Identify, Name, Value);
         }
 
         public static async Task Remove(string Identify, string Name)
         {
-            await Interop.Call("Taiizor.RemoveAttribute", Identify, Name);
+            await Interop.Call("Taiizor.Attribute.Remove", Identify, Name);
         }
     }
 }

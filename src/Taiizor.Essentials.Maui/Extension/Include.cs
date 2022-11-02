@@ -14,7 +14,7 @@
 
         public static async Task Font(string Path, string Rel)
         {
-            await Interop.Call("Taiizor.IncludeFont", Path, Rel);
+            await Interop.Call("Taiizor.Include.Font", Path, Rel);
         }
 
         public static async Task FontProtected(string Path, string Rel, string Pathname)
@@ -29,7 +29,7 @@
 
         public static async Task Script(string Path)
         {
-            await Interop.Call("Taiizor.IncludeJs", Path);
+            await Interop.Call("Taiizor.Include.Js", Path);
         }
 
         public static async Task ScriptProtected(string Path, string Pathname)
@@ -64,7 +64,7 @@
 
         public static async Task Stylesheet(string Path, string Rel, string Type)
         {
-            await Interop.Call("Taiizor.IncludeCss", Path, Rel, Type);
+            await Interop.Call("Taiizor.Include.Css", Path, Rel, Type);
         }
 
         public static async Task StylesheetProtected(string Path, string Rel, string Type, string Pathname)

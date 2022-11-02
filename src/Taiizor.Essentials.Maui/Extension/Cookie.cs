@@ -14,22 +14,22 @@
 
         public static async Task Set(string Name, string Value, int Days, string Path)
         {
-            await Interop.Call("Taiizor.SetCookie", Name, Value, Days, Path);
+            await Interop.Call("Taiizor.Cookie.Set", Name, Value, Days, Path);
         }
 
         public static async ValueTask<string> Get(string Name)
         {
-            return await Interop.CallString("Taiizor.GetCookie", Name);
+            return await Interop.CallString("Taiizor.Cookie.Get", Name);
         }
 
         public static async ValueTask<bool> Check(string Name)
         {
-            return await Interop.CallBool("Taiizor.CheckCookie", Name);
+            return await Interop.CallBool("Taiizor.Cookie.Check", Name);
         }
 
         public static async Task Delete(string Name, bool Execute = false)
         {
-            await Interop.Call("Taiizor.DeleteCookie", Name, Execute);
+            await Interop.Call("Taiizor.Cookie.Delete", Name, Execute);
         }
     }
 }

@@ -4,7 +4,25 @@ console.log('%cTaiizor Blazor Javascript has started.', 'color: #DC143C');
 var Taiizor = {};
 
 
-Taiizor.X = {};
+Taiizor.Storage = {};
+Taiizor.Storage.Local = {};
+Taiizor.Storage.Session = {};
+
+
+Taiizor.Add = {};
+Taiizor.Add.Script = {};
+
+
+Taiizor.Attribute = {};
+
+
+Taiizor.Class = {};
+
+
+Taiizor.Cookie = {};
+
+
+Taiizor.Include = {};
 
 
 Taiizor.Invoke = {};
@@ -41,6 +59,175 @@ Taiizor.Style.Styles = [];
 
 
 Taiizor.Title = {};
+
+
+
+Taiizor.Storage.Session.Set = function (sessionKey, sessionValue) {
+    sessionStorage.setItem(sessionKey, sessionValue);
+}
+
+Taiizor.Storage.Session.Get = function (sessionKey) {
+    return sessionStorage.getItem(sessionKey);
+}
+
+Taiizor.Storage.Session.Check = function (sessionKey) {
+    let sessionValue = Taiizor.Storage.Session.Get(sessionKey);
+    if (sessionValue == null || sessionValue == '') {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+Taiizor.Storage.Session.Delete = function (sessionKey, execute = false) {
+    if (Taiizor.Storage.Session.Check(sessionKey) || execute) {
+        sessionStorage.removeItem(sessionKey);
+    }
+}
+
+
+
+Taiizor.Storage.Local.Set = function (localKey, localValue) {
+    localStorage.setItem(localKey, localValue);
+}
+
+Taiizor.Storage.Local.Get = function (localKey) {
+    return localStorage.getItem(localKey);
+}
+
+Taiizor.Storage.Local.Check = function (localKey) {
+    let localValue = Taiizor.Storage.Local.Get(localKey);
+    if (localValue == null || localValue == '') {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+Taiizor.Storage.Local.Delete = function (localKey, execute = false) {
+    if (Taiizor.Storage.Local.Check(localKey) || execute) {
+        localStorage.removeItem(localKey);
+    }
+}
+
+
+
+Taiizor.Add.Head = function (tagHtml) {
+    document.head.appendChild(document.createRange().createContextualFragment(tagHtml));
+}
+
+Taiizor.Add.Body = function (tagHtml) {
+    document.body.appendChild(document.createRange().createContextualFragment(tagHtml));
+}
+
+Taiizor.Add.Script.Head = function (textNode) {
+    var element = document.createElement('script');
+    element.setAttribute('type', 'text/javascript');
+
+    element.appendChild(document.createTextNode(textNode));
+    document.head.appendChild(element);
+}
+
+Taiizor.Add.Script.Body = function (textNode) {
+    var element = document.createElement('script');
+    element.setAttribute('type', 'text/javascript');
+
+    element.appendChild(document.createTextNode(textNode));
+    document.body.appendChild(element);
+}
+
+
+
+Taiizor.Attribute.Set = function (elementId, propertyName, propertyValue) {
+    document.getElementById(elementId).setAttribute(propertyName, propertyValue);
+}
+
+Taiizor.Attribute.Remove = function (elementId, propertyName) {
+    document.getElementById(elementId).removeAttribute(propertyName);
+}
+
+
+
+Taiizor.Class.Set = function (classId, className) {
+    document.getElementById(classId).className = className;
+}
+
+Taiizor.Class.Add = function (classId, className) {
+    document.getElementById(classId).classList.add(className);
+}
+
+Taiizor.Class.Toggle = function (classId, className) {
+    document.getElementById(classId).classList.toggle(className);
+}
+
+Taiizor.Class.Remove = function (classId, className) {
+
+    document.getElementById(classId).classList.remove(className);
+}
+
+
+
+Taiizor.Cookie.Set = function (cookieName, cookieValue, exDays, path) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exDays * 24 * 60 * 60 * 1000));
+    let expires = 'expires=' + d.toUTCString();
+    let paths = 'path=' + path;
+    document.cookie = cookieName + '=' + cookieValue + ';' + expires + ';' + paths;
+}
+
+Taiizor.Cookie.Get = function (cookieName) {
+    let name = cookieName + '=';
+    let ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+
+    return '';
+}
+
+Taiizor.Cookie.Check = function (cookieName) {
+    let cookieValue = Taiizor.Cookie.Get(cookieName);
+    if (cookieValue == null || cookieValue == '') {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+Taiizor.Cookie.Delete = function (cookieName, execute = false) {
+    if (Taiizor.Cookie.Check(cookieName) || execute) {
+        document.cookie = cookieName + '=; Max-Age=-99999999;';
+    }
+}
+
+
+
+Taiizor.Include.Font = function (path, rel) {
+    var customFont = document.createElement('link');
+    customFont.setAttribute('href', path);
+    customFont.setAttribute('rel', rel);
+    document.head.appendChild(customFont);
+}
+
+Taiizor.Include.Js = function (path) {
+    var customScript = document.createElement('script');
+    customScript.setAttribute('src', path);
+    document.body.appendChild(customScript);
+}
+
+Taiizor.Include.Css = function (path, rel, type) {
+    var customStylesheet = document.createElement('link');
+    customStylesheet.setAttribute('href', path);
+    customStylesheet.setAttribute('rel', rel);
+    customStylesheet.setAttribute('type', type);
+    document.head.appendChild(customStylesheet);
+}
 
 
 
@@ -278,186 +465,3 @@ Taiizor.Title.Check = function () {
         return false;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Taiizor.IncludeFont = function (path, rel) {
-    var customFont = document.createElement('link');
-    customFont.setAttribute('href', path);
-    customFont.setAttribute('rel', rel);
-    document.head.appendChild(customFont);
-}
-
-Taiizor.IncludeJs = function (path) {
-    var customScript = document.createElement('script');
-    customScript.setAttribute('src', path);
-    document.body.appendChild(customScript);
-}
-
-Taiizor.IncludeCss = function (path, rel, type) {
-    var customStylesheet = document.createElement('link');
-    customStylesheet.setAttribute('href', path);
-    customStylesheet.setAttribute('rel', rel);
-    customStylesheet.setAttribute('type', type);
-    document.head.appendChild(customStylesheet);
-}
-
-Taiizor.SetAttribute = function (elementId, propertyName, propertyValue) {
-    document.getElementById(elementId).setAttribute(propertyName, propertyValue);
-}
-
-Taiizor.RemoveAttribute = function (elementId, propertyName) {
-    document.getElementById(elementId).removeAttribute(propertyName);
-}
-
-Taiizor.SetClass = function (classId, className) {
-    document.getElementById(classId).className = className;
-}
-
-Taiizor.AddClass = function (classId, className) {
-    document.getElementById(classId).classList.add(className);
-}
-
-Taiizor.ToggleClass = function (classId, className) {
-    document.getElementById(classId).classList.toggle(className);
-}
-
-Taiizor.RemoveClass = function (classId, className) {
-
-    document.getElementById(classId).classList.remove(className);
-}
-
-
-
-Taiizor.HeadAdd = function (tagHtml) {
-    document.head.appendChild(document.createRange().createContextualFragment(tagHtml));
-}
-
-Taiizor.BodyAdd = function (tagHtml) {
-    document.body.appendChild(document.createRange().createContextualFragment(tagHtml));
-}
-
-Taiizor.HeadScriptAdd = function (textNode) {
-    var element = document.createElement('script');
-    element.setAttribute('type', 'text/javascript');
-
-    element.appendChild(document.createTextNode(textNode));
-    document.head.appendChild(element);
-}
-
-Taiizor.BodyScriptAdd = function (textNode) {
-    var element = document.createElement('script');
-    element.setAttribute('type', 'text/javascript');
-
-    element.appendChild(document.createTextNode(textNode));
-    document.body.appendChild(element);
-}
-
-Taiizor.SetCookie = function (cookieName, cookieValue, exDays, path) {
-    const d = new Date();
-    d.setTime(d.getTime() + (exDays * 24 * 60 * 60 * 1000));
-    let expires = 'expires=' + d.toUTCString();
-    let paths = 'path=' + path;
-    document.cookie = cookieName + '=' + cookieValue + ';' + expires + ';' + paths;
-}
-
-Taiizor.GetCookie = function (cookieName) {
-    let name = cookieName + '=';
-    let ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    
-    return '';
-}
-
-Taiizor.CheckCookie = function (cookieName) {
-    let cookieValue = Taiizor.GetCookie(cookieName);
-    if (cookieValue == null || cookieValue == '') {
-        return false;
-    } else {
-        return true;
-    }
-}
-
-Taiizor.DeleteCookie = function (cookieName, execute = false) {
-    if (Taiizor.CheckCookie(cookieName) || execute) {
-        document.cookie = cookieName + '=; Max-Age=-99999999;'; 
-    }
-}
-
-Taiizor.SetLocalStorage = function (localKey, localValue) {
-    localStorage.setItem(localKey, localValue);
-}
-
-Taiizor.GetLocalStorage = function (localKey) {
-    return localStorage.getItem(localKey);
-}
-
-Taiizor.CheckLocalStorage = function (localKey) {
-    let localValue = Taiizor.GetLocalStorage(localKey);
-    if (localValue == null || localValue == '') {
-        return false;
-    } else {
-        return true;
-    }
-}
-
-Taiizor.DeleteLocalStorage = function (localKey, execute = false) {
-    if (Taiizor.CheckLocalStorage(localKey) || execute) {
-        localStorage.removeItem(localKey);
-    }
-}
-
-Taiizor.SetSessionStorage = function (sessionKey, sessionValue) {
-    sessionStorage.setItem(sessionKey, sessionValue);
-}
-
-Taiizor.GetSessionStorage = function (sessionKey) {
-    return sessionStorage.getItem(sessionKey);
-}
-
-Taiizor.CheckSessionStorage = function (sessionKey) {
-    let sessionValue = Taiizor.GetSessionStorage(sessionKey);
-    if (sessionValue == null || sessionValue == '') {
-        return false;
-    } else {
-        return true;
-    }
-}
-
-Taiizor.DeleteSessionStorage = function (sessionKey, execute = false) {
-    if (Taiizor.CheckSessionStorage(sessionKey) || execute) {
-        sessionStorage.removeItem(sessionKey);
-    }
-}
-
-
-
