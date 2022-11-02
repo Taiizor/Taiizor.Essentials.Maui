@@ -4,13 +4,21 @@ console.log('%cTaiizor Blazor Javascript has started.', 'color: #DC143C');
 var Taiizor = {};
 
 
-Taiizor.Style = {};
-Taiizor.Title = {};
+Taiizor.X = {};
+
+
 Taiizor.Invoke = {};
-Taiizor.Reload = {};
-Taiizor.Redirect = {};
+Taiizor.Invoke.Reference = {};
+
+
+Taiizor.Lang = {};
+Taiizor.Lang.Tag = {};
+Taiizor.Lang.Html = {};
+Taiizor.Lang.Head = {};
+Taiizor.Lang.Body = {};
+
+
 Taiizor.Location = {};
-Taiizor.Style.Styles = [];
 Taiizor.Location.Href = {};
 Taiizor.Location.Host = {};
 Taiizor.Location.Port = {};
@@ -22,6 +30,19 @@ Taiizor.Location.Hostname = {};
 Taiizor.Location.Protocol = {};
 
 
+Taiizor.Redirect = {};
+
+
+Taiizor.Reload = {};
+
+
+Taiizor.Style = {};
+Taiizor.Style.Styles = [];
+
+
+Taiizor.Title = {};
+
+
 
 Taiizor.Invoke.MethodAsync = function (assemblyName, methodName, ...args) {
     if (arguments != null && arguments.length > 0) {
@@ -31,7 +52,7 @@ Taiizor.Invoke.MethodAsync = function (assemblyName, methodName, ...args) {
     }
 }
 
-Taiizor.Invoke.ReferenceMethodAsync = function (objectReference, methodName, ...args) {
+Taiizor.Invoke.Reference.MethodAsync = function (objectReference, methodName, ...args) {
     if (arguments != null && arguments.length > 0) {
         return objectReference.invokeMethodAsync(methodName, ...args);
     } else {
@@ -40,6 +61,81 @@ Taiizor.Invoke.ReferenceMethodAsync = function (objectReference, methodName, ...
 
     //objectReference.dispose();
 }
+
+
+
+Taiizor.Lang.Html.Set = function (languageCode) {
+    document.documentElement.lang = languageCode;
+}
+
+Taiizor.Lang.Html.Get = function () {
+    return document.documentElement.lang;
+}
+
+Taiizor.Lang.Html.Check = function () {
+    let langValue = Taiizor.Lang.Html.Get();
+    if (langValue == null || langValue == '') {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+Taiizor.Lang.Head.Set = function (languageCode) {
+    document.head.lang = languageCode;
+}
+
+Taiizor.Lang.Head.Get = function () {
+    return document.head.lang;
+}
+
+Taiizor.Lang.Head.Check = function () {
+    let langValue = Taiizor.Lang.Head.Get();
+    if (langValue == null || langValue == '') {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+Taiizor.Lang.Body.Get = function (languageCode) {
+    document.body.lang = languageCode;
+}
+
+Taiizor.Lang.Body.Get = function () {
+    return document.body.lang;
+}
+
+Taiizor.Lang.Body.Check = function () {
+    let langValue = Taiizor.Lang.Body.Get();
+    if (langValue == null || langValue == '') {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+Taiizor.Lang.Tag.Set = function (tagHtml, languageCode) {
+    document.getElementById(tagHtml).lang = languageCode;
+}
+
+Taiizor.Lang.Tag.Get = function (tagHtml) {
+    try {
+        return document.getElementById(tagHtml).lang;
+    } catch {
+        return '';
+    }
+}
+
+Taiizor.Lang.Tag.Check = function (tagHtml) {
+    let langValue = Taiizor.Lang.Tag.Get(tagHtml);
+    if (langValue == null || langValue == '') {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 
 
 Taiizor.Location.Href.Set = function (href = '') {
@@ -363,48 +459,5 @@ Taiizor.DeleteSessionStorage = function (sessionKey, execute = false) {
     }
 }
 
-Taiizor.SetLangHtml = function (languageCode) {
-    document.documentElement.lang = languageCode;
-}
 
-Taiizor.GetLangHtml = function () {
-    return document.documentElement.lang;
-}
-
-Taiizor.SetLangHead = function (languageCode) {
-    document.head.lang = languageCode;
-}
-
-Taiizor.GetLangHead = function () {
-    return document.head.lang;
-}
-
-Taiizor.SetLangBody = function (languageCode) {
-    document.body.lang = languageCode;
-}
-
-Taiizor.GetLangBody = function () {
-    return document.body.lang;
-}
-
-Taiizor.SetLang = function (tagHtml, languageCode) {
-    document.getElementById(tagHtml).lang = languageCode;
-}
-
-Taiizor.GetLang = function (tagHtml) {
-    try {
-        return document.getElementById(tagHtml).lang;
-    } catch {
-        return '';
-    }
-}
-
-Taiizor.CheckLang = function (tagHtml) {
-    let langValue = Taiizor.GetLang(tagHtml);
-    if (langValue == null || langValue == '') {
-        return false;
-    } else {
-        return true;
-    }
-}
 
