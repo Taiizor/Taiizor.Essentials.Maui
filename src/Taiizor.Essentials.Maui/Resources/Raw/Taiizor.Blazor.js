@@ -4,6 +4,28 @@ console.log('%cTaiizor Blazor Javascript has started.', 'color: #DC143C');
 var Taiizor = {};
 
 
+Taiizor.Invoke = {};
+
+
+Taiizor.Invoke.MethodAsync = function (assemblyName, methodName, ...args) {
+    if (arguments != null && arguments.length > 0) {
+        return DotNet.invokeMethodAsync(assemblyName, methodName, ...args);
+    } else {
+        return DotNet.invokeMethodAsync(assemblyName, methodName);
+    }
+}
+
+Taiizor.Invoke.ReferenceMethodAsync = function (objectReference, methodName, ...args) {
+    if (arguments != null && arguments.length > 0) {
+        return objectReference.invokeMethodAsync(methodName, ...args);
+    } else {
+        return objectReference.invokeMethodAsync(methodName);
+    }
+
+    //objectReference.dispose();
+}
+
+
 Taiizor.Reload = function () {
     window.location.reload();
 }
@@ -301,22 +323,4 @@ Taiizor.GetSearch = function () {
 
 Taiizor.GetHash = function () {
     return window.location.hash;
-}
-
-Taiizor.InvokeMethodAsync = function (assemblyName, methodName, ...args) {
-    if (arguments != null && arguments.length > 0) {
-        return DotNet.invokeMethodAsync(assemblyName, methodName, ...args);
-    } else {
-        return DotNet.invokeMethodAsync(assemblyName, methodName);
-    }
-}
-
-Taiizor.InvokeReferenceMethodAsync = function (objectReference, methodName, ...args) {
-    if (arguments != null && arguments.length > 0) {
-        return objectReference.invokeMethodAsync(methodName, ...args);
-    } else {
-        return objectReference.invokeMethodAsync(methodName);
-    }
-
-    //objectReference.dispose();
 }
