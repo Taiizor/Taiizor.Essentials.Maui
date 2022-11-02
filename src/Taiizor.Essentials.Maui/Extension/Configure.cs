@@ -36,9 +36,9 @@ namespace Taiizor.Essentials.Maui.Extension
                         {
                             window.ExtendsContentIntoTitleBar = false;
 
-                            var handle = WinRT.Interop.WindowNative.GetWindowHandle(window);
-                            var id = Win32Interop.GetWindowIdFromWindow(handle);
-                            var appWindow = AppWindow.GetFromWindowId(id);
+                            IntPtr handle = WinRT.Interop.WindowNative.GetWindowHandle(window);
+                            WindowId id = Win32Interop.GetWindowIdFromWindow(handle);
+                            AppWindow appWindow = AppWindow.GetFromWindowId(id);
 
                             switch (appWindow.Presenter)
                             {

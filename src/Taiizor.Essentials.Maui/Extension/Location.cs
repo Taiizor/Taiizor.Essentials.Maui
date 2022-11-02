@@ -11,7 +11,7 @@
         {
             return await Interop.CallString("Taiizor.Location.Href.Get");
         }
-        
+
         public static async Task SetHost(string Host)
         {
             await Interop.Call("Taiizor.Location.Host.Set", Host);
