@@ -1,5 +1,4 @@
-﻿using Microsoft.Maui.LifecycleEvents;
-using Taiizor.Essentials.Maui.AppCenter.Enum;
+﻿using Taiizor.Essentials.Maui.AppCenter.Enum;
 using Taiizor.Essentials.Maui.AppCenter.Extension;
 using Taiizor.Essentials.Maui.AppCenter.Services;
 using Taiizor.Essentials.Maui.Cross;

@@ -12,7 +12,20 @@
 @code {
     protected override void OnInitialized()
     {
-        _ = new Interop(JS);
+        Dictionary<JavascriptEnum, bool> Files = new()
+        {
+            { JavascriptEnum.Custom, false },
+            { JavascriptEnum.Taiizor, true },
+            { JavascriptEnum.AppCenter, false },
+            { JavascriptEnum.Conforyon, true }
+        };
+
+        Dictionary<AssemblyEnum, bool> Assembly = new()
+        {
+            { AssemblyEnum.Conforyon, true }
+        };
+
+        _ = new Interop(JS, Files, Assembly);
 
         base.OnInitialized();
     }
