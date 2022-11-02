@@ -40,5 +40,9 @@ namespace Taiizor.Essentials.Maui.AppCenter.Value
         public static string AppCenterMobileKeyFormat = "ios={0};android={1};";
 
         public static string AppCenterDesktopKeyFormat = "macos={0};windowsdesktop={1};";
+
+        public const string EnvironmentToken = "MAUI_TAIIZOR_{0}_TARGET_TOKEN";
+
+        public const EnvironmentVariableTarget EnvironmentTarget = EnvironmentVariableTarget.User;
     }
 }

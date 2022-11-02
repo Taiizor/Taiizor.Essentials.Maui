@@ -22,17 +22,17 @@ namespace Taiizor.Essentials.Maui.AppCenter.Helper
             return string.Format(Format, Key);
         }
 
-        public static bool SetVariable(AppEnum App, string Value, string Format = "MAUI_TAIIZOR_{0}_TARGET_TOKEN", EnvironmentVariableTarget Target = EnvironmentVariableTarget.User)
+        public static bool SetVariable(AppEnum App, string Value, string Format = Internal.EnvironmentToken, EnvironmentVariableTarget Target = Internal.EnvironmentTarget)
         {
             return SetVariable(APP.GetApp(App), Value, Format, Target);
         }
 
-        public static string GetVariable(AppEnum App, string Format = "MAUI_TAIIZOR_{0}_TARGET_TOKEN", EnvironmentVariableTarget Target = EnvironmentVariableTarget.User)
+        public static string GetVariable(AppEnum App, string Format = Internal.EnvironmentToken, EnvironmentVariableTarget Target = Internal.EnvironmentTarget)
         {
             return GetVariable(APP.GetApp(App), Format, Target);
         }
 
-        public static bool SetVariable(string Key, string Value, string Format = "MAUI_TAIIZOR_{0}_TARGET_TOKEN", EnvironmentVariableTarget Target = EnvironmentVariableTarget.User)
+        public static bool SetVariable(string Key, string Value, string Format = Internal.EnvironmentToken, EnvironmentVariableTarget Target = Internal.EnvironmentTarget)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace Taiizor.Essentials.Maui.AppCenter.Helper
             }
         }
 
-        public static string GetVariable(string Key, string Format = "MAUI_TAIIZOR_{0}_TARGET_TOKEN", EnvironmentVariableTarget Target = EnvironmentVariableTarget.User)
+        public static string GetVariable(string Key, string Format = Internal.EnvironmentToken, EnvironmentVariableTarget Target = Internal.EnvironmentTarget)
         {
             try
             {
