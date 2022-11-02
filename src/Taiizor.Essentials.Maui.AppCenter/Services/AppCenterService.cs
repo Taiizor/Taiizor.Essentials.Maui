@@ -22,11 +22,6 @@ namespace Taiizor.Essentials.Maui.AppCenter.Services
 {
     public class AppCenterService
     {
-        internal static bool Engine(Dictionary<AppEnum, string> Keys)
-        {
-            return Engine(Keys, Internal.AppCenterWatch);
-        }
-
         internal static bool Engine(Dictionary<AppEnum, string> Keys, WatchStruct Watch)
         {
             Internal.AppCenterWatch = Watch;
