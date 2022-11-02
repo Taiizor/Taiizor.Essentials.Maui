@@ -24,7 +24,7 @@ namespace Taiizor.Essentials.Maui.Extension
         public static void UseFullscreen(this MauiAppBuilder Builder, Dictionary<AppEnum, bool> Apps)
         {
             App(Apps);
-            
+
             Builder.ConfigureLifecycleEvents(events =>
             {
 #if WINDOWS
@@ -52,7 +52,8 @@ namespace Taiizor.Essentials.Maui.Extension
                 });
 #elif ANDROID
                 events.AddAndroid(android => android
-                    .OnCreate((activity, bundle) => {
+                    .OnCreate((activity, bundle) =>
+                    {
                         if (Internal.AppFullscreen[AppEnum.Android])
                         {
                             activity.Window?.AddFlags(WindowManagerFlags.Fullscreen);
@@ -108,7 +109,7 @@ namespace Taiizor.Essentials.Maui.Extension
 #endif
             });
         }
-        
+
         private static void App(Dictionary<AppEnum, bool> Apps)
         {
             if (Apps != null && Apps.Keys.Count > 0)

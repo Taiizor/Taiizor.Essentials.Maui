@@ -21,7 +21,7 @@ namespace Taiizor.Essentials.Maui.Value
             { AppEnum.Android, true },
             { AppEnum.Windows, true }
         };
-        
+
         public static Dictionary<AssemblyEnum, bool> AssemblyLoad = new()
         {
             { AssemblyEnum.AppCenter, false },
