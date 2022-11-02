@@ -19,6 +19,9 @@ namespace Simple.WinUI
             this.InitializeComponent();
         }
 
-        protected override MauiApp CreateMauiApp() => Mutex.Check(MauiProgram.CreateMauiApp());
+        protected override MauiApp CreateMauiApp()
+        {
+            return Mutex.Check(MauiProgram.CreateMauiApp());
+        }
     }
 }
