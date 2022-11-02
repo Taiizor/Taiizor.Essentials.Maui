@@ -15,7 +15,7 @@ namespace Initialize
     {
         public static MauiApp CreateMauiApp()
         {
-            var builder = MauiApp.CreateBuilder();
+            MauiAppBuilder builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
@@ -25,7 +25,7 @@ namespace Initialize
 
             builder.Services.AddMauiBlazorWebView();
 #if DEBUG
-		    builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
             builder.UseAppCenter(new()
             {
@@ -36,16 +36,16 @@ namespace Initialize
             });
 
             Initialize();
-            
+
             return builder.Build();
         }
 
         private static void Initialize()
         {
             // ======================================================================= \\
-            
+
             //Taiizor.Essentials.Maui.AppCenter - Basic usage
-            
+
             AppDomain.CurrentDomain.FirstChanceException += ExceptionService.Set;
             AppDomain.CurrentDomain.UnhandledException += ExceptionService.Set;
             TaskScheduler.UnobservedTaskException += ExceptionService.Set;
