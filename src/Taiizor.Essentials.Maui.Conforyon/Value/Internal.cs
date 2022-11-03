@@ -5,6 +5,8 @@ namespace Taiizor.Essentials.Maui.Conforyon.Value
 {
     internal class Internal
     {
+        public static bool ConforyonState = false;
+
         public const bool Clear = false;
         public const string Empty = "Empty!";
         public const string Error = "Error!";
