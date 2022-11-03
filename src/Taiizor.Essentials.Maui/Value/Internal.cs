@@ -22,12 +22,6 @@ namespace Taiizor.Essentials.Maui.Value
             { AppEnum.Windows, true }
         };
 
-        public static Dictionary<AssemblyEnum, bool> AssemblyLoad = new()
-        {
-            { AssemblyEnum.AppCenter, false },
-            { AssemblyEnum.Conforyon, false }
-        };
-
         public static Dictionary<JavascriptEnum, bool> JavascriptFiles = new()
         {
             { JavascriptEnum.Custom, true },

@@ -1,10 +1,7 @@
 ﻿using Microsoft.JSInterop;
 using Taiizor.Essentials.Maui.Enum;
 using Taiizor.Essentials.Maui.Value;
-using HC = Taiizor.Essentials.Maui.Helper.Combine;
-using HD = Taiizor.Essentials.Maui.Helper.Directory;
 using HI = Taiizor.Essentials.Maui.Helper.Interop;
-using SRA = System.Reflection.Assembly;
 
 namespace Taiizor.Essentials.Maui.Extension
 {
@@ -14,15 +11,10 @@ namespace Taiizor.Essentials.Maui.Extension
 
         public Interop(IJSRuntime JSR)
         {
-            _ = new Interop(JSR, Internal.JavascriptFiles, Internal.AssemblyLoad);
+            _ = new Interop(JSR, Internal.JavascriptFiles);
         }
 
         public Interop(IJSRuntime JSR, Dictionary<JavascriptEnum, bool> Files)
-        {
-            _ = new Interop(JSR, Files, Internal.AssemblyLoad);
-        }
-
-        public Interop(IJSRuntime JSR, Dictionary<JavascriptEnum, bool> Files, Dictionary<AssemblyEnum, bool> Assemblies)
         {
             HI.CheckRuntime(JSR);
 
@@ -33,43 +25,6 @@ namespace Taiizor.Essentials.Maui.Extension
                 if (!Files.ContainsKey(File.Key) || Files[File.Key])
                 {
                     _ = Call("eval", Javascript.File(File.Key));
-                }
-            }
-
-            foreach (KeyValuePair<AssemblyEnum, bool> Assembly in Internal.AssemblyLoad)
-            {
-                if (Assemblies.ContainsKey(Assembly.Key) && Assemblies[Assembly.Key])
-                {
-                    string Key = $"Taiizor.Essentials.Maui.{Assembly.Key}";
-                    string Path = HC.FullPath(HD.GetDirectory, Key, ".dll");
-
-                    try
-                    {
-                        if (File.Exists(Path))
-                        {
-                            bool Loading = true;
-                            SRA[] Loaded = AppDomain.CurrentDomain.GetAssemblies();
-
-                            foreach (SRA Load in Loaded)
-                            {
-                                if (Load.GetName().Name == Key)
-                                {
-                                    Loading = false;
-                                    break;
-                                }
-                            }
-
-                            if (Loading)
-                            {
-                                SRA.LoadFile(Path);
-                                //SRA.LoadFrom(Path);
-                            }
-                        }
-                    }
-                    catch
-                    {
-                        //
-                    }
                 }
             }
         }
