@@ -40,13 +40,30 @@ namespace Taiizor.Essentials.Maui.Extension
             {
                 if (Assemblies.ContainsKey(Assembly.Key) && Assemblies[Assembly.Key])
                 {
+                    string Key = $"Taiizor.Essentials.Maui.{Assembly.Key}";
+                    string Path = HC.FullPath(HD.GetDirectory, Key, ".dll");
+
                     try
                     {
-                        string Path = HC.FullPath(HD.GetDirectory, $"Taiizor.Essentials.Maui.{Assembly.Key}", ".dll");
-
                         if (File.Exists(Path))
                         {
-                            SRA.LoadFile(Path);
+                            bool Loading = true;
+                            SRA[] Loaded = AppDomain.CurrentDomain.GetAssemblies();
+
+                            foreach (SRA Load in Loaded)
+                            {
+                                if (Load.GetName().Name == Key)
+                                {
+                                    Loading = false;
+                                    break;
+                                }
+                            }
+
+                            if (Loading)
+                            {
+                                SRA.LoadFile(Path);
+                                //SRA.LoadFrom(Path);
+                            }
                         }
                     }
                     catch
