@@ -1,4 +1,6 @@
-﻿namespace Initialize
+﻿using Taiizor.Essentials.Maui.Conforyon.Extension;
+
+namespace Initialize
 {
     public static class MauiProgram
     {
@@ -11,6 +13,8 @@
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 });
+
+            builder.UseConforyon();
 
             builder.Services.AddMauiBlazorWebView();
 #if DEBUG

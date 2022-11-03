@@ -20,12 +20,7 @@
             { JavascriptEnum.Conforyon, true }
         };
 
-        Dictionary<AssemblyEnum, bool> Assembly = new()
-        {
-            { AssemblyEnum.Conforyon, true }
-        };
-
-        _ = new Interop(JS, Files, Assembly);
+        _ = new Interop(JS, Files);
 
         base.OnInitialized();
     }
