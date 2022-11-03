@@ -53,7 +53,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
         <FileVersion>$(Version)</FileVersion>
         <AssemblyVersion>$(Version)</AssemblyVersion>
         <AssemblyFileVersion>$(Version)</AssemblyFileVersion>
-        <Version>2.0.0.3</Version>
+        <Version>2.0.0.4</Version>
         <VersionPrefix></VersionPrefix>
         <VersionSuffix></VersionSuffix>
         <PackageVersion>$(VersionPrefix)$(Version)$(VersionSuffix)</PackageVersion>
