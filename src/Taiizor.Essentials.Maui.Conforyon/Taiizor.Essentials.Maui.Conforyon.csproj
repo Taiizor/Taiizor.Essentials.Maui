@@ -92,7 +92,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
 
     <ItemGroup>
         <PackageReference Include="Conforyon" Version="2.0.0.3" />
-        <PackageReference Include="Microsoft.JSInterop" Version="6.0.10" />
+        <PackageReference Include="Microsoft.JSInterop" Version="6.0.11" />
     </ItemGroup>
 
 </Project>
