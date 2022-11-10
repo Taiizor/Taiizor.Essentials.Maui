@@ -29,7 +29,7 @@
         {
             await Interop.Call("Taiizor.Include.Js", Path);
         }
-        
+
         public static async Task ScriptProtected(string Path, string Pathname)
         {
             if (await Location.GetPathname() == Pathname)
