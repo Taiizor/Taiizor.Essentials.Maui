@@ -23,7 +23,7 @@
             {
                 return true;
             }
-            
+
             return false;
         }
     }

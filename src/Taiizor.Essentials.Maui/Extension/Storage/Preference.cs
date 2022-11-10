@@ -83,7 +83,7 @@
             {
                 return true;
             }
-            
+
             return false;
         }
 
@@ -126,7 +126,7 @@
 
             return false;
         }
-        
+
         public static bool Check(string Key, string Value)
         {
             if (Check(Key) && Get(Key, Value) == Value)
