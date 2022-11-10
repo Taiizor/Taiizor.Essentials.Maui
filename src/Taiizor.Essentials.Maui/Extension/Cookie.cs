@@ -27,6 +27,16 @@
             return await Interop.CallBool("Taiizor.Cookie.Check", Name);
         }
 
+        public static async ValueTask<bool> Check(string Name, string Value)
+        {
+            if (await Check(Name) && await Get(Name) == Value)
+            {
+                return true;
+            }
+            
+            return false;
+        }
+
         public static async Task Delete(string Name, bool Execute = false)
         {
             await Interop.Call("Taiizor.Cookie.Delete", Name, Execute);

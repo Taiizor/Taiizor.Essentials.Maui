@@ -77,6 +77,76 @@
             return Preferences.ContainsKey(Key);
         }
 
+        public static bool Check(string Key, int Value)
+        {
+            if (Check(Key) && Get(Key, Value) == Value)
+            {
+                return true;
+            }
+            
+            return false;
+        }
+
+        public static bool Check(string Key, long Value)
+        {
+            if (Check(Key) && Get(Key, Value) == Value)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool Check(string Key, float Value)
+        {
+            if (Check(Key) && Get(Key, Value) == Value)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool Check(string Key, double Value)
+        {
+            if (Check(Key) && Get(Key, Value) == Value)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool Check(string Key, bool Value)
+        {
+            if (Check(Key) && Get(Key, Value) == Value)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        
+        public static bool Check(string Key, string Value)
+        {
+            if (Check(Key) && Get(Key, Value) == Value)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool Check(string Key, DateTime Value)
+        {
+            if (Check(Key) && Get(Key, Value) == Value)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public static void Clear()
         {
             Preferences.Clear();

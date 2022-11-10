@@ -35,6 +35,16 @@ namespace Taiizor.Essentials.Maui.Extension.Storage.Device
             return File.Exists(Combine.FullPath(Internal.CacheDirectory, Name, Internal.StorageExtension));
         }
 
+        public static async ValueTask<bool> Check(string Name, string Content)
+        {
+            if (Check(Name) && await Read(Name) == Content)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public static void Delete(string Name, bool Execute = false)
         {
             if (Check(Name) || Execute)

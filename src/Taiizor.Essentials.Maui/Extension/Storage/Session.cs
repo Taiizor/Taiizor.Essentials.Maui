@@ -17,6 +17,16 @@
             return await Interop.CallBool("Taiizor.Storage.Session.Check", Key);
         }
 
+        public static async ValueTask<bool> Check(string Key, string Value)
+        {
+            if (await Check(Key) && await Get(Key) == Value)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public static async Task Delete(string Key, bool Execute = false)
         {
             await Interop.Call("Taiizor.Storage.Session.Delete", Key, Execute);

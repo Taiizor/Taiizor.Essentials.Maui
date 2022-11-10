@@ -16,5 +16,15 @@
         {
             return await Interop.CallBool("Taiizor.Title.Check");
         }
+
+        public static async ValueTask<bool> Check(string Title)
+        {
+            if (await Check() && await Get() == Title)
+            {
+                return true;
+            }
+            
+            return false;
+        }
     }
 }

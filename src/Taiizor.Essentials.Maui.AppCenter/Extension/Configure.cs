@@ -47,10 +47,7 @@ namespace Taiizor.Essentials.Maui.AppCenter.Extension
 
         private static bool LogEvent(string eventName, string type = null)
         {
-            if (Internal.AppCenterDebug)
-            {
-                Debug.WriteLine($"Lifecycle Event: {eventName}{(type == null ? string.Empty : $" ({type})")}");
-            }
+            Debug.WriteLine($"Lifecycle Event: {eventName}{(type == null ? string.Empty : $" ({type})")}");
 
             return true;
         }

@@ -4,9 +4,7 @@
     {
         public static async ValueTask<string> Read(string Name)
         {
-            bool Exists = await Check(Name);
-
-            if (Exists)
+            if (await Check(Name))
             {
                 using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync(Name);
                 using StreamReader streamReader = new(fileStream);
