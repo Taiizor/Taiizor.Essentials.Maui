@@ -19,9 +19,7 @@
 
         public static async Task FontProtected(string Path, string Rel, string Pathname)
         {
-            string Result = await Location.GetPathname();
-
-            if (Pathname == Result)
+            if (await Location.GetPathname() == Pathname)
             {
                 await Font(Path, Rel);
             }
@@ -31,12 +29,10 @@
         {
             await Interop.Call("Taiizor.Include.Js", Path);
         }
-
+        
         public static async Task ScriptProtected(string Path, string Pathname)
         {
-            string Result = await Location.GetPathname();
-
-            if (Pathname == Result)
+            if (await Location.GetPathname() == Pathname)
             {
                 await Script(Path);
             }
@@ -69,9 +65,7 @@
 
         public static async Task StylesheetProtected(string Path, string Rel, string Type, string Pathname)
         {
-            string Result = await Location.GetPathname();
-
-            if (Pathname == Result)
+            if (await Location.GetPathname() == Pathname)
             {
                 await Stylesheet(Path, Rel, Type);
             }

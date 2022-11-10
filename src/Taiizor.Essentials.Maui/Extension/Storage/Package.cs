@@ -21,5 +21,15 @@
         {
             return await FileSystem.Current.AppPackageFileExistsAsync(Name);
         }
+
+        public static async ValueTask<bool> Check(string Name, string Content)
+        {
+            if (await Read(Name) == Content)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

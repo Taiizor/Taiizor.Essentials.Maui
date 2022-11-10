@@ -1,4 +1,5 @@
-﻿using Taiizor.Essentials.Maui.Enum;
+﻿using System.Reflection;
+using Taiizor.Essentials.Maui.Enum;
 using Taiizor.Essentials.Maui.Value;
 
 namespace Taiizor.Essentials.Maui.Helper
@@ -15,6 +16,18 @@ namespace Taiizor.Essentials.Maui.Helper
                 JavascriptEnum.Conforyon => string.Format(Internal.JavascriptFile, "Conforyon"),
                 _ => string.Format(Internal.JavascriptFile, "None"),
             };
+        }
+
+        public static string LoadFile(JavascriptEnum Javascript)
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string resourceName = GetFile(Javascript);
+
+            using Stream? stream = assembly.GetManifestResourceStream(resourceName);
+
+            using StreamReader reader = new(stream);
+
+            return reader.ReadToEnd();
         }
     }
 }

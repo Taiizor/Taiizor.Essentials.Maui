@@ -37,7 +37,7 @@ namespace Taiizor.Essentials.Maui.Extension.Storage.Device
 
         public static async ValueTask<bool> Check(string Name, string Content)
         {
-            if (Check(Name) && await Read(Name) == Content)
+            if (await Read(Name) == Content)
             {
                 return true;
             }

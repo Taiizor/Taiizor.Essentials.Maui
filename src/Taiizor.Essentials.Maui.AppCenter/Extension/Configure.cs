@@ -20,32 +20,32 @@ namespace Taiizor.Essentials.Maui.AppCenter.Extension
             {
 #if WINDOWS
                 events.AddWindows(windows => windows
-                    .OnActivated((window, args) => LogEvent("OnActivated", $"{args}"))
-                    .OnClosed((window, args) => LogEvent("OnClosed", $"{args}")) //End
-                    .OnLaunched((window, args) => LogEvent("OnLaunched", $"{args}"))
-                    .OnLaunching((window, args) => AppCenterService.Engine(Keys, Watch)) //Start //LogEvent("OnLaunching", $"{args}")
-                    .OnWindowCreated((window) => LogEvent("OnWindowCreated"))
-                    .OnResumed((window) => LogEvent("OnResumed"))
-                    .OnVisibilityChanged((window, args) => LogEvent("OnVisibilityChanged", $"{args}")));
+                    .OnActivated((window, args) => Feedback("OnActivated", $"{args}"))
+                    .OnClosed((window, args) => Feedback("OnClosed", $"{args}")) //End
+                    .OnLaunched((window, args) => Feedback("OnLaunched", $"{args}"))
+                    .OnLaunching((window, args) => AppCenterService.Engine(Keys, Watch)) //Start //Feedback("OnLaunching", $"{args}")
+                    .OnWindowCreated((window) => Feedback("OnWindowCreated"))
+                    .OnResumed((window) => Feedback("OnResumed"))
+                    .OnVisibilityChanged((window, args) => Feedback("OnVisibilityChanged", $"{args}")));
 #elif ANDROID
                 events.AddAndroid(android => android
-                    .OnActivityResult((activity, requestCode, resultCode, data) => LogEvent("OnActivityResult", $"{requestCode}, {resultCode}, {data}"))
-                    .OnStart((activity) => LogEvent("OnStart"))
-                    .OnCreate((activity, bundle) => AppCenterService.Engine(Keys, Watch)) //Start //LogEvent("OnCreate", $"{bundle}")
-                    .OnBackPressed((activity) => LogEvent("OnBackPressed"))
-                    .OnStop((activity) => LogEvent("OnStop"))); //End
+                    .OnActivityResult((activity, requestCode, resultCode, data) => Feedback("OnActivityResult", $"{requestCode}, {resultCode}, {data}"))
+                    .OnStart((activity) => Feedback("OnStart"))
+                    .OnCreate((activity, bundle) => AppCenterService.Engine(Keys, Watch)) //Start //Feedback("OnCreate", $"{bundle}")
+                    .OnBackPressed((activity) => Feedback("OnBackPressed"))
+                    .OnStop((activity) => Feedback("OnStop"))); //End
 #elif IOS || MACCATALYST
                 events.AddiOS(ios => ios
-                    .OnActivated((app) => LogEvent("OnActivated"))
-                    .OnResignActivation((app) => LogEvent("OnResignActivation"))
-                    .DidEnterBackground((app) => LogEvent("DidEnterBackground"))
-                    .FinishedLaunching((app, dict) => AppCenterService.Engine(Keys, Watch)) //Start //LogEvent("FinishedLaunching", $"{dict}")
-                    .WillTerminate((app) => LogEvent("WillTerminate"))); //End
+                    .OnActivated((app) => Feedback("OnActivated"))
+                    .OnResignActivation((app) => Feedback("OnResignActivation"))
+                    .DidEnterBackground((app) => Feedback("DidEnterBackground"))
+                    .FinishedLaunching((app, dict) => AppCenterService.Engine(Keys, Watch)) //Start //Feedback("FinishedLaunching", $"{dict}")
+                    .WillTerminate((app) => Feedback("WillTerminate"))); //End
 #endif
             });
         }
 
-        private static bool LogEvent(string eventName, string type = null)
+        private static bool Feedback(string eventName, string type = null)
         {
             Debug.WriteLine($"Lifecycle Event: {eventName}{(type == null ? string.Empty : $" ({type})")}");
 
