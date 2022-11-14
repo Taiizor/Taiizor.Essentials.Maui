@@ -1,10 +1,12 @@
 ﻿using Microsoft.Maui.LifecycleEvents;
 using Taiizor.Essentials.Maui.Enum;
 using Taiizor.Essentials.Maui.Value;
+using Taiizor.Essentials.Maui.Struct;
 
 #if WINDOWS
 using WinRT.Interop;
 using Microsoft.UI.Windowing;
+using Windows.Graphics;
 using Microsoft.UI;
 #elif MACCATALYST || IOS
 using UIKit;
@@ -24,7 +26,7 @@ namespace Taiizor.Essentials.Maui.Extension
 
         public static void UseFullscreen(this MauiAppBuilder Builder, Dictionary<AppEnum, bool> Apps)
         {
-            App(Apps);
+            FullscreenApp(Apps);
 
             Builder.ConfigureLifecycleEvents(events =>
             {
@@ -37,9 +39,7 @@ namespace Taiizor.Essentials.Maui.Extension
                         {
                             window.ExtendsContentIntoTitleBar = false;
 
-                            IntPtr handle = WindowNative.GetWindowHandle(window);
-                            WindowId id = Win32Interop.GetWindowIdFromWindow(handle);
-                            AppWindow appWindow = AppWindow.GetFromWindowId(id);
+                            AppWindow appWindow = GetWindow(window);
 
                             switch (appWindow.Presenter)
                             {
@@ -111,13 +111,71 @@ namespace Taiizor.Essentials.Maui.Extension
             });
         }
 
-        private static void App(Dictionary<AppEnum, bool> Apps)
+        public static void UseProperties(this MauiAppBuilder Builder)
+        {
+            UseProperties(Builder, Internal.AppProperties);
+        }
+
+        public static void UseProperties(this MauiAppBuilder Builder, Dictionary<AppEnum, PropertyStruct> Apps)
+        {
+            PropertiesApp(Apps);
+
+#if WINDOWS
+            Builder.ConfigureLifecycleEvents(events =>
+            {
+                events.AddWindows(windows =>
+                {
+                    windows.OnWindowCreated(window =>
+                    {
+                        AppWindow appWindow = GetWindow(window);
+
+                        switch (appWindow.Presenter)
+                        {
+                            case OverlappedPresenter overlappedPresenter:
+                                overlappedPresenter.IsResizable = Internal.AppProperties[AppEnum.Windows].Resizable;
+                                overlappedPresenter.IsAlwaysOnTop = Internal.AppProperties[AppEnum.Windows].AlwaysOnTop;
+                                overlappedPresenter.IsMaximizable = Internal.AppProperties[AppEnum.Windows].Maximizable;
+                                overlappedPresenter.IsMinimizable = Internal.AppProperties[AppEnum.Windows].Minimizable;
+                                break;
+                        }
+
+                        if (Internal.AppProperties[AppEnum.Windows].MoveAndResize != null && Internal.AppProperties[AppEnum.Windows].MoveAndResize.HasValue)
+                        {
+                            MovanizeStruct movanize = Internal.AppProperties[AppEnum.Windows].MoveAndResize.Value;
+
+                            appWindow.MoveAndResize(new RectInt32(movanize.X, movanize.Y, movanize.Width, movanize.Height));
+                        }
+                    });
+                });
+            });
+#endif
+        }
+
+#if WINDOWS
+        private static AppWindow GetWindow(Microsoft.UI.Xaml.Window Window)
+        {
+            return AppWindow.GetFromWindowId(Win32Interop.GetWindowIdFromWindow(WindowNative.GetWindowHandle(Window)));
+        }
+#endif
+
+        private static void FullscreenApp(Dictionary<AppEnum, bool> Apps)
         {
             if (Apps != null && Apps.Keys.Count > 0)
             {
                 foreach (AppEnum App in Apps.Keys)
                 {
                     Internal.AppFullscreen[App] = Apps[App];
+                }
+            }
+        }
+
+        private static void PropertiesApp(Dictionary<AppEnum, PropertyStruct> Apps)
+        {
+            if (Apps != null && Apps.Keys.Count > 0)
+            {
+                foreach (AppEnum App in Apps.Keys)
+                {
+                    Internal.AppProperties[App] = Apps[App];
                 }
             }
         }
