@@ -3,6 +3,7 @@ using Taiizor.Essentials.Maui.Enum;
 using Taiizor.Essentials.Maui.Value;
 
 #if WINDOWS
+using WinRT.Interop;
 using Microsoft.UI.Windowing;
 using Microsoft.UI;
 #elif MACCATALYST || IOS
@@ -36,7 +37,7 @@ namespace Taiizor.Essentials.Maui.Extension
                         {
                             window.ExtendsContentIntoTitleBar = false;
 
-                            IntPtr handle = WinRT.Interop.WindowNative.GetWindowHandle(window);
+                            IntPtr handle = WindowNative.GetWindowHandle(window);
                             WindowId id = Win32Interop.GetWindowIdFromWindow(handle);
                             AppWindow appWindow = AppWindow.GetFromWindowId(id);
 
