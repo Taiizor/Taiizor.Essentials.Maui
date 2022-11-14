@@ -31,7 +31,7 @@ namespace Taiizor.Essentials.Maui.Value
             { AppEnum.Android, true },
             { AppEnum.Windows, true }
         };
-        
+
         public static Dictionary<AppEnum, PropertyStruct> AppProperties = new()
         {
             { AppEnum.iOS, DefaultProperty },
