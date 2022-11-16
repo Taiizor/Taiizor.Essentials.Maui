@@ -7,7 +7,7 @@ namespace Taiizor.Essentials.Maui.AppCenter.Helper
     {
         public static string GetText(string Title)
         {
-            return string.Format($"{Internal.AppCenterWatch.Format}", Internal.AppCenterWatch.Prefix, Internal.AppCenterWatch.Name, Title, AppCenterService.UserId, Internal.AppCenterWatch.Suffix);
+            return string.Format(Internal.AppCenterWatch.Format, Internal.AppCenterWatch.Prefix, Internal.AppCenterWatch.Name, Title, AppCenterService.UserId, Internal.AppCenterWatch.Suffix);
         }
     }
 }

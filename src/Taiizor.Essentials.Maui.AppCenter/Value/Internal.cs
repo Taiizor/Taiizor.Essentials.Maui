@@ -22,7 +22,7 @@ namespace Taiizor.Essentials.Maui.AppCenter.Value
             ErrorName = "Error",
             Prefix = "Prefix",
             Suffix = "Suffix",
-            Name = "Watch"
+            Name = "Watch" //Trace
         };
 
         public static Dictionary<AppEnum, string> AppCenterKey = new()
