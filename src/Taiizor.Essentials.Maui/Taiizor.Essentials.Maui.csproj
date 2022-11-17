@@ -91,8 +91,4 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
         </PackageReference>
     </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Taiizor.Essentials.Blazor" Version="22.11.17.2220" />
-    </ItemGroup>
-
 </Project>
