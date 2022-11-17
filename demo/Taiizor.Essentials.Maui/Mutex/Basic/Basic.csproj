@@ -54,7 +54,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Taiizor.Essentials.Maui" Version="22.11.17.2034" />
+        <PackageReference Include="Taiizor.Essentials.Maui" Version="22.11.17.2301" />
     </ItemGroup>
 
 </Project>
