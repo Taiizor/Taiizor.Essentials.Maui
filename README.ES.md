@@ -10,7 +10,7 @@
 [![Discord-Server](https://img.shields.io/discord/932386235538878534?label=Discord)](https://discord.gg/nxG977byXb)
 
 # Bienvenido a Taiizor.Essentials.Maui
-Taiizor.Essentials.Maui es una biblioteca esencial para proyectos que utilizan .NET MAUI Blazor. Proporciona comodidad con varias funciones que ofrece.
+Taiizor.Essentials.Maui es una biblioteca esencial para proyectos que utilizan .NET MAUI. Proporciona comodidad con varias funciones que ofrece.
 
 ## Colaboradores
 

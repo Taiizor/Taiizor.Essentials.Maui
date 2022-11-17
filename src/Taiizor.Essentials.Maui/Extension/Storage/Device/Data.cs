@@ -1,4 +1,4 @@
-﻿using Taiizor.Essentials.Maui.Helper;
+﻿using Taiizor.Essentials.Blazor.Helper;
 using Taiizor.Essentials.Maui.Value;
 
 namespace Taiizor.Essentials.Maui.Extension.Storage.Device

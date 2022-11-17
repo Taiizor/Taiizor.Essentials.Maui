@@ -10,7 +10,7 @@
 [![Discord-Server](https://img.shields.io/discord/932386235538878534?label=Discord)](https://discord.gg/nxG977byXb)
 
 # Taiizor.Essentials.Maui'ye Hoşgeldiniz
-Taiizor.Essentials.Maui, .NET MAUI Blazor kullanan projeler için temel bir kitaplıktır. Sunduğu çeşitli fonksiyonlarla kolaylık sağlar.
+Taiizor.Essentials.Maui, .NET MAUI kullanan projeler için temel bir kitaplıktır. Sunduğu çeşitli fonksiyonlarla kolaylık sağlar.
 
 ## Katkıda Bulunanlar
 

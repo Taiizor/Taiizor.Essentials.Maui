@@ -22,12 +22,12 @@
 
     <PropertyGroup>
         <PackageId>Taiizor.Essentials.Maui</PackageId>
-        <Summary>Essentials library for projects using .NET MAUI Blazor</Summary>
+        <Summary>Essentials library for projects using .NET MAUI</Summary>
         <Authors>Taiizor</Authors>
         <Owners>$(Authors)</Owners>
         <Company>$(Authors)</Company>
         <NeutralLanguage>en-GB</NeutralLanguage>
-        <Product>Taiizor.Essentials.Maui (net7.0)</Product>
+        <Product>Taiizor.Essentials.Maui ($(TargetFramework))</Product>
         <Copyright>Copyright © $([System.DateTime]::Today.ToString(yyyy)) $(Authors)</Copyright>
         <PackageDescription>$(Description)</PackageDescription>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -42,7 +42,7 @@
         <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
         <Title>Taiizor.Essentials.Maui</Title>
         <Description>$(Summary)
-.NET MAUI Blazor Essentials Library - $(PackageId)</Description>
+.NET MAUI Essentials Library - $(PackageId)</Description>
         <PackageReleaseNotes>Code improvements have been made.
 Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/releases</PackageReleaseNotes>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -65,19 +65,6 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
         <Configurations>Debug;Release</Configurations>
         <NoWarn>1587,1591</NoWarn>
     </PropertyGroup>
-
-    <ItemGroup>
-      <None Remove="Resources\Raw\Conforyon.Blazor.js" />
-      <None Remove="Resources\Raw\None.Blazor.js" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Include="Resources\Raw\Conforyon.Blazor.js" />
-        <EmbeddedResource Include="Resources\Raw\None.Blazor.js" />
-        <EmbeddedResource Include="Resources\Raw\Custom.Blazor.js" />
-        <EmbeddedResource Include="Resources\Raw\Taiizor.Blazor.js" />
-        <EmbeddedResource Include="Resources\Raw\AppCenter.Blazor.js" />
-    </ItemGroup>
   
     <ItemGroup>
         <None Include="Resources\Taiizor.Essentials.Maui.png">
@@ -105,7 +92,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.JSInterop" Version="7.0.0" />
+        <PackageReference Include="Taiizor.Essentials.Blazor" Version="22.11.17.2220" />
     </ItemGroup>
 
 </Project>
