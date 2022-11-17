@@ -53,7 +53,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
         <FileVersion>$(Version)</FileVersion>
         <AssemblyVersion>$(Version)</AssemblyVersion>
         <AssemblyFileVersion>$(Version)</AssemblyFileVersion>
-        <Version>2.0.0.8</Version>
+        <Version>$([System.DateTime]::Today.ToString(yy)).$([System.DateTime]::Today.ToString(MM)).$([System.DateTime]::Today.ToString(dd)).$([System.DateTime]::Now.ToString(HH))$([System.DateTime]::Now.ToString(mm))</Version>
         <VersionPrefix></VersionPrefix>
         <VersionSuffix></VersionSuffix>
         <PackageVersion>$(VersionPrefix)$(Version)$(VersionSuffix)</PackageVersion>
