@@ -21,6 +21,12 @@
     </PropertyGroup>
 
     <PropertyGroup>
+        <PublishReadyToRun>false</PublishReadyToRun>
+        <PublishReadyToRunComposite>true</PublishReadyToRunComposite>
+        <PublishReadyToRunEmitSymbols>true</PublishReadyToRunEmitSymbols>
+    </PropertyGroup>
+
+    <PropertyGroup>
         <PackageId>Taiizor.Essentials.Maui</PackageId>
         <Summary>Essentials library for projects using .NET MAUI</Summary>
         <Authors>Taiizor</Authors>

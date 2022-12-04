@@ -20,6 +20,12 @@
     </PropertyGroup>
 
     <PropertyGroup>
+        <PublishReadyToRun>false</PublishReadyToRun>
+        <PublishReadyToRunComposite>true</PublishReadyToRunComposite>
+        <PublishReadyToRunEmitSymbols>true</PublishReadyToRunEmitSymbols>
+    </PropertyGroup>
+
+    <PropertyGroup>
         <PackageId>Taiizor.Essentials.Maui.AppCenter</PackageId>
         <Summary>Essentials library for projects using .NET MAUI AppCenter</Summary>
         <Authors>Taiizor</Authors>
@@ -92,10 +98,10 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
 
     <ItemGroup>
         <PackageReference Include="Microsoft.JSInterop" Version="7.0.0" />
-        <PackageReference Include="Microsoft.AppCenter" Version="5.0.0" />
+        <PackageReference Include="Microsoft.AppCenter" Version="5.0.1" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-        <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.0" />
-        <PackageReference Include="Microsoft.AppCenter.Analytics" Version="5.0.0" />
+        <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.1" />
+        <PackageReference Include="Microsoft.AppCenter.Analytics" Version="5.0.1" />
     </ItemGroup>
 
 </Project>
