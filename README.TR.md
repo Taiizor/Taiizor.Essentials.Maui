@@ -28,7 +28,7 @@ Bu harika insanlara teşekkürler ([emoji anahtarı](https://allcontributors.org
 		</a>
 		<br/>
 		<a href="https://github.com/Taiizor/Taiizor.Essentials.Maui/commits?author=Taiizor" title="Kodlama">💻</a>
-		<a href="https://www.taiizor.com" title="Fikirler & Planlama, Geri Bildirim">🤔</a>
+		<a href="https://www.vegalya.com" title="Fikirler & Planlama, Geri Bildirim">🤔</a>
 	</td>
   </tr>
 </table>
