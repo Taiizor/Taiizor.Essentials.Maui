@@ -97,9 +97,9 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Maui/relea
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.JSInterop" Version="7.0.2" />
+        <PackageReference Include="Microsoft.JSInterop" Version="7.0.3" />
         <PackageReference Include="Microsoft.AppCenter" Version="5.0.1" />
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3-beta1" />
         <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.1" />
         <PackageReference Include="Microsoft.AppCenter.Analytics" Version="5.0.1" />
     </ItemGroup>
