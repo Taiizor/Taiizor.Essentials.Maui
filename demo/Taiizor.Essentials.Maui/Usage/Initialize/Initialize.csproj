@@ -54,8 +54,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Taiizor.Essentials.Blazor" Version="23.2.23.455" />
         <PackageReference Include="Taiizor.Essentials.Maui" Version="23.2.23.500" />
+        <PackageReference Include="Taiizor.Essentials.Blazor" Version="23.2.23.455" />
     </ItemGroup>
 
 </Project>
